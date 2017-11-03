@@ -1,3 +1,5 @@
+import com.sun.org.apache.xml.internal.security.algorithms.SignatureAlgorithm;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ import java.sql.Statement;
 public class Index extends HttpServlet {
     private String login;
     private String password;
+    private String position;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,7 +27,7 @@ public class Index extends HttpServlet {
         Statement statement;
         ResultSet resultSet;
 
-        String querySelectLogin = "SELECT login FROM users WHERE login = '" + getLogin() + "'";
+        String querySelectLogin = "SELECT login, role FROM users WHERE login = '" + getLogin() + "'";
         String querySelectPassword = "SELECT password FROM users WHERE password = '" + getPassword() + "'";
 
         if (!getLogin().equals("") && !getPassword().equals("")) {
@@ -40,6 +43,7 @@ public class Index extends HttpServlet {
                 resultSet = statement.executeQuery(querySelectLogin);
                 while (resultSet.next()) {
                     tmpLogin = resultSet.getString(1);
+                    setPosition(resultSet.getString(2));
                 }
                 resultSet.close();
 
@@ -85,5 +89,13 @@ public class Index extends HttpServlet {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

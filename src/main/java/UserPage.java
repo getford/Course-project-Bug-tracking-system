@@ -7,6 +7,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/userpage")
 public class UserPage extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -16,4 +17,5 @@ public class UserPage extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
+
 }
