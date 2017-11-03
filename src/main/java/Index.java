@@ -27,7 +27,7 @@ public class Index extends HttpServlet {
         Statement statement;
         ResultSet resultSet;
 
-        String querySelectLogin = "SELECT login, role FROM users WHERE login = '" + getLogin() + "'";
+        String querySelectLogin = "SELECT login, id_position FROM users WHERE login = '" + getLogin() + "'";
         String querySelectPassword = "SELECT password FROM users WHERE password = '" + getPassword() + "'";
 
         if (!getLogin().equals("") && !getPassword().equals("")) {
@@ -55,6 +55,8 @@ public class Index extends HttpServlet {
                     resultSet.close();
 
                     if (getPassword().equals(tmpPassword)) {
+                        if(getPosition().equals(0))
+                            resp.sendRedirect("/adminpage.jsp");
                         resp.sendRedirect("/userpage.jsp");
                         /*requestDispatcher = req.getRequestDispatcher("/userpage.jsp");
                         requestDispatcher.forward(req, resp);*/
