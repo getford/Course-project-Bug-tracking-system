@@ -4,32 +4,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 
 @WebServlet(urlPatterns = "/createissue")
 public class CreateIssue extends HttpServlet {
 
-    private int idProject;
-    private int idType;
-    private int idStatus;
-    private int idPriority;
-    private int idUserAssagnee;
-    private int idUserReporter;
-    private Date dateCreate;
-    private String title;
-    private String description;
-    private String enviroment;
-
-    private final String queryInsert = "INSERT INTO bug (id_project, id_type, id_status, id_priority, id_user_assignee, " +
-            "id_user_reporter, date, title, description, enviroment)" +
-            "values (" + getIdProject() + "," + getIdType() + "," + getIdStatus() + "," + getIdPriority() + ","
-            + getIdUserAssagnee() + "," + getIdUserReporter() + "," + getDateCreate() + ",'" + getTitle() + "','"
-            + getDescription() + "','" + getEnviroment() + "')";
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        try {
+            createIssue(req, resp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createIssue(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        int idProject = selectIdProject(req, resp);
+        int idType = selectIdTypeIssue(req, resp);
+        int idStatus = 0;
+        int idPriority = selectIdPriority(req, resp);
+        int idUserAssagnee
+                ;
+        int idUserReporter;
+        Date dateCreate;
+        String title;
+        String description;
+        String enviroment;
+
+//        final String queryInsert = "INSERT INTO bug (id_project, id_type, id_status, id_priority, id_user_assignee, " +
+//                "id_user_reporter, date, title, description, enviroment)" +
+//                "values (" + idProject + "," + idType + "," + idStatus + "," + idPriority + ","
+//                + idUserAssagnee + "," + idUserReporter + "," + dateCreate + ",'" + title + "','"
+//                + description + "','" + enviroment + "')";
         try {
             Connect connect = new Connect();
 
@@ -41,87 +54,60 @@ public class CreateIssue extends HttpServlet {
         }
     }
 
-    public int getIdProject() {
-        return idProject;
+    private int selectIdProject(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        int tmpId = 0;
+        String nameProject = req.getParameter("nameProject");
+        String query = "SELECT id FROM projects WHERE name = '" + nameProject + "'";
+
+        Connect connect = new Connect();
+        Statement statement = connect.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next())
+            tmpId = resultSet.getInt(1);
+
+        resultSet.close();
+        statement.close();
+        connect.close();
+
+        return tmpId;
     }
 
-    public void setIdProject(int idProject) {
-        this.idProject = idProject;
+    private int selectIdTypeIssue(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        int tmpIdTypeIssue = 0;
+        String nameTypeIssue = req.getParameter("nameTypeIssue");
+        String query = "SELECT id FROM type WHERE name = '" + nameTypeIssue + "'";
+
+        Connect connect = new Connect();
+        Statement statement = connect.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next())
+            tmpIdTypeIssue = resultSet.getInt(1);
+
+        resultSet.close();
+        statement.close();
+        connect.close();
+
+        return tmpIdTypeIssue;
     }
 
-    public int getIdType() {
-        return idType;
-    }
+    private int selectIdPriority(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        int tmpIdPriority = 0;
+        String name = req.getParameter("namePriority");
+        String query = "SELECT id FROM priority WHERE name = '" + name + "'";
 
-    public void setIdType(int idType) {
-        this.idType = idType;
-    }
+        Connect connect = new Connect();
+        Statement statement = connect.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
 
-    public int getIdStatus() {
-        return idStatus;
-    }
+        while (resultSet.next())
+            tmpIdPriority = resultSet.getInt(1);
 
-    public void setIdStatus(int idStatus) {
-        this.idStatus = idStatus;
-    }
-
-    public int getIdPriority() {
-        return idPriority;
-    }
-
-    public void setIdPriority(int idPriority) {
-        this.idPriority = idPriority;
-    }
-
-    public int getIdUserAssagnee() {
-        return idUserAssagnee;
-    }
-
-    public void setIdUserAssagnee(int idUserAssagnee) {
-        this.idUserAssagnee = idUserAssagnee;
-    }
-
-    public int getIdUserReporter() {
-        return idUserReporter;
-    }
-
-    public void setIdUserReporter(int idUserReporter) {
-        this.idUserReporter = idUserReporter;
-    }
-
-    public String getQueryInsert() {
-        return queryInsert;
-    }
-
-    public Date getDateCreate() {
-        return dateCreate;
-    }
-
-    public void setDateCreate(Date dateCreate) {
-        this.dateCreate = dateCreate;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getEnviroment() {
-        return enviroment;
-    }
-
-    public void setEnviroment(String enviroment) {
-        this.enviroment = enviroment;
+        resultSet.close();
+        statement.close();
+        connect.close();
+        return tmpIdPriority;
     }
 }
