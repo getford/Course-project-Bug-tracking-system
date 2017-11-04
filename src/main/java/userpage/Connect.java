@@ -1,4 +1,4 @@
-package createissue;
+package userpage;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ public class Connect {
     private static final String login = "root";
     private static final String password = "";
 
-    public Connect() throws SQLException, ClassNotFoundException {
+    Connect() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
         setConnection((Connection) DriverManager.getConnection(url, login, password));
         if (connection != null) {

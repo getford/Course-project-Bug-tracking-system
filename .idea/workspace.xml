@@ -7,19 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522dc27f-aace-4fec-85f2-50a9297be2c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/createissue/SelectAllUsers.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/createissue/SelectPriorityIssue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/createissue/classes/PriorityIssue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/createissue/classes/TypeIssue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/createissue/classes/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e603d9de-f17d-492f-937c-a211fccbf31f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e603d9de-f17d-492f-937c-a211fccbf31f.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/userpage/Connect.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/userpage/SelectAllYourProject.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/userpage/classes/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BugTrackingSystem.iml" afterPath="$PROJECT_DIR$/BugTrackingSystem.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CreateIssue.java" afterPath="$PROJECT_DIR$/src/main/java/CreateIssue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/createissue.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/createissue.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/createissue/Connect.java" afterPath="$PROJECT_DIR$/src/main/java/createissue/Connect.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/userpage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/UserPage.java" afterPath="$PROJECT_DIR$/src/main/java/userpage/UserPage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,51 +46,44 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="BugTrackingSystem@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="bugtrackingsystem" type="e3449647:DbNodeDescriptor" />
-        <item name="bugs" type="e3449647:DbNodeDescriptor" />
+        <item name="projects" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="BugTrackingSystem@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="bugtrackingsystem" type="e3449647:DbNodeDescriptor" />
-        <item name="priority" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="BugTrackingSystem@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="bugtrackingsystem" type="e3449647:DbNodeDescriptor" />
-        <item name="type" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="BugTrackingSystem@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="bugtrackingsystem" type="e3449647:DbNodeDescriptor" />
-        <item name="users" type="e3449647:DbNodeDescriptor" />
+        <item name="user_project" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Index.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Index.java">
+      <file leaf-file-name="UserPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userpage/UserPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1509747715860" expanded="true" signature="983:1054" ph="SELECT login... users" />
-                <marker date="1509747715860" expanded="true" signature="1095:1162" ph="SELECT passw... users" />
-              </folding>
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createissue.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/createissue.jsp">
+      <file leaf-file-name="SelectAllYourProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userpage/SelectAllYourProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="69" column="40" lean-forward="false" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="78">
+              <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#299#308#0" expanded="true" />
+                <element signature="e#375#384#0" expanded="true" />
+                <element signature="method#setIdUserProjectArrayList#0;class#SelectAllYourProject#0" expanded="false" />
+                <marker date="1509786499692" expanded="true" signature="829:862" ph="SELECT * FRO... projects" />
+                <marker date="1509786499692" expanded="true" signature="829:863" ph="SELECT * FRO... projects" />
+                <marker date="1509786499692" expanded="true" signature="1486:1537" ph="SELECT id_pr... user_project" />
+                <marker date="1509786499692" expanded="true" signature="1486:1538" ph="SELECT id_pr... user_project" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,10 +91,9 @@
       <file leaf-file-name="CreateIssue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CreateIssue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="198">
+              <caret line="59" column="47" lean-forward="false" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="47" />
               <folding>
-                <element signature="method#selectIdProject#0;class#CreateIssue#0" expanded="false" />
                 <element signature="method#selectIdTypeIssue#0;class#CreateIssue#0" expanded="false" />
                 <element signature="method#selectIdPriority#0;class#CreateIssue#0" expanded="false" />
                 <element signature="method#selectIdUserAssignee#0;class#CreateIssue#0" expanded="false" />
@@ -121,24 +107,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e603d9de-f17d-492f-937c-a211fccbf31f/console.sql">
+      <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="188" lean-forward="false" selection-start-line="0" selection-start-column="188" selection-end-line="0" selection-end-column="188" />
+            <state relative-caret-position="292">
+              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Connect.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/createissue/Connect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/userpage/Connect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,15 +177,21 @@
         <option value="$PROJECT_DIR$/src/main/java/Connect.java" />
         <option value="$PROJECT_DIR$/src/main/java/classes/Connect.java" />
         <option value="$PROJECT_DIR$/src/main/java/classes/SelectAllUsers.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/classes/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/classes/TypeIssue.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/classes/PriorityIssue.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/SelectPriorityIssue.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/createissue.jsp" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e603d9de-f17d-492f-937c-a211fccbf31f/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/CreateIssue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userpage/Connect.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e603d9de-f17d-492f-937c-a211fccbf31f/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/userpage/SelectIdYourProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userpage/SelectYourProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userpage/classes/Project.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userpage/UserPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/userpage/SelectAllYourProject.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
       </list>
     </option>
   </component>
@@ -272,7 +274,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="createissue" type="462c0819:PsiDirectoryNode" />
+              <item name="userpage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BugTrackingSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -280,7 +282,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="createissue" type="462c0819:PsiDirectoryNode" />
+              <item name="userpage" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -319,6 +321,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="userpage" />
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -504,12 +507,12 @@
       <updated>1508449298782</updated>
       <workItem from="1508449300410" duration="3376000" />
       <workItem from="1509745937812" duration="6519000" />
-      <workItem from="1509776140054" duration="7717000" />
+      <workItem from="1509776140054" duration="11117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17612000" />
+    <option name="totallyTimeSpent" value="21012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -526,7 +529,7 @@
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5053908" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43126684" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3207547" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -595,13 +598,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/CreateIssue.java</url>
-          <line>44</line>
+          <url>file://$PROJECT_DIR$/src/main/java/userpage/UserPage.java</url>
+          <line>22</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CreateIssue.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CreateIssue.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -631,7 +646,6 @@
         <state relative-caret-position="408">
           <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding>
-            <element signature="method#selectIdProject#0;class#CreateIssue#0" expanded="false" />
             <element signature="method#selectIdTypeIssue#0;class#CreateIssue#0" expanded="false" />
             <element signature="method#selectIdPriority#0;class#CreateIssue#0" expanded="false" />
             <element signature="method#selectIdUserAssignee#0;class#CreateIssue#0" expanded="false" />
@@ -715,16 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -755,18 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Index.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1509747715860" expanded="true" signature="983:1054" ph="SELECT login... users" />
-            <marker date="1509747715860" expanded="true" signature="1095:1162" ph="SELECT passw... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0041bfd7-eee5-4138-adf5-4fd1fe08ff5c/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -782,24 +774,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,32 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectPriorityIssue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="38" column="91" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#288#303#0" expanded="true" />
-            <element signature="method#setPriorityIssueArrayList#0;class#SelectPriorityIssue#0" expanded="false" />
-            <marker date="1509782853215" expanded="true" signature="419:441" ph="SELECT * FRO... priority" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#272#283#0" expanded="true" />
-            <element signature="method#setTypeIssueArrayList#0;class#SelectTypeIssue#0" expanded="false" />
-            <marker date="1509782196489" expanded="true" signature="395:413" ph="SELECT * FRO... type" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectAllUsers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -883,26 +831,146 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/createissue.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
+        <state relative-caret-position="1173">
           <caret line="69" column="40" lean-forward="false" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e603d9de-f17d-492f-937c-a211fccbf31f/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Index.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="188" lean-forward="false" selection-start-line="0" selection-start-column="188" selection-end-line="0" selection-end-column="188" />
+          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1509747715860" expanded="true" signature="983:1054" ph="SELECT login... users" />
+            <marker date="1509747715860" expanded="true" signature="1095:1162" ph="SELECT passw... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#272#283#0" expanded="true" />
+            <element signature="method#setTypeIssueArrayList#0;class#SelectTypeIssue#0" expanded="false" />
+            <marker date="1509782196489" expanded="true" signature="395:413" ph="SELECT * FRO... type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e603d9de-f17d-492f-937c-a211fccbf31f/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/SelectYourProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectPriorityIssue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#288#303#0" expanded="true" />
+            <element signature="method#setPriorityIssueArrayList#0;class#SelectPriorityIssue#0" expanded="false" />
+            <marker date="1509782853215" expanded="true" signature="419:441" ph="SELECT * FRO... priority" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/classes/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/SelectAllYourProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="48" column="66" lean-forward="false" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#299#308#0" expanded="true" />
+            <element signature="e#375#384#0" expanded="true" />
+            <element signature="method#setIdUserProjectArrayList#0;class#SelectAllYourProject#0" expanded="false" />
+            <marker date="1509786499692" expanded="true" signature="829:862" ph="SELECT * FRO... projects" />
+            <marker date="1509786499692" expanded="true" signature="829:863" ph="SELECT * FRO... projects" />
+            <marker date="1509786499692" expanded="true" signature="1486:1537" ph="SELECT id_pr... user_project" />
+            <marker date="1509786499692" expanded="true" signature="1486:1538" ph="SELECT id_pr... user_project" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/UserPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CreateIssue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="59" column="47" lean-forward="false" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="47" />
           <folding>
-            <element signature="method#selectIdProject#0;class#CreateIssue#0" expanded="false" />
             <element signature="method#selectIdTypeIssue#0;class#CreateIssue#0" expanded="false" />
             <element signature="method#selectIdPriority#0;class#CreateIssue#0" expanded="false" />
             <element signature="method#selectIdUserAssignee#0;class#CreateIssue#0" expanded="false" />
