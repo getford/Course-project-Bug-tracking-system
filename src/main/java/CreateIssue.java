@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 
 @WebServlet(urlPatterns = "/createissue")
 public class CreateIssue extends HttpServlet {
@@ -30,22 +29,22 @@ public class CreateIssue extends HttpServlet {
         int idType = selectIdTypeIssue(req, resp);
         int idStatus = 0;
         int idPriority = selectIdPriority(req, resp);
-        int idUserAssagnee
-                ;
-        int idUserReporter;
-        Date dateCreate;
-        String title;
-        String description;
-        String enviroment;
+        int idUserAssignee = selectIdUserAssignee(req, resp);
+        int idUserReporter = 2;
+        String dateCreate = req.getParameter("date_issue");
+        String title = req.getParameter("title_issue");
+        String description = req.getParameter("description_issue");
+        String environment = req.getParameter("environment_issue");
 
-//        final String queryInsert = "INSERT INTO bug (id_project, id_type, id_status, id_priority, id_user_assignee, " +
-//                "id_user_reporter, date, title, description, enviroment)" +
-//                "values (" + idProject + "," + idType + "," + idStatus + "," + idPriority + ","
-//                + idUserAssagnee + "," + idUserReporter + "," + dateCreate + ",'" + title + "','"
-//                + description + "','" + enviroment + "')";
+        final String queryInsert = "INSERT INTO bugs (id_project, id_type, id_status, id_priority, id_user_assignee, " +
+                "id_user_reporter, date_create, title, description, environment)" +
+                "VALUES (" + idProject + "," + idType + "," + idStatus + "," + idPriority + ","
+                + idUserAssignee + "," + idUserReporter + ",'" + dateCreate + "','" + title + "','"
+                + description + "','" + environment + "')";
         try {
             Connect connect = new Connect();
-
+            Statement statement = connect.getConnection().createStatement();
+            statement.executeUpdate(queryInsert);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -109,5 +108,26 @@ public class CreateIssue extends HttpServlet {
         statement.close();
         connect.close();
         return tmpIdPriority;
+    }
+
+    private int selectIdUserAssignee(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        int tmpIdUserAssignee = 0;
+
+        String email = req.getParameter("userAssignee");
+        String query = "SELECT id FROM users WHERE email = '" + email + "'";
+
+        Connect connect = new Connect();
+        Statement statement = connect.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        while (resultSet.next())
+            tmpIdUserAssignee = resultSet.getInt(1);
+
+        resultSet.close();
+        statement.close();
+        connect.close();
+
+        return tmpIdUserAssignee;
     }
 }

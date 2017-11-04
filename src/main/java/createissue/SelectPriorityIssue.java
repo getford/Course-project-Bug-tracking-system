@@ -1,0 +1,42 @@
+package createissue;
+
+import createissue.classes.PriorityIssue;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class SelectPriorityIssue {
+    private ArrayList<PriorityIssue> priorityIssueArrayList = new ArrayList<PriorityIssue>();
+
+    public void selectAllPriorityIssue() throws SQLException, ClassNotFoundException {
+        String query = "SELECT * FROM priority";
+        Connect connect = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connect = new Connect();
+            statement = connect.getConnection().createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                priorityIssueArrayList.add(new PriorityIssue(resultSet.getInt(1), resultSet.getString(2)));
+            }
+        } finally {
+            assert resultSet != null;
+            resultSet.close();
+            statement.close();
+            connect.close();
+        }
+    }
+
+    public ArrayList<PriorityIssue> getPriorityIssueArrayList() {
+        return priorityIssueArrayList;
+    }
+
+    public void setPriorityIssueArrayList(ArrayList<PriorityIssue> priorityIssueArrayList) {
+        this.priorityIssueArrayList = priorityIssueArrayList;
+    }
+}

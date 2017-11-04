@@ -4,6 +4,8 @@
     <title>User page</title>
 </head>
 <body>
-Hello
+<p>
+    <a href="createissue.jsp">Create issue</a>
+</p>
 </body>
 </html>
