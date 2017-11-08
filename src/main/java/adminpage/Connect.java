@@ -1,11 +1,10 @@
-import org.apache.log4j.Logger;
+package adminpage;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Connect {
-    private static final Logger log = Logger.getLogger(Connect.class);
     private Connection connection;
 
     private static final String url = "jdbc:mysql://localhost:3306/BugTrackingSystem";
@@ -16,7 +15,6 @@ public class Connect {
         Class.forName("com.mysql.jdbc.Driver");
         setConnection((Connection) DriverManager.getConnection(url, login, password));
         if (connection != null) {
-            log.info("Access granted.");
             System.out.println("Access granted.");
         } else {
             System.out.println("Access denied.");
@@ -25,6 +23,7 @@ public class Connect {
 
     void close() throws SQLException {
         getConnection().close();
+
     }
 
     public Connection getConnection() {

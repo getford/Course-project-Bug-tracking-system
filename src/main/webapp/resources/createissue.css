@@ -69,7 +69,7 @@ form {
     margin-bottom: 30px;
 }
 
-.setting_pr .field-group{
+.setting_pr .field-group {
     padding: 0 0 20px 140px;
 
 }
@@ -91,7 +91,7 @@ form {
     width: 130px;
     text-align: right;
     word-wrap: break-word;
-    color : black;
+    color: black;
     font-size: 15px;
     font-weight: bold;
 }
@@ -108,17 +108,17 @@ form {
     border: 1px solid darkgray;
 }
 
-.assignee{
+.assignee {
     width: 370px;
-    height:25px;
+    height: 25px;
     border: 1px solid darkgray;
 }
 
-textarea{
+textarea {
     max-width: 620px;
 }
 
-.env_text{
+.env_text {
     height: 60px;
     width: 100%;
     line-height: 15px;
@@ -129,7 +129,7 @@ textarea{
     border: 1px solid darkgray;
 }
 
-.desc_text{
+.desc_text {
     height: 180px;
     width: 100%;
     line-height: 15px;
@@ -142,7 +142,7 @@ textarea{
 
 .long_in {
     width: 100%;
-    height:25px;
+    height: 25px;
     border: 1px solid darkgray;
 }
 
@@ -191,17 +191,17 @@ input[type=button]:hover {
     text-shadow: 0 1px 0 #ffffff;
 }
 
-.buttons a{
+.buttons a {
     text-decoration: none;
-    color:whitesmoke;
+    color: whitesmoke;
     cursor: pointer;
     line-height: 1.2;
     font-weight: 400;
 }
 
-.buttons a:hover{
+.buttons a:hover {
     text-decoration: none;
-    color:whitesmoke;
+    color: whitesmoke;
     cursor: pointer;
     line-height: 1.2;
     font-weight: 400;
