@@ -1,5 +1,6 @@
 package userpage;
 
+import createissue.classes.TypeIssue;
 import userpage.classes.Project;
 
 import java.sql.ResultSet;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectAllYourProject {
+    //TODO: получать userID после авторизации
     private int idUser = 1;
     private ArrayList<Integer> idUserProjectArrayList = new ArrayList<Integer>();
     private ArrayList<Project> projectArrayList = new ArrayList<Project>();
@@ -83,4 +85,5 @@ public class SelectAllYourProject {
     public void setProjectArrayList(ArrayList<Project> projectArrayList) {
         this.projectArrayList = projectArrayList;
     }
+
 }

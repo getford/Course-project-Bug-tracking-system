@@ -55,7 +55,7 @@ public class Index extends HttpServlet {
                     resultSet.close();
 
                     if (getPassword().equals(tmpPassword)) {
-                        if(getPosition().equals(0))
+                        if (getPosition().equals(0))
                             resp.sendRedirect("/adminpage.jsp");
                         resp.sendRedirect("/userpage.jsp");
                         /*requestDispatcher = req.getRequestDispatcher("/userpage.jsp");
