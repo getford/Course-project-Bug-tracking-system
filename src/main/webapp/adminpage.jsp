@@ -4,8 +4,8 @@
 <head>
     <title>Admin page</title>
     <%
-        ParseCookie parseCookie = new ParseCookie();
-        if (parseCookie.getUserIdFromCookie(request, response) != 0) {
+        ParseCookie parseCookie = new ParseCookie(request);
+        if (parseCookie.getPositionIdFromToken() != 0) {
             response.sendRedirect("/index.jsp");
         }
     %>

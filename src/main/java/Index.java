@@ -1,6 +1,5 @@
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.impl.crypto.MacProvider;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.Key;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,7 +17,7 @@ import java.sql.Statement;
 @WebServlet(urlPatterns = "/index")
 public class Index extends HttpServlet {
     private static final Logger log = Logger.getLogger(Index.class);
-    private static final Key key = MacProvider.generateKey();
+//    private static final Key key = MacProvider.generateKey();
 
     private int id;
     private String login;
@@ -76,10 +74,12 @@ public class Index extends HttpServlet {
 //                                        key
 //                                )
                                 .compact();
+                        log.info("token create successfully");
 
                         Cookie cookie = new Cookie("auth", token);
                         cookie.setMaxAge(-1); //  the cookie will persist until browser shutdown
                         resp.addCookie(cookie);
+                        log.info("cookie create successfully");
 
                         if (getPosition() == 0) {
                             log.info("Redirect to /adminpage.jsp");

@@ -17,9 +17,8 @@ public class Connect {
         setConnection((Connection) DriverManager.getConnection(url, login, password));
         if (connection != null) {
             log.info("Access granted.");
-            System.out.println("Access granted.");
         } else {
-            System.out.println("Access denied.");
+            log.error("Access denied.");
         }
     }
 

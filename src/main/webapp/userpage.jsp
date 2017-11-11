@@ -14,35 +14,31 @@
     <script src="formissue.js"></script>
 </head>
 <body id="body" style="overflow:hidden;">
-<%--<%
-    UserPage userPage = new UserPage();
-    SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
-    try {
-        selectAllYourProject.selectAllYouProject();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-    }
-%>--%>
-<!---------------------- Assignee -------------------------------->
 <%
-    ParseCookie parseCookie = new ParseCookie();
+    ParseCookie parseCookie = new ParseCookie(request);
     SelectAllUsers selectAllUsers = new SelectAllUsers();
     SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
     SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
     SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
     try {
-        selectAllYourProject.setUserId(parseCookie.getUserIdFromCookie(request, response));
+        selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
         selectAllUsers.selectAll();
         selectTypeIssue.selectAllTypeIssue();
         selectPriorityIssue.selectAllPriorityIssue();
-        selectAllYourProject.selectAllYouProject();
+        selectAllYourProject.selectAllProjects();
 
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
     }
 %>
+<p>
+    Hello,
+    <b><%=parseCookie.getLoginFromToken()%>
+    </b>
+    <%--ID: <%=parseCookie.getUserIdFromToken()%>--%>
+    <%--Position: <%=parseCookie.getPositionIdFromToken()%>--%>
+</p>
+
 <div id="issue">
     <div id="popupIssue">
         <h2 class="heading_is">Creare Issue
@@ -126,7 +122,7 @@
                 </div>
                 <div class="bottom_container">
                     <div class="buttons">
-                        <input type="submit" value="Create"/>
+                        <input type="submit" onclick="div_hide()" value="Create"/>
                         <a href="#" onclick="div_hide()">Cancel</a>
                     </div>
                 </div>
@@ -149,6 +145,9 @@
 <%
     }
 %>
+</p>
+<p>
+    Log out
 </p>
 </body>
 </html>
