@@ -1,6 +1,7 @@
 package createissue;
 
 import createissue.classes.TypeIssue;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectTypeIssue {
+    private static final Logger log = Logger.getLogger(SelectTypeIssue.class);
     private ArrayList<TypeIssue> typeIssueArrayList = new ArrayList<TypeIssue>();
 
     public void selectAllTypeIssue() throws SQLException, ClassNotFoundException {

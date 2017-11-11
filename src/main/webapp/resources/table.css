@@ -1,0 +1,20 @@
+table {
+    width: 29%;
+    border-collapse: collapse;
+}
+
+td, th {
+    /*background: ghostwhite;*/
+    padding: 4px;
+    border: 1px solid #000000;
+}
+
+th {
+    background: #afd792;
+    color: black;
+}
+
+tbody tr:hover {
+    background: #f3bd48;
+    color: black;
+}

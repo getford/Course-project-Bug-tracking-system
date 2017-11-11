@@ -11,6 +11,7 @@
     <title>User page</title>
     <title>Create issue</title>
     <link href="resources/createissue.css" rel="stylesheet">
+    <link href="resources/table.css" rel="stylesheet">
     <script src="formissue.js"></script>
 </head>
 <body id="body" style="overflow:hidden;">
@@ -134,17 +135,34 @@
 <a href="#" id="create_is" onclick="div_show()">Create Issue</a>
 <p>
 <h4>Your projects</h4>
-<%
-    for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
-        String infoProject = "Name: " + selectAllYourProject.getProjectArrayList().get(i).getNameProject() + ", Key: " +
-                selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject() + ", Leader: " +
-                selectAllYourProject.getProjectArrayList().get(i).getIdUserLead();
-%>
-<%=infoProject%>
-<br/>
-<%
-    }
-%>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Key</th>
+        <th>Leader</th>
+    </tr>
+    <%
+        for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
+            String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
+            String key = selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject();
+            String leader = String.valueOf(selectAllYourProject.getProjectArrayList().get(i).getIdUserLead());
+    %>
+    <tbody>
+    <tr>
+        <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=name%>
+        </a>
+        </td>
+        <td><%=key%>
+        </td
+        >
+        <td><%=leader%>
+        </td>
+    </tr>
+    </tbody>
+    <%
+        }
+    %>
+</table>
 </p>
 <p>
     Log out

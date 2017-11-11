@@ -1,6 +1,7 @@
 package createissue;
 
 import createissue.classes.PriorityIssue;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectPriorityIssue {
+    private static final Logger log = Logger.getLogger(SelectPriorityIssue.class);
     private ArrayList<PriorityIssue> priorityIssueArrayList = new ArrayList<PriorityIssue>();
 
     public void selectAllPriorityIssue() throws SQLException, ClassNotFoundException {

@@ -1,5 +1,6 @@
 package userpage;
 
+import org.apache.log4j.Logger;
 import userpage.classes.Project;
 
 import java.sql.ResultSet;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectAllYourProject {
+    private static final Logger log = Logger.getLogger(SelectAllYourProject.class);
     private ArrayList<Project> projectArrayList = new ArrayList<Project>();
     private int userId;
 
@@ -24,10 +26,12 @@ public class SelectAllYourProject {
                     "on user_project.id_project = projects.id " +
                     "where id_user = " + getUserId();
             resultSet = statement.executeQuery(query);
+            log.info("Query: " + query);
             while (resultSet.next()) {
                 projectArrayList.add(new Project(resultSet.getInt(1), resultSet.getInt(2),
                         resultSet.getString(3), resultSet.getString(4)));
             }
+            log.info("Array projects current user was received successfully.");
 
         } finally {
             assert resultSet != null;

@@ -1,6 +1,7 @@
 package createissue;
 
 import createissue.classes.User;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectAllUsers {
+    private static final Logger log = Logger.getLogger(SelectAllUsers.class);
     private ArrayList<User> userArrayList = new ArrayList<User>();
 
     public void selectAll() throws SQLException, ClassNotFoundException {
@@ -27,6 +29,7 @@ public class SelectAllUsers {
                         resultSet.getString(5), resultSet.getString(6),
                         resultSet.getString(7)));
             }
+            log.info("Array users successfully received");
         } finally {
             assert resultSet != null;
             resultSet.close();

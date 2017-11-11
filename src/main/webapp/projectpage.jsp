@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%request.getParameter("userProject");%></title>
+    <title>Project page</title>
 </head>
 <body>
 <p>

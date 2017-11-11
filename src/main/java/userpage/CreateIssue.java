@@ -1,5 +1,8 @@
 package userpage;
 
+import createissue.SelectAllUsers;
+import org.apache.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +16,7 @@ import java.sql.Statement;
 
 @WebServlet(urlPatterns = "/createissue")
 public class CreateIssue extends HttpServlet {
+    private static final Logger log = Logger.getLogger(CreateIssue.class);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -48,7 +52,7 @@ public class CreateIssue extends HttpServlet {
             Connect connect = new Connect();
             Statement statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsert);
-
+            log.info("Query: " + queryInsert);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
