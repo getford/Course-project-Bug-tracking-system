@@ -1,18 +1,23 @@
 package userpage;
 
-import createissue.classes.TypeIssue;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
 import userpage.classes.Project;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectAllYourProject {
-    //TODO: получать userID после авторизации
-    private int idUser = 1;
     private ArrayList<Integer> idUserProjectArrayList = new ArrayList<Integer>();
     private ArrayList<Project> projectArrayList = new ArrayList<Project>();
+    private int userId;
 
     public void selectAllYouProject() throws SQLException, ClassNotFoundException {
         selectIdYourProject();
@@ -41,7 +46,7 @@ public class SelectAllYourProject {
     }
 
     private void selectIdYourProject() throws SQLException, ClassNotFoundException {
-        String query = "SELECT id_project FROM user_project WHERE id_user = " + getIdUser();
+        String query = "SELECT id_project FROM user_project WHERE id_user = " + getUserId();
         Connect connect = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -62,14 +67,6 @@ public class SelectAllYourProject {
         }
     }
 
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
     public ArrayList<Integer> getIdUserProjectArrayList() {
         return idUserProjectArrayList;
     }
@@ -86,4 +83,11 @@ public class SelectAllYourProject {
         this.projectArrayList = projectArrayList;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

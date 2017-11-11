@@ -1,10 +1,9 @@
-<%@ page import="userpage.SelectAllYourProject" %>
-<%@ page import="userpage.UserPage" %>
-<%@ page import="java.sql.SQLException" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
 <%@ page import="createissue.SelectTypeIssue" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="userpage.ParseCookie" %>
+<%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -28,19 +27,19 @@
 %>--%>
 <!---------------------- Assignee -------------------------------->
 <%
+    ParseCookie parseCookie = new ParseCookie();
     SelectAllUsers selectAllUsers = new SelectAllUsers();
     SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
     SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
     SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
     try {
+        selectAllYourProject.setUserId(parseCookie.getUserIdFromCookie(request, response));
         selectAllUsers.selectAll();
         selectTypeIssue.selectAllTypeIssue();
         selectPriorityIssue.selectAllPriorityIssue();
         selectAllYourProject.selectAllYouProject();
 
-    } catch (SQLException e) {
-        e.printStackTrace();
-    } catch (ClassNotFoundException e) {
+    } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
     }
 %>
@@ -137,7 +136,7 @@
     </div>
 </div>
 <a href="#" id="create_is" onclick="div_show()">Create Issue</a>
-<%--<p>
+<p>
 <h4>Your projects</h4>
 <%
     for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
@@ -150,6 +149,6 @@
 <%
     }
 %>
-</p>--%>
+</p>
 </body>
 </html>

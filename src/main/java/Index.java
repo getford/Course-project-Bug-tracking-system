@@ -15,7 +15,6 @@ import java.security.Key;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 
 @WebServlet(urlPatterns = "/index")
 public class Index extends HttpServlet {
@@ -64,15 +63,18 @@ public class Index extends HttpServlet {
                 if (getLogin().equals(tmpLogin)) {
                     if (getPassword().equals(tmpPassword)) {
                         String token = Jwts.builder()
-                                // .setSubject("users/TzMUocMF4p")
-                                .setExpiration(new Date(1300819380))
+                                .setSubject("AuthToken")
+                                //.setExpiration(new Date(1300819380))
                                 .claim("id", getId())
                                 .claim("login", getLogin())
                                 .claim("position", getPosition())
-                                .signWith(
-                                        SignatureAlgorithm.HS512,
-                                        key
+                                .signWith(SignatureAlgorithm.HS512,
+                                        "zhigalo".getBytes("UTF-8")
                                 )
+//                                .signWith(
+//                                        SignatureAlgorithm.HS256,
+//                                        key
+//                                )
                                 .compact();
 
                         Cookie cookie = new Cookie("auth", token);
