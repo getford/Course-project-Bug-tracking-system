@@ -24,7 +24,7 @@ public class Connect {
         }
     }
 
-    void close() throws SQLException {
+    public void close() throws SQLException {
         getConnection().close();
     }
 

@@ -1,6 +1,5 @@
 package userpage;
 
-import createissue.SelectAllUsers;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,6 +15,10 @@ import java.sql.Statement;
 @WebServlet(urlPatterns = "/createissue")
 public class CreateIssue extends HttpServlet {
     private static final Logger log = Logger.getLogger(CreateIssue.class);
+
+    private Connect connect = null;
+    private Statement statement = null;
+    private ResultSet resultSet = null;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -49,8 +51,8 @@ public class CreateIssue extends HttpServlet {
                 + idUserAssignee + "," + idUserReporter + ",'" + dateCreate + "','" + title + "','"
                 + description + "','" + environment + "')";
         try {
-            Connect connect = new Connect();
-            Statement statement = connect.getConnection().createStatement();
+            connect = new Connect();
+            statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsert);
             log.info("Query: " + queryInsert);
         } catch (SQLException e) {
@@ -68,9 +70,9 @@ public class CreateIssue extends HttpServlet {
         String nameProject = req.getParameter("nameProject");
         String query = "SELECT id FROM projects WHERE name = '" + nameProject + "'";
 
-        Connect connect = new Connect();
-        Statement statement = connect.getConnection().createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        connect = new Connect();
+        statement = connect.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
         while (resultSet.next())
             tmpId = resultSet.getInt(1);
 
@@ -87,9 +89,9 @@ public class CreateIssue extends HttpServlet {
         String nameTypeIssue = req.getParameter("nameTypeIssue");
         String query = "SELECT id FROM type WHERE name = '" + nameTypeIssue + "'";
 
-        Connect connect = new Connect();
-        Statement statement = connect.getConnection().createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        connect = new Connect();
+        statement = connect.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
         while (resultSet.next())
             tmpIdTypeIssue = resultSet.getInt(1);
 
@@ -106,9 +108,9 @@ public class CreateIssue extends HttpServlet {
         String name = req.getParameter("namePriority");
         String query = "SELECT id FROM priority WHERE name = '" + name + "'";
 
-        Connect connect = new Connect();
-        Statement statement = connect.getConnection().createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        connect = new Connect();
+        statement = connect.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
 
         while (resultSet.next())
             tmpIdPriority = resultSet.getInt(1);
@@ -126,9 +128,9 @@ public class CreateIssue extends HttpServlet {
         String email = req.getParameter("userAssignee");
         String query = "SELECT id FROM users WHERE email = '" + email + "'";
 
-        Connect connect = new Connect();
-        Statement statement = connect.getConnection().createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
+        connect = new Connect();
+        statement = connect.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
 
         while (resultSet.next())
             tmpIdUserAssignee = resultSet.getInt(1);

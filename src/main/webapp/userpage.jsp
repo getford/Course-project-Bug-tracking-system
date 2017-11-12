@@ -148,12 +148,14 @@
     %>
     <tbody>
     <tr>
-        <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=name%>
+        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=name%>
         </a>
         </td>
-        <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=key%></a>
+        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=key%>
+        </a>
         </td>
-        <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=leader%></a>
+        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=leader%>
+        </a>
         </td>
     </tr>
     </tbody>

@@ -15,11 +15,11 @@ public class SelectAllYourProject {
     private ArrayList<User> leaderArrayList = new ArrayList<User>();
     private int userId;
 
-    public void selectAllProjects() throws SQLException, ClassNotFoundException {
-        Connect connect = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
+    private Connect connect = null;
+    private Statement statement = null;
+    private ResultSet resultSet = null;
 
+    public void selectAllProjects() throws SQLException, ClassNotFoundException {
         try {
             connect = new Connect();
             statement = connect.getConnection().createStatement();
@@ -43,11 +43,7 @@ public class SelectAllYourProject {
         selectNameLeaderProjects();
     }
 
-    private void selectNameLeaderProjects() throws SQLException, ClassNotFoundException {
-        Connect connect = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
+    public void selectNameLeaderProjects() throws SQLException, ClassNotFoundException {
         try {
             connect = new Connect();
             statement = connect.getConnection().createStatement();

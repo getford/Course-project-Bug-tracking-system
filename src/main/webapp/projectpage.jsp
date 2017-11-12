@@ -1,17 +1,21 @@
+<%@ page import="projectpage.ProjectPage" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Project page</title>
+    <%
+        ProjectPage projectPage = new ProjectPage(request, response);
+    %>
 </head>
 <body>
 <p>
-    Name project:
+    <b>Name project:</b> <%=projectPage.getNameProject()%>
 </p>
 <p>
-    Key name:
+    <b>Key name:</b> <%=projectPage.getKeyProject()%>
 </p>
 <p>
-    Leader:
+    <b>Leader:</b> <%=projectPage.getLeaderName()%>
 </p>
 </body>
 </html>
