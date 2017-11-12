@@ -35,6 +35,7 @@
     Hello,
     <b><%=parseCookie.getLoginFromToken()%>
     </b>
+	
     <%--ID: <%=parseCookie.getUserIdFromToken()%>--%>
     <%--Position: <%=parseCookie.getPositionIdFromToken()%>--%>
 </p>
