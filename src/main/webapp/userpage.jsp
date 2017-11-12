@@ -144,7 +144,7 @@
         for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
             String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
             String key = selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject();
-            String leader = selectAllYourProject.getLeaderArrayList().get(i).getFirstname() + " " + selectAllYourProject.getLeaderArrayList().get(i).getLastname();
+            String leader = selectAllYourProject.getProjectArrayList().get(i).getFirstLastNameLead();
     %>
     <tbody>
     <tr>
@@ -162,6 +162,12 @@
     <%
         }
     %>
+</table>
+</p>
+<p>
+<h4>Your tasks</h4>
+<table>
+
 </table>
 </p>
 <p>

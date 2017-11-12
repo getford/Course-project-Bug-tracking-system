@@ -2,13 +2,13 @@ package userpage.classes;
 
 public class Project {
     private int id;
-    private int idUserLead;
+    private String firstLastNameLead;
     private String nameProject;
     private String keyNameProject;
 
-    public Project(int id, int idUserLead, String nameProject, String keyNameProject) {
+    public Project(int id, String firstLastNameLead, String nameProject, String keyNameProject) {
         this.id = id;
-        this.idUserLead = idUserLead;
+        this.firstLastNameLead = firstLastNameLead;
         this.nameProject = nameProject;
         this.keyNameProject = keyNameProject;
     }
@@ -21,12 +21,12 @@ public class Project {
         this.id = id;
     }
 
-    public int getIdUserLead() {
-        return idUserLead;
+    public String getFirstLastNameLead() {
+        return firstLastNameLead;
     }
 
-    public void setIdUserLead(int idUserLead) {
-        this.idUserLead = idUserLead;
+    public void setFirstLastNameLead(String firstLastNameLead) {
+        this.firstLastNameLead = firstLastNameLead;
     }
 
     public String getNameProject() {

@@ -1,5 +1,6 @@
 package projectpage;
 
+import bugs.SelectAllBugsProject;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,10 +31,10 @@ public class ProjectPage {
 
     private void selectInfoProjects(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ClassNotFoundException {
         String selectedNameProject = req.getParameter("nameproject");
+
         int idUserLead = 0;
 
         String querySelectInfoProject = "SELECT id_user_lead, name, key_name FROM projects WHERE name = '" + selectedNameProject + "'";
-        String querySelectNameLead = "SELECT firstname, lastname FROM users WHERE id = " + idUserLead;
 
         try {
             connect = new Connect();
@@ -45,9 +46,9 @@ public class ProjectPage {
                 setNameProject(resultSet.getString(2));
                 setKeyProject(resultSet.getString(3));
             }
-            String queryNameLead = "SELECT firstname, lastname FROM users WHERE id = " + idUserLead;
             resultSet.close();
-            resultSet = statement.executeQuery(queryNameLead);
+            String querySelectNameLead = "SELECT firstname, lastname FROM users WHERE id = " + idUserLead;
+            resultSet = statement.executeQuery(querySelectNameLead);
             while (resultSet.next())
                 setLeaderName(resultSet.getString(1) + " " + resultSet.getString(2));
 
@@ -82,4 +83,6 @@ public class ProjectPage {
     public void setLeaderName(String leaderName) {
         this.leaderName = leaderName;
     }
+
+
 }

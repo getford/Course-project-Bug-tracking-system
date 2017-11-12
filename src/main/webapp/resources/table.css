@@ -1,10 +1,9 @@
 table {
-    width: 29%;
+    width: 100%;
     border-collapse: collapse;
 }
 
 td, th {
-    /*background: ghostwhite;*/
     padding: 4px;
     border: 1px solid #000000;
 }
