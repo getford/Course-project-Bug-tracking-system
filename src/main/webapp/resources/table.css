@@ -18,3 +18,9 @@ tbody tr:hover {
     background: #f3bd48;
     color: black;
 }
+
+a:hover {
+    cursor: default;
+    text-decoration: none;
+    color:#000000;
+}

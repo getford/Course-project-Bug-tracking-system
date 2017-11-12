@@ -1,3 +1,5 @@
+package projectpage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,10 @@ public class ProjectPage extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+    public void selectInfoProjects() {
 
     }
 }

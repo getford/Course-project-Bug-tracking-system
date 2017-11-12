@@ -19,6 +19,11 @@ public class User {
         this.lastname = lastname;
     }
 
+    public User(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     public int getId() {
         return id;
     }

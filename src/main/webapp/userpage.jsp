@@ -1,7 +1,6 @@
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
 <%@ page import="createissue.SelectTypeIssue" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="userpage.ParseCookie" %>
 <%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="java.sql.SQLException" %>
@@ -145,17 +144,16 @@
         for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
             String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
             String key = selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject();
-            String leader = String.valueOf(selectAllYourProject.getProjectArrayList().get(i).getIdUserLead());
+            String leader = selectAllYourProject.getLeaderArrayList().get(i).getFirstname() + " " + selectAllYourProject.getLeaderArrayList().get(i).getLastname();
     %>
     <tbody>
     <tr>
         <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=name%>
         </a>
         </td>
-        <td><%=key%>
-        </td
-        >
-        <td><%=leader%>
+        <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=key%></a>
+        </td>
+        <td><a href="/projectpage.jsp" name="<%=name%>" style="display: block"><%=leader%></a>
         </td>
     </tr>
     </tbody>
@@ -165,7 +163,7 @@
 </table>
 </p>
 <p>
-    Log out
+    <a href="">Log out</a>
 </p>
 </body>
 </html>
