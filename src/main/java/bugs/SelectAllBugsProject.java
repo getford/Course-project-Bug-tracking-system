@@ -32,7 +32,8 @@ public class SelectAllBugsProject {
                     "  priority.name," +
                     "  users.firstname," +
                     "  users.lastname," +
-                    "  id_user_reporter," +
+                    "  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter)," +
+                    "  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter)," +
                     "  date_create," +
                     "  title," +
                     "  description," +
@@ -47,18 +48,20 @@ public class SelectAllBugsProject {
             log.info("Query: " + querySelectBugs);
             while (resultSet.next()) {
                 String idKeyProject = getKeyProject() + "-" + resultSet.getInt(1);
-                String firstLastName = resultSet.getString(5) + " " + resultSet.getString(6);
+                String firstLastNameAssignee = resultSet.getString(5) + " " + resultSet.getString(6);
+                String firstLastNameReporter = resultSet.getString(7) + " " + resultSet.getString(8);
+                String dateDayCreateBug = resultSet.getString(9).substring(0, 10);
                 bugArrayList.add(new Bug(
                         idKeyProject, // id
                         resultSet.getString(2), // type
                         resultSet.getString(3), // status
                         resultSet.getString(4), // priority
-                        firstLastName,
-                        resultSet.getString(7), // id user reporter
-                        resultSet.getString(8), // date
-                        resultSet.getString(9), // title
-                        resultSet.getString(10), // description
-                        resultSet.getString(11) // environment
+                        firstLastNameAssignee,
+                        firstLastNameReporter,
+                        dateDayCreateBug,
+                        resultSet.getString(10), // title
+                        resultSet.getString(11), // description
+                        resultSet.getString(12) // environment
                 ));
             }
         } finally {
@@ -69,7 +72,7 @@ public class SelectAllBugsProject {
         }
     }
 
-    public void returnIdSelectedProject(String nameProject) throws SQLException, ClassNotFoundException {
+    public int returnIdSelectedProject(String nameProject) throws SQLException, ClassNotFoundException {
         try {
             connect = new Connect();
             statement = connect.getConnection().createStatement();
@@ -93,6 +96,8 @@ public class SelectAllBugsProject {
             statement.close();
             connect.close();
         }
+
+        return getIdProject();
     }
 
     public String getKeyProject() {
