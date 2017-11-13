@@ -1,6 +1,7 @@
 <%@ page import="bugs.SelectAllBugsProject" %>
 <%@ page import="projectpage.ProjectPage" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="bugs.StatisticsBug" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,9 +12,11 @@
 <%
     ProjectPage projectPage = new ProjectPage(request, response);
     SelectAllBugsProject selectAllBugsProject = new SelectAllBugsProject();
+    StatisticsBug statisticsBug = new StatisticsBug();
     try {
         selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject"));
-        selectAllBugsProject.showBugs();
+        statisticsBug.setIdProject(selectAllBugsProject.returnIdSelectedProject("namepage"));
+        statisticsBug.showStatisticsBugs();
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
     }
@@ -81,7 +84,10 @@
         }
     %>
 </table>
-
+<p>
+<h4>Statistics Bug</h4>
+<hr>
+<h6></h6>
 </p>
 </body>
 </html>
