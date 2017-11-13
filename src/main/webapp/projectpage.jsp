@@ -15,7 +15,8 @@
     StatisticsBug statisticsBug = new StatisticsBug();
     try {
         selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject"));
-        statisticsBug.setIdProject(selectAllBugsProject.returnIdSelectedProject("namepage"));
+        selectAllBugsProject.showBugs();
+        statisticsBug.setIdProject(selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject")));
         statisticsBug.showStatisticsBugs();
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
