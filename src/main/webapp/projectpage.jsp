@@ -1,7 +1,7 @@
 <%@ page import="bugs.SelectAllBugsProject" %>
+<%@ page import="bugs.StatisticsBug" %>
 <%@ page import="projectpage.ProjectPage" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="bugs.StatisticsBug" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
