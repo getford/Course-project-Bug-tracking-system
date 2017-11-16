@@ -4,7 +4,7 @@
 <%@ page import="userpage.ParseCookie" %>
 <%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="bugs.SelectYourAssigneedBug" %>
+<%@ page import="bugs.selectYourAssigneedBug" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -21,14 +21,14 @@
     SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
     SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
     SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
-    SelectYourAssigneedBug selectYourAssigneedBug = null;
+    selectYourAssigneedBug selectYourAssigneedBug = null;
     try {
         selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
         selectAllUsers.selectAll();
         selectTypeIssue.selectAllTypeIssue();
         selectPriorityIssue.selectAllPriorityIssue();
         selectAllYourProject.selectAllProjects();
-        selectYourAssigneedBug = new SelectYourAssigneedBug(parseCookie.getUserIdFromToken());
+        selectYourAssigneedBug = new selectYourAssigneedBug(parseCookie.getUserIdFromToken());
 
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
