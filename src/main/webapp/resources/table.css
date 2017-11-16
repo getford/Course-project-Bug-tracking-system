@@ -21,5 +21,9 @@ tbody tr:hover {
 a:hover {
     cursor: default;
     text-decoration: none;
-    color:#000000;
+    color: #000000;
+}
+
+a {
+    display: block;
 }

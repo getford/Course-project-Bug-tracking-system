@@ -59,22 +59,22 @@
     %>
     <tbody>
     <tr>
-        <td><%=id%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=id%></a>
         </td>
-        <td><%=type%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=type%></a>
         </td>
-        <td><%=status%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=status%></a>
         </td>
-        <td><%=priority%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=priority%></a>
         </td>
-        <td><%=assignee%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=assignee%></a>
         </td>
-        <td><%=reporter%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=reporter%></a>
         </td>
-        <td><%=date%>
-        <td><%=title%>
-        <td><%=description%>
-        <td><%=environment%>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=date%></a>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=title%></a>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=description%></a>
+        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%></a>
         </td>
     </tr>
     </tbody>
