@@ -1,10 +1,10 @@
 package bugs.classes;
 
-public class BugType {
+public class BugStat {
     private String name;
     private int count;
 
-    public BugType(String name, int count) {
+    public BugStat(String name, int count) {
         this.name = name;
         this.count = count;
     }

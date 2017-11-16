@@ -12,25 +12,22 @@
 <%
     ProjectPage projectPage = new ProjectPage(request, response);
     SelectAllBugsProject selectAllBugsProject = new SelectAllBugsProject();
-    StatisticsBug statisticsBug = new StatisticsBug();
+    StatisticsBug statisticsBug = null;
     try {
         selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject"));
         selectAllBugsProject.showBugs();
-        statisticsBug.setIdProject(selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject")));
-        statisticsBug.showStatisticsBugs();
+        statisticsBug = new StatisticsBug (selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject")));
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
     }
 %>
 <p>
     <b>Name project: </b> <%=projectPage.getNameProject()%>
-</p>
-<p>
+    <br>
     <b>Key name: </b><%=projectPage.getKeyProject()%>
-</p>
-<p>
-    <b>Leader: </b><a href="/userpage.jsp"><%=projectPage.getLeaderName()%>
-</a>
+    <br>
+    <b>Leader: </b><a href="/userpage.jsp"><%=projectPage.getLeaderName()%></a>
+
 </p>
 <p>
 <h4>Bugs</h4>
@@ -85,10 +82,46 @@
         }
     %>
 </table>
-<p>
 <h4>Statistics Bug</h4>
 <hr>
-<h6></h6>
-</p>
+<div>
+    <h6>Status</h6>
+    <%
+        for (int i = 0; i < statisticsBug.getBugStatStatusArrayList().size(); i++) {
+            String name = statisticsBug.getBugStatStatusArrayList().get(i).getName();
+            int count = statisticsBug.getBugStatStatusArrayList().get(i).getCount();
+    %>
+    <span><b><%=name%></b>: <%=count%></span>
+    <br>
+    <%
+        }
+    %>
+</div>
+<div>
+    <h6>Priority</h6>
+    <%
+        for (int i = 0; i < statisticsBug.getBugStatPriorityArrayList().size(); i++) {
+            String name = statisticsBug.getBugStatPriorityArrayList().get(i).getName();
+            int count = statisticsBug.getBugStatPriorityArrayList().get(i).getCount();
+    %>
+    <span><b><%=name%></b>: <%=count%></span>
+    <br>
+    <%
+        }
+    %>
+</div>
+<div>
+    <h6>Type</h6>
+    <%
+        for (int i = 0; i < statisticsBug.getBugStatTypeArrayList().size(); i++) {
+            String name = statisticsBug.getBugStatTypeArrayList().get(i).getName();
+            int count = statisticsBug.getBugStatTypeArrayList().get(i).getCount();
+    %>
+    <span><b><%=name%></b>: <%=count%></span>
+    <br>
+    <%
+        }
+    %>
+</div>
 </body>
 </html>

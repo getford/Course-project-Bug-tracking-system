@@ -1,6 +1,6 @@
 package bugs;
 
-import bugs.classes.BugType;
+import bugs.classes.BugStat;
 import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
@@ -10,55 +10,59 @@ import java.util.ArrayList;
 
 public class StatisticsBug {
     private static final Logger log = Logger.getLogger(StatisticsBug.class);
-    private ArrayList<BugType> statisticsBugTypeArrayList = new ArrayList<BugType>();
-
-    private int idProject;
+    private ArrayList<BugStat> bugStatTypeArrayList = new ArrayList<BugStat>();
+    private ArrayList<BugStat> bugStatStatusArrayList = new ArrayList<BugStat>();
+    private ArrayList<BugStat> bugStatPriorityArrayList = new ArrayList<BugStat>();
 
     private Connect connect = null;
     private Statement statement = null;
     private ResultSet resultSet = null;
 
+    public StatisticsBug(int idProject) throws SQLException, ClassNotFoundException {
+        String queryPriorityStatistics =
+                "SELECT" +
+                        "  name, " +
+                        "  count(name) " +
+                        "FROM priority " +
+                        "  INNER JOIN bugs ON priority.id = bugs.id_priority " +
+                        "WHERE bugs.id_project = " + idProject +
+                        " GROUP BY name;";
 
-    public void showStatisticsBugs() {
-        try {
-            showStatisticsType();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+        String queryTypeStatistics =
+                "SELECT" +
+                        "  name, " +
+                        "  count(name) " +
+                        "FROM type " +
+                        "  INNER JOIN bugs ON type.id = bugs.id_type " +
+                        "WHERE bugs.id_project = " + idProject +
+                        " GROUP BY name;";
 
-    public void showStatisticsStatus() {
+        String queryStatusStatistics =
+                "SELECT" +
+                        "  name, " +
+                        "  count(name) " +
+                        "FROM status " +
+                        "  INNER JOIN bugs ON status.id = bugs.id_status " +
+                        "WHERE bugs.id_project = " + idProject +
+                        " GROUP BY name;";
 
-    }
-
-    private void showStatisticsType() throws SQLException, ClassNotFoundException {
-        int idProject = 1;
-        ArrayList<Integer> idTypeArrayList = new ArrayList<Integer>();
         try {
             connect = new Connect();
             statement = connect.getConnection().createStatement();
 
-            String queryCountBugs = "SELECT id FROM type";
-            resultSet = statement.executeQuery(queryCountBugs);
+            resultSet = statement.executeQuery(queryPriorityStatistics);
             while (resultSet.next()) {
-                idTypeArrayList.add(resultSet.getInt(1));
+                bugStatPriorityArrayList.add(new BugStat(resultSet.getString(1), resultSet.getInt(2)));
             }
-            resultSet.close();
 
-            for (int i = 0; i < idTypeArrayList.size(); i++) {
-                String querySelectCountTypeBugs = "SELECT" +
-                        "  type.name," +
-                        "  count(type.name)" +
-                        "FROM bugs" +
-                        "  INNER JOIN type ON bugs.id_type = type.id " +
-                        "WHERE id_project = " + idProject + " AND type.id = " + idTypeArrayList.get(i);
-                resultSet = statement.executeQuery(querySelectCountTypeBugs);
-                log.info("Query: " + querySelectCountTypeBugs);
-                while (resultSet.next()) {
-                    statisticsBugTypeArrayList.add(new BugType(resultSet.getString(1), resultSet.getInt(2)));
-                }
+            resultSet = statement.executeQuery(queryTypeStatistics);
+            while (resultSet.next()) {
+                bugStatTypeArrayList.add(new BugStat(resultSet.getString(1), resultSet.getInt(2)));
+            }
+
+            resultSet = statement.executeQuery(queryStatusStatistics);
+            while (resultSet.next()) {
+                bugStatStatusArrayList.add(new BugStat(resultSet.getString(1), resultSet.getInt(2)));
             }
         } finally {
             assert resultSet != null;
@@ -68,11 +72,15 @@ public class StatisticsBug {
         }
     }
 
-    public int getIdProject() {
-        return idProject;
+    public ArrayList<BugStat> getBugStatTypeArrayList() {
+        return bugStatTypeArrayList;
     }
 
-    public void setIdProject(int idProject) {
-        this.idProject = idProject;
+    public ArrayList<BugStat> getBugStatStatusArrayList() {
+        return bugStatStatusArrayList;
+    }
+
+    public ArrayList<BugStat> getBugStatPriorityArrayList() {
+        return bugStatPriorityArrayList;
     }
 }
