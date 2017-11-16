@@ -11,7 +11,7 @@
     <title>Create issue</title>
     <link href="resources/createissue.css" rel="stylesheet">
     <link href="resources/table.css" rel="stylesheet">
-    <script src="formissue.js"></script>
+    <script src="resources/formissue.js"></script>
 </head>
 <body id="body" style="overflow:hidden;">
 <%
