@@ -4,6 +4,7 @@
 <%@ page import="userpage.ParseCookie" %>
 <%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="bugs.SelectYourAssigneedBug" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -20,12 +21,14 @@
     SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
     SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
     SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
+    SelectYourAssigneedBug selectYourAssigneedBug = null;
     try {
         selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
         selectAllUsers.selectAll();
         selectTypeIssue.selectAllTypeIssue();
         selectPriorityIssue.selectAllPriorityIssue();
         selectAllYourProject.selectAllProjects();
+        selectYourAssigneedBug = new SelectYourAssigneedBug(parseCookie.getUserIdFromToken());
 
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
@@ -35,7 +38,7 @@
     Hello,
     <b><%=parseCookie.getLoginFromToken()%>
     </b>
-	
+
     <%--ID: <%=parseCookie.getUserIdFromToken()%>--%>
     <%--Position: <%=parseCookie.getPositionIdFromToken()%>--%>
 </p>
@@ -168,7 +171,44 @@
 <p>
 <h4>Your tasks</h4>
 <table>
-
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Priority</th>
+        <th>Date create</th>
+        <th>Title</th>
+    </tr>
+    <%
+        assert selectYourAssigneedBug != null;
+        for (int i = 0; i < selectYourAssigneedBug.getAssigneedBugArrayList().size(); i++) {
+            String idKey = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getId();
+            String type = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getType();
+            String priority = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getPriority();
+            String dateCreate = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getDateCreate();
+            String title = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getTitle();
+    %>
+    <tbody>
+    <tr>
+        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=idKey%>
+        </a>
+        </td>
+        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=type%>
+        </a>
+        </td>
+        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=priority%>
+        </a>
+        </td>
+        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=dateCreate%>
+        </a>
+        </td>
+        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=title%>
+        </a>
+        </td>
+    </tr>
+    </tbody>
+    <%
+        }
+    %>
 </table>
 </p>
 <p>
