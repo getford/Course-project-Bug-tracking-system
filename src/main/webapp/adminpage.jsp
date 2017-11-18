@@ -1,4 +1,6 @@
 <%@ page import="userpage.ParseCookie" %>
+<%@ page import="adminpage.SelectPosition" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,6 +9,12 @@
         ParseCookie parseCookie = new ParseCookie(request);
         if (parseCookie.getPositionIdFromToken() != 0) {
             response.sendRedirect("/index.jsp");
+        }
+        SelectPosition selectPosition = new SelectPosition();
+        try{
+            selectPosition.selectPisition();
+        }catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
     %>
 
@@ -28,12 +36,12 @@
         <h2 class="heading_pr">Add project
         </h2>
         <div class="popup-content">
-            <form action="/createproject" method="post" id="form" name="formus">
+            <form action="http://localhost:8080/addproject" method="post"  id="form" name="formus">
                 <div class="form-body_pr">
                     <div class="content">
                         <div class="field-group">
                             <label>Name</label>
-                            <input type="text" name="namePr" class="long_in">
+                            <input type="text" name="nameProject" class="long_in">
                         </div>
                         <div class="field-group">
                             <label>Key Project</label>
@@ -46,16 +54,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="bottom_container">
+                    <div class="buttons">
+
+                        <a href="#" onclick="div_hide_pr()">Cancel</a>
+                    </div>
+                </div>
+                <input type="submit" onclick="div_hide_pr()" value="Create"/>
             </form>
         </div>
-        <div class="bottom_container">
-            <div class="buttons">
-                <input type="submit" onclick="div_hide_pr()" value="Create"/>
-                <a href="#" onclick="div_hide_pr()">Cancel</a>
-            </div>
-        </div>
-
-        </form>
     </div>
 </div>
 
@@ -70,7 +77,16 @@
                         <div class="field-group">
                             <label>Position</label>
                             <select name="position">
+                                <%
+                                    for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
+                                        String name = selectPosition.getUserPositionsArraylist().get(i).getName();
+                                %>
+                                <option value="<%=name%>">
+                                    <%=name%>
+                                </option>
+                                <%}%>
                             </select>
+
                         </div>
                         <div class="field-group">
                             <label>Login</label>
@@ -82,7 +98,7 @@
                         </div>
                         <div class="field-group">
                             <label>Verify password</label>
-                            <input type="password" name="passwordV"/>
+                            <input type="password" name="passwordv"/>
                         </div>
                         <div class="field-group">
                             <label>Email</label>
@@ -90,11 +106,11 @@
                         </div>
                         <div class="field-group">
                             <label>Firstname</label>
-                            <input type="text" name="Fname"/>
+                            <input type="text" name="fname"/>
                         </div>
                         <div class="field-group">
                             <label>Lastname</label>
-                            <input type="text" name="Lname"/>
+                            <input type="text" name="lname"/>
                         </div>
                     </div>
                 </div>

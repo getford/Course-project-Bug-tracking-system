@@ -34,23 +34,25 @@ public class CreateIssue extends HttpServlet {
 
     private void createIssue(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
-        int idProject = selectIdProject(req, resp);
-        int idType = selectIdTypeIssue(req, resp);
-        int idStatus = 0;
-        int idPriority = selectIdPriority(req, resp);
-        int idUserAssignee = selectIdUserAssignee(req, resp);
-        int idUserReporter = 2;
-        String dateCreate = req.getParameter("date_issue");
-        String title = req.getParameter("title_issue");
-        String description = req.getParameter("description_issue");
-        String environment = req.getParameter("environment_issue");
-
-        final String queryInsert = "INSERT INTO bugs (id_project, id_type, id_status, id_priority, id_user_assignee, " +
-                "id_user_reporter, date_create, title, description, environment)" +
-                "VALUES (" + idProject + "," + idType + "," + idStatus + "," + idPriority + ","
-                + idUserAssignee + "," + idUserReporter + ",'" + dateCreate + "','" + title + "','"
-                + description + "','" + environment + "')";
         try {
+            int idProject = selectIdProject(req, resp);
+            int idType = selectIdTypeIssue(req, resp);
+            int idStatus = 0;
+            int idPriority = selectIdPriority(req, resp);
+            int idUserAssignee = selectIdUserAssignee(req, resp);
+            int idUserReporter = 2;
+            String dateCreate = req.getParameter("date_issue");
+            String title = req.getParameter("title_issue");
+            String description = req.getParameter("description_issue");
+            String environment = req.getParameter("environment_issue");
+
+            final String queryInsert = "INSERT INTO bugs (id_project, id_type, id_status, id_priority, id_user_assignee, " +
+                    "id_user_reporter, date_create, title, description, environment)" +
+                    "VALUES (" + idProject + "," + idType + "," + idStatus + "," + idPriority + ","
+                    + idUserAssignee + "," + idUserReporter + ",'" + dateCreate + "','" + title + "','"
+                    + description + "','" + environment + "')";
+
+
             connect = new Connect();
             statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsert);
@@ -59,6 +61,11 @@ public class CreateIssue extends HttpServlet {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } finally {
+            assert resultSet != null;
+            resultSet.close();
+            statement.close();
+            connect.close();
         }
 
         resp.sendRedirect("/userpage.jsp");
