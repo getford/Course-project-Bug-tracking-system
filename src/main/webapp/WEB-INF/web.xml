@@ -4,9 +4,21 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>/views/index.xhtml</welcome-file>
+    </welcome-file-list>
 
     <error-page>
         <error-code>404</error-code>
-        <location>/error.jsp</location>
+        <location>/views/error.xhtml</location>
     </error-page>
 </web-app>

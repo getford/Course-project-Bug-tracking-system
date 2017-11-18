@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class selectYourAssigneedBug {
+public class SelectYourAssigneedBug {
     private ArrayList<AssigneedBug> assigneedBugArrayList = new ArrayList<AssigneedBug>();
 
     private Connect connect = null;
     private Statement statement = null;
     private ResultSet resultSet = null;
 
-    public selectYourAssigneedBug(int idUserAssigneed) throws SQLException, ClassNotFoundException {
+    public SelectYourAssigneedBug(int idUserAssigneed) throws SQLException, ClassNotFoundException {
         String querySelectAssigneedBugs = "SELECT" +
                 "  bugs.id," +
                 "  projects.key_name, " +
