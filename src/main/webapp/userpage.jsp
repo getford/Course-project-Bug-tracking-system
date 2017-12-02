@@ -21,14 +21,14 @@
     SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
     SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
     SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
-    SelectYourAssigneedBug SelectYourAssigneedBug = null;
+    SelectYourAssigneedBug selectYourAssigneedBug = null;
     try {
         selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
         selectAllUsers.selectAll();
         selectTypeIssue.selectAllTypeIssue();
         selectPriorityIssue.selectAllPriorityIssue();
         selectAllYourProject.selectAllProjects();
-        SelectYourAssigneedBug = new SelectYourAssigneedBug(parseCookie.getUserIdFromToken());
+        selectYourAssigneedBug = new SelectYourAssigneedBug(parseCookie.getUserIdFromToken());
 
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
@@ -179,13 +179,13 @@
         <th>Title</th>
     </tr>
     <%
-        assert SelectYourAssigneedBug != null;
-        for (int i = 0; i < SelectYourAssigneedBug.getAssigneedBugArrayList().size(); i++) {
-            String idKey = SelectYourAssigneedBug.getAssigneedBugArrayList().get(i).getId();
-            String type = SelectYourAssigneedBug.getAssigneedBugArrayList().get(i).getType();
-            String priority = SelectYourAssigneedBug.getAssigneedBugArrayList().get(i).getPriority();
-            String dateCreate = SelectYourAssigneedBug.getAssigneedBugArrayList().get(i).getDateCreate();
-            String title = SelectYourAssigneedBug.getAssigneedBugArrayList().get(i).getTitle();
+        assert selectYourAssigneedBug != null;
+        for (int i = 0; i < selectYourAssigneedBug.getAssigneedBugArrayList().size(); i++) {
+            String idKey = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getId();
+            String type = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getType();
+            String priority = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getPriority();
+            String dateCreate = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getDateCreate();
+            String title = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getTitle();
     %>
     <tbody>
     <tr>
