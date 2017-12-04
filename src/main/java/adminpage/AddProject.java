@@ -23,18 +23,16 @@ public class AddProject extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         try {
             addProject(req, resp);
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     private void addProject(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
+            throws IOException, SQLException {
         try {
             int idLead = 0; /*selectIdUser(request, response);*/
             String nameProject = request.getParameter("nameProject");
@@ -78,6 +76,4 @@ public class AddProject extends HttpServlet {
 
         return tmpId;
     }
-
-
 }

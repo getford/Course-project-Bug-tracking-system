@@ -1,42 +1,60 @@
-<%@ page import="userpage.ParseCookie" %>
 <%@ page import="adminpage.SelectPosition" %>
+<%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="userpage.ParseCookie" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Admin page</title>
-    <%
-        ParseCookie parseCookie = new ParseCookie(request);
-        if (parseCookie.getPositionIdFromToken() != 0) {
-            response.sendRedirect("/index.jsp");
-        }
-        SelectPosition selectPosition = new SelectPosition();
-        try{
-            selectPosition.selectPisition();
-        }catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link href="resources/admin.css" rel="stylesheet">
     <script src="resources/formuser.js"></script>
     <script src="resources/formproject.js"></script>
-
+    <%
+        ParseCookie parseCookie = new ParseCookie(request);
+        SelectUserInfo selectUserInfo = null;
+        if (parseCookie.getPositionIdFromToken() != 0) {
+            response.sendRedirect("/index.jsp");
+        }
+        SelectPosition selectPosition = new SelectPosition();
+        try {
+            selectPosition.selectPisition();
+            selectUserInfo = new SelectUserInfo();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    %>
+    <title>Admin page - <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
+    </title>
 </head>
 <body>
 <body id="body" style="overflow:hidden;">
 
-<p>
-    Hello,
-    <b><%=parseCookie.getLoginFromToken()%>
-    </b>
-</p>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
+                <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="profile.jsp">Profile</a></li>
+                <li><a href="statistic.jsp">Statistic</a></li>
+                <hr/>
+                <li><a href="#">Exit</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div id="project">
     <div id="popupProject">
         <h2 class="heading_pr">Add project
         </h2>
         <div class="popup-content">
-            <form action="http://localhost:8080/addproject" method="post"  id="form" name="formus">
+            <form action="http://localhost:8080/addproject" method="post" id="form" name="formus">
                 <div class="form-body_pr">
                     <div class="content">
                         <div class="field-group">
@@ -65,7 +83,6 @@
         </div>
     </div>
 </div>
-
 <div id="user">
     <div id="popupUser">
         <h2 class="heading_us">Add user
@@ -133,9 +150,6 @@
 
 </div>
 
-<p>
-    <a href="">Log out</a>
-</p>
 </body>
 </body>
 </html>

@@ -5,13 +5,17 @@
 <%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="bugs.SelectYourAssigneedBug" %>
+<%@ page import="helpinfo.SelectUserInfo" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>User page</title>
     <title>Create issue</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="resources/createissue.css" rel="stylesheet">
-    <link href="resources/table.css" rel="stylesheet">
+    <%--<link href="resources/table.css" rel="stylesheet">--%>
     <script src="resources/formissue.js"></script>
 </head>
 <body id="body" style="overflow:hidden;">
@@ -22,6 +26,7 @@
     SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
     SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
     SelectYourAssigneedBug selectYourAssigneedBug = null;
+    SelectUserInfo selectUserInfo = new SelectUserInfo();
     try {
         selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
         selectAllUsers.selectAll();
@@ -34,15 +39,108 @@
         e.printStackTrace();
     }
 %>
-<p>
-    Hello,
-    <b><%=parseCookie.getLoginFromToken()%>
-    </b>
 
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
+                <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="profile.jsp">Profile</a></li>
+                <li><a href="statistic.jsp">Statistic</a></li>
+                <hr/>
+                <li><a href="#">Exit</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">Create issue</button>
+<p>
     <%--ID: <%=parseCookie.getUserIdFromToken()%>--%>
     <%--Position: <%=parseCookie.getPositionIdFromToken()%>--%>
 </p>
 
+<div class="panel panel-warning">
+    <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Key</th>
+                <th>Leader</th>
+            </tr>
+            <%
+                for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
+                    String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
+                    String key = selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject();
+                    String leader = selectAllYourProject.getProjectArrayList().get(i).getFirstLastNameLead();
+            %>
+            <tbody>
+            <tr>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=name%>
+                </a>
+                </td>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=key%>
+                </a>
+                </td>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=leader%>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+            <%
+                }
+            %>
+        </table>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading" style="text-align: center;"><h4>Your tasks</h4></div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Priority</th>
+                <th>Date create</th>
+                <th>Title</th>
+            </tr>
+            <%
+                assert selectYourAssigneedBug != null;
+                for (int i = 0; i < selectYourAssigneedBug.getAssigneedBugArrayList().size(); i++) {
+                    String idKey = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getId();
+                    String type = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getType();
+                    String priority = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getPriority();
+                    String dateCreate = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getDateCreate();
+                    String title = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getTitle();
+            %>
+            <tbody>
+            <tr>
+                <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=idKey%>
+                </a>
+                </td>
+                <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=type%>
+                </a>
+                </td>
+                <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=priority%>
+                </a>
+                </td>
+                <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=dateCreate%>
+                </a>
+                </td>
+                <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=title%>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+            <%
+                }
+            %>
+        </table>
+    </div>
+</div>
 <div id="issue">
     <div id="popupIssue">
         <h2 class="heading_is">Creare Issue
@@ -135,84 +233,6 @@
         </div>
     </div>
 </div>
-<a href="#" id="create_is" onclick="div_show()">Create Issue</a>
-<p>
-<h4>Your projects</h4>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Key</th>
-        <th>Leader</th>
-    </tr>
-    <%
-        for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
-            String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
-            String key = selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject();
-            String leader = selectAllYourProject.getProjectArrayList().get(i).getFirstLastNameLead();
-    %>
-    <tbody>
-    <tr>
-        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=name%>
-        </a>
-        </td>
-        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=key%>
-        </a>
-        </td>
-        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=leader%>
-        </a>
-        </td>
-    </tr>
-    </tbody>
-    <%
-        }
-    %>
-</table>
-</p>
-<p>
-<h4>Your tasks</h4>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Type</th>
-        <th>Priority</th>
-        <th>Date create</th>
-        <th>Title</th>
-    </tr>
-    <%
-        assert selectYourAssigneedBug != null;
-        for (int i = 0; i < selectYourAssigneedBug.getAssigneedBugArrayList().size(); i++) {
-            String idKey = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getId();
-            String type = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getType();
-            String priority = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getPriority();
-            String dateCreate = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getDateCreate();
-            String title = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getTitle();
-    %>
-    <tbody>
-    <tr>
-        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=idKey%>
-        </a>
-        </td>
-        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=type%>
-        </a>
-        </td>
-        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=priority%>
-        </a>
-        </td>
-        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=dateCreate%>
-        </a>
-        </td>
-        <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=title%>
-        </a>
-        </td>
-    </tr>
-    </tbody>
-    <%
-        }
-    %>
-</table>
-</p>
-<p>
-    <a href="">Log out</a>
-</p>
+<%--<a href="#" id="create_is" onclick="div_show()">Create Issue</a>--%>
 </body>
 </html>
