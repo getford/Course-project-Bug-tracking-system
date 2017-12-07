@@ -8,7 +8,7 @@
 <body>
 <div class="jumbotron text-center">
     <h1 class="form-signin-heading">Bug tracking system</h1>
-    <p>Great Bug tracking system service</p>
+    <p>Great Bug tracking system</p>
 </div>
 <div class="container">
     <br/>

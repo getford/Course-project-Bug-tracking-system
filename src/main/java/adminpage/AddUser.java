@@ -1,8 +1,10 @@
 package adminpage;
 
+import mail.SendMail;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,8 +13,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+@WebServlet("/adduser")
 public class AddUser extends HttpServlet {
-    private static final Logger log = Logger.getLogger(AddProject.class);
+    private static final Logger log = Logger.getLogger(AddUser.class);
+
+    SendMail sendMail = new SendMail();
 
     private Connect connect = null;
     private Statement statement = null;
@@ -23,9 +28,7 @@ public class AddUser extends HttpServlet {
             throws ServletException, IOException {
         try {
             addUser(req, resp);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -41,15 +44,16 @@ public class AddUser extends HttpServlet {
             String lname = req.getParameter("lname");
 
             final String queryInsertUser = "INSERT INTO users (id_position,login,password,email,firstname,lastname)" +
-                    "VALUES (" + id_position + "," + login + "," + password + "'" + email + "'" + fname + "'" + lname + ")";
+                    "VALUES (" + id_position + "," + login + "," + password + "," + email + "," + fname + "," + lname + ")";
 
             connect = new Connect();
             statement = connect.getConnection().createStatement();
             resultSet = statement.executeQuery(queryInsertUser);
+
+            sendMail.sendMailRegistration(email, login, password);
+
             log.info("Query: " + queryInsertUser);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             assert resultSet != null;

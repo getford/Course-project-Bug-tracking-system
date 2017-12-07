@@ -51,6 +51,23 @@ public class SelectUserInfo {
         return namePosition;
     }
 
+    public String selectUserEmail(int id) {
+        String email = null;
+        String query = "SELECT email from users WHERE id = " + id;
+
+        try {
+            connect = new Connect();
+            statement = connect.getConnection().createStatement();
+            resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                email = resultSet.getString(1);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return email;
+    }
+
     public int selectCountAllYourBugs(int id) {
         int count = 0;
         String queryAll = "SELECT count(*) FROM bugs WHERE bugs.id_user_assignee = " + id;

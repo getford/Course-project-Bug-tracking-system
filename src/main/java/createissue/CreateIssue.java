@@ -1,5 +1,7 @@
-package userpage;
+package createissue;
 
+import helpinfo.SelectUserInfo;
+import mail.SendMail;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -16,6 +18,11 @@ import java.sql.Statement;
 public class CreateIssue extends HttpServlet {
     private static final Logger log = Logger.getLogger(CreateIssue.class);
 
+    private SendMail sendMail = new SendMail();
+    private SelectUserInfo selectUserInfo = new SelectUserInfo();
+
+    private String EmailUserAssignee = null;
+
     private Connect connect = null;
     private Statement statement = null;
     private ResultSet resultSet = null;
@@ -25,22 +32,21 @@ public class CreateIssue extends HttpServlet {
             throws ServletException, IOException {
         try {
             createIssue(req, resp);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     private void createIssue(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
+        ParseCookie parseCookie = new ParseCookie(req);
         try {
             int idProject = selectIdProject(req, resp);
             int idType = selectIdTypeIssue(req, resp);
             int idStatus = 0;
             int idPriority = selectIdPriority(req, resp);
             int idUserAssignee = selectIdUserAssignee(req, resp);
-            int idUserReporter = 2;
+            int idUserReporter = parseCookie.getUserIdFromToken();
             String dateCreate = req.getParameter("date_issue");
             String title = req.getParameter("title_issue");
             String description = req.getParameter("description_issue");
@@ -52,14 +58,27 @@ public class CreateIssue extends HttpServlet {
                     + idUserAssignee + "," + idUserReporter + ",'" + dateCreate + "','" + title + "','"
                     + description + "','" + environment + "')";
 
-
             connect = new Connect();
             statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsert);
+
+
+            int maxId = 0;
+            String queryMaxIdBug = "SELECT MAX(id) FROM bugs";
+            resultSet = statement.executeQuery(queryMaxIdBug);
+            while (resultSet.next())
+                maxId = resultSet.getInt(1);
+
+            String idBug = selectKeyNameProject(req, resp) + "-" + maxId;
+            String urlBug = "http://localhost:8080/viewbug.jsp?idbug=" + idBug;
+
+
+            sendMail.sendMailAssignee(getEmailUserAssignee(),
+                    selectUserInfo.selectUserName(parseCookie.getUserIdFromToken()),
+                    selectUserInfo.selectUserEmail(parseCookie.getUserIdFromToken()),
+                    urlBug, idBug);
             log.info("Query: " + queryInsert);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             assert resultSet != null;
@@ -88,6 +107,25 @@ public class CreateIssue extends HttpServlet {
         connect.close();
 
         return tmpId;
+    }
+
+    private String selectKeyNameProject(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        String keyName = null;
+        String nameProject = req.getParameter("nameProject");
+        String query = "SELECT key_name FROM projects WHERE name = '" + nameProject + "'";
+
+        connect = new Connect();
+        statement = connect.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
+        while (resultSet.next())
+            keyName = resultSet.getString(1);
+
+        resultSet.close();
+        statement.close();
+        connect.close();
+
+        return keyName;
     }
 
     private int selectIdTypeIssue(HttpServletRequest req, HttpServletResponse resp)
@@ -132,8 +170,9 @@ public class CreateIssue extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         int tmpIdUserAssignee = 0;
 
-        String email = req.getParameter("userAssignee");
-        String query = "SELECT id FROM users WHERE email = '" + email + "'";
+        setEmailUserAssignee(req.getParameter("userAssignee"));
+
+        String query = "SELECT id FROM users WHERE email = '" + getEmailUserAssignee() + "'";
 
         connect = new Connect();
         statement = connect.getConnection().createStatement();
@@ -147,5 +186,13 @@ public class CreateIssue extends HttpServlet {
         connect.close();
 
         return tmpIdUserAssignee;
+    }
+
+    public String getEmailUserAssignee() {
+        return EmailUserAssignee;
+    }
+
+    public void setEmailUserAssignee(String emailUserAssignee) {
+        EmailUserAssignee = emailUserAssignee;
     }
 }

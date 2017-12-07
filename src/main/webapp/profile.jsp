@@ -1,5 +1,7 @@
 <%@ page import="userpage.ParseCookie" %>
 <%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="bugs.SelectAllYourBug" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,6 +11,12 @@
     <%
         ParseCookie parseCookie = new ParseCookie(request);
         SelectUserInfo selectUserInfo = new SelectUserInfo();
+        SelectAllYourBug selectAllYourBug = null;
+        try {
+            selectAllYourBug = new SelectAllYourBug(parseCookie.getUserIdFromToken());
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     %>
     <title>Profile - <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
@@ -23,6 +31,7 @@
                 <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
+                <li><a href="userpage.jsp">Dashboard</a></li>
                 <li class="disabled"><a href="profile.jsp">Profile</a></li>
                 <li><a href="statistic.jsp">Statistic</a></li>
                 <hr/>
@@ -35,18 +44,40 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h3>Profile info</h3>
+            <div class="panel panel-warning">
+                <div class="panel-heading" style="text-align: center;"><h3>Profile info</h3>
+                </div>
+            </div>
             <p><b>Name: </b><%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
             </p>
             <p><b>Position: </b><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%>
             </p>
+            <p><b>Email: </b><%=selectUserInfo.selectUserEmail(parseCookie.getUserIdFromToken())%>
+            </p>
+            <hr>
+            <p><b>All you created bug: </b><%=selectUserInfo.selectCountAllYourBugs(parseCookie.getUserIdFromToken())%>
+            </p>
+            <p><b>Open bug: </b><%=selectUserInfo.selectCountOpenYourBugs(parseCookie.getUserIdFromToken())%>
+            </p>
+            <p><b>Close bug: </b><%=selectUserInfo.selectCountCloseYourBugs(parseCookie.getUserIdFromToken())%>
+            </p>
         </div>
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
-            <h3>Your added bugs</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <div></div>
+        <div class="col-sm-7">
+            <div class="panel panel-warning">
+                <div class="panel-heading" style="text-align: center;"><h3>Your added bugs</h3>
+                </div>
+            </div>
+            <%
+                assert selectAllYourBug != null;
+                for (int i = 0; i < selectAllYourBug.getYourBugArrayList().size(); i++) {
+                    String id = selectAllYourBug.getYourBugArrayList().get(i).getId();
+                    String title = selectAllYourBug.getYourBugArrayList().get(i).getTitle();
+            %>
+            <p><%=id%> <%=title%></p>
+            <%
+                }
+            %>
         </div>
     </div>
 </div>

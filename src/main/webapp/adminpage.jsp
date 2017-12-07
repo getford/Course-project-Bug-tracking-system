@@ -25,7 +25,7 @@
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-    %>
+        assert selectUserInfo != null;%>
     <title>Admin page - <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
     </title>
 </head>
@@ -40,6 +40,7 @@
                 <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
+                <li><a href="userpage.jsp">Dashboard</a></li>
                 <li><a href="profile.jsp">Profile</a></li>
                 <li><a href="statistic.jsp">Statistic</a></li>
                 <hr/>
@@ -88,7 +89,7 @@
         <h2 class="heading_us">Add user
         </h2>
         <div class="popup-content">
-            <form action="/createuser" method="post" id="formus" name="formus">
+            <form action="/adduser" method="post" id="formus" name="formus">
                 <div class="form-body_us">
                     <div class="content">
                         <div class="field-group">

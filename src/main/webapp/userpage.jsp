@@ -48,6 +48,7 @@
                 <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
+                <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
                 <li><a href="profile.jsp">Profile</a></li>
                 <li><a href="statistic.jsp">Statistic</a></li>
                 <hr/>
@@ -141,6 +142,8 @@
         </table>
     </div>
 </div>
+
+<%-- Create issue --%>
 <div id="issue">
     <div id="popupIssue">
         <h2 class="heading_is">Creare Issue

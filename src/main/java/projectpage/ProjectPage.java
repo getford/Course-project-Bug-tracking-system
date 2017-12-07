@@ -21,9 +21,7 @@ public class ProjectPage {
     public ProjectPage(HttpServletRequest req, HttpServletResponse resp) {
         try {
             selectInfoProjects(req, resp);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

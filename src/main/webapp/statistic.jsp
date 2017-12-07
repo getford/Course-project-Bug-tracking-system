@@ -24,6 +24,7 @@
                 <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
+                <li><a href="userpage.jsp">Dashboard</a></li>
                 <li><a href="profile.jsp">Profile</a></li>
                 <li class="disabled"><a href="statistic.jsp">Statistic</a></li>
                 <hr/>
