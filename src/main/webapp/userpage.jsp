@@ -17,6 +17,28 @@
     <link href="resources/createissue.css" rel="stylesheet">
     <%--<link href="resources/table.css" rel="stylesheet">--%>
     <script src="resources/formissue.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#bugsInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#bugsTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#projectInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#projectTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </head>
 <body id="body" style="overflow:hidden;">
 <%
@@ -39,25 +61,33 @@
         e.printStackTrace();
     }
 %>
-
 <div class="panel panel-primary">
     <div class="panel-body">
-        <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-                <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-                <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
-                <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
-                <li><a href="profile.jsp">Profile</a></li>
-                <li><a href="statistic.jsp">Statistic</a></li>
-                <hr/>
-                <li><a href="#">Exit</a></li>
-            </ul>
+        <div class="col-sm-7">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                    <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
+                    <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp">Profile</a></li>
+                    <li><a href="statistic.jsp">Statistic</a></li>
+                    <hr/>
+                    <li><a href="#">Exit</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">
+                Create
+                issue
+            </button>
         </div>
     </div>
 </div>
-<button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">Create issue</button>
 <p>
     <%--ID: <%=parseCookie.getUserIdFromToken()%>--%>
     <%--Position: <%=parseCookie.getPositionIdFromToken()%>--%>
@@ -66,19 +96,22 @@
 <div class="panel panel-warning">
     <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>
     <div class="panel-body">
+        <input class="form-control" id="projectInput" type="text" placeholder="Search..">
         <table class="table table-striped">
+            <thead>
             <tr>
                 <th>Name</th>
                 <th>Key</th>
                 <th>Leader</th>
             </tr>
+            </thead>
             <%
                 for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
                     String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
                     String key = selectAllYourProject.getProjectArrayList().get(i).getKeyNameProject();
                     String leader = selectAllYourProject.getProjectArrayList().get(i).getFirstLastNameLead();
             %>
-            <tbody>
+            <tbody id="projectTable">
             <tr>
                 <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>" style="display: block"><%=name%>
                 </a>
@@ -100,7 +133,9 @@
 <div class="panel panel-success">
     <div class="panel-heading" style="text-align: center;"><h4>Your tasks</h4></div>
     <div class="panel-body">
+        <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
         <table class="table table-striped">
+            <thead>
             <tr>
                 <th>ID</th>
                 <th>Type</th>
@@ -108,6 +143,7 @@
                 <th>Date create</th>
                 <th>Title</th>
             </tr>
+            </thead>
             <%
                 assert selectYourAssigneedBug != null;
                 for (int i = 0; i < selectYourAssigneedBug.getAssigneedBugArrayList().size(); i++) {
@@ -117,7 +153,7 @@
                     String dateCreate = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getDateCreate();
                     String title = selectYourAssigneedBug.getAssigneedBugArrayList().get(i).getTitle();
             %>
-            <tbody>
+            <tbody id="bugsTable">
             <tr>
                 <td><a href="/viewbug.jsp?idbug=<%=idKey%>"><%=idKey%>
                 </a>

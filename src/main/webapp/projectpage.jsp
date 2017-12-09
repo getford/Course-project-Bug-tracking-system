@@ -15,7 +15,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#myInput").on("keyup", function () {
+            $("#bugsInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
                 $("#bugsTable tr").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
@@ -33,7 +33,7 @@
     SelectUserInfo selectUserInfo = new SelectUserInfo();
     try {
         selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject"));
-        selectAllBugsProject.showBugs();
+        selectAllBugsProject    .showBugs();
         statisticsBug = new StatisticsBug(selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject")));
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
@@ -41,18 +41,28 @@
 %>
 <div class="panel panel-primary">
     <div class="panel-body">
-        <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-                <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-                <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
-                <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="userpage.jsp">Dashboard</a></li>
-                <li><a href="profile.jsp">Profile</a></li>
-                <li><a href="statistic.jsp">Statistic</a></li>
-                <hr/>
-                <li><a href="#">Exit</a></li>
-            </ul>
+        <div class="col-sm-7">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                    <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
+                    <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp">Profile</a></li>
+                    <li><a href="statistic.jsp">Statistic</a></li>
+                    <hr/>
+                    <li><a href="#">Exit</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">
+                Create
+                issue
+            </button>
         </div>
     </div>
 </div>
@@ -121,7 +131,7 @@
 <div class="panel panel-success">
     <div class="panel-heading" style="text-align: center;"><h4>Bugs</h4></div>
     <div class="panel-body">
-        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
         <br>
         <table class="table table-striped">
             <thead>

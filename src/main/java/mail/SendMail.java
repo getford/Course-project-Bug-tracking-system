@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class SendMail {
 
-    private final static String to = "o3so2ll3.que@20mm.eu";
+    private final static String to = "zeie2ozw.iyg@20email.eu";
 
     /*    JsonParser jsonParser = new JsonParser();
     JsonElement jsonElement = jsonParser.parse();*/
