@@ -18,10 +18,10 @@
     <script src="resources/formissue.js"></script>
 
     <script>
-        $(document).ready(() => {
-            $("#bugsInput").on("keyup", () => {
+        $(document).ready(function () {
+            $("#bugsInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
-                $("#bugsTable tr").filter(() => {
+                $("#bugsTable tr").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
@@ -29,37 +29,39 @@
     </script>
 
     <script>
-        $(document).ready(() => {
-            $("#projectInput").on("keyup", () => {
+        $(document).ready(function () {
+            $("#projectInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
-                $("#projectTable tr").filter(() => {
+                $("#projectTable tr").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
         });
     </script>
-</head>
-<body id="body" style="overflow:hidden;">
-<%
-    ParseCookie parseCookie = new ParseCookie(request);
-    SelectAllUsers selectAllUsers = new SelectAllUsers();
-    SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
-    SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
-    SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
-    SelectYourAssigneedBug selectYourAssigneedBug = null;
-    SelectUserInfo selectUserInfo = new SelectUserInfo();
-    try {
-        selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
-        selectAllUsers.selectAll();
-        selectTypeIssue.selectAllTypeIssue();
-        selectPriorityIssue.selectAllPriorityIssue();
-        selectAllYourProject.selectAllProjects();
-        selectYourAssigneedBug = new SelectYourAssigneedBug(parseCookie.getUserIdFromToken());
 
-    } catch (SQLException | ClassNotFoundException e) {
-        e.printStackTrace();
-    }
-%>
+    <%
+        ParseCookie parseCookie = new ParseCookie(request);
+        SelectAllUsers selectAllUsers = new SelectAllUsers();
+        SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
+        SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
+        SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
+        SelectYourAssigneedBug selectYourAssigneedBug = null;
+        SelectUserInfo selectUserInfo = new SelectUserInfo();
+        try {
+            selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
+            selectAllUsers.selectAll();
+            selectTypeIssue.selectAllTypeIssue();
+            selectPriorityIssue.selectAllPriorityIssue();
+            selectAllYourProject.selectAllProjects();
+            selectYourAssigneedBug = new SelectYourAssigneedBug(parseCookie.getUserIdFromToken());
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    %>
+</head>
+<body>
+<body id="body" style="overflow:hidden;">
 <div class="panel panel-primary">
     <div class="panel-body">
         <div class="col-sm-7">
@@ -268,5 +270,6 @@
     </div>
 </div>
 <%--<a href="#" id="create_is" onclick="div_show()">Create Issue</a>--%>
+</body>
 </body>
 </html>

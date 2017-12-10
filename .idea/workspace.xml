@@ -66,30 +66,37 @@
       <file leaf-file-name="SelectUserInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/userpage/SelectUserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="0">
+              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
               <folding>
                 <element signature="method#selectUserName#0;class#SelectUserInfo#0" expanded="false" />
                 <element signature="method#selectUserPositionName#0;class#SelectUserInfo#0" expanded="false" />
                 <element signature="method#selectCountAllYourBugs#0;class#SelectUserInfo#0" expanded="false" />
                 <element signature="method#selectCountOpenYourBugs#0;class#SelectUserInfo#0" expanded="false" />
                 <element signature="method#selectCountCloseYourBugs#0;class#SelectUserInfo#0" expanded="false" />
-                <marker date="1512906930263" expanded="true" signature="380:429" ph="SELECT first... users" />
-                <marker date="1512906930263" expanded="true" signature="1051:1218" ph="SELECT posit... users" />
                 <marker date="1512906930263" expanded="true" signature="1797:1832" ph="SELECT email... id" />
-                <marker date="1512906930263" expanded="true" signature="2345:2401" ph="SELECT count... bugs" />
-                <marker date="1512906930263" expanded="true" signature="2916:3005" ph="SELECT count... bugs" />
-                <marker date="1512906930263" expanded="true" signature="3522:3611" ph="SELECT count... bugs" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statistic.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="38" />
+              <folding>
+                <element signature="n#div#3;n#body#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistic.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/statistic.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+            <state relative-caret-position="450">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -141,7 +148,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b4172a17-7f3a-4f23-9f91-93c01718fc15/console.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/createissue.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/param_mail.json" />
         <option value="$PROJECT_DIR$/src/main/java/mail/classes/ParamMail.java" />
@@ -161,9 +167,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Index.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectpage/ProjectPage.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/adminpage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/projectpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/userpage/SelectUserInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/statistic.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/projectpage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
       </list>
     </option>
   </component>
@@ -531,12 +538,12 @@
       <workItem from="1512660974830" duration="327000" />
       <workItem from="1512722498814" duration="826000" />
       <workItem from="1512802905096" duration="764000" />
-      <workItem from="1512806027235" duration="8459000" />
+      <workItem from="1512806027235" duration="9112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43091000" />
+    <option name="totallyTimeSpent" value="43744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1005,22 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/projectpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3345">
-          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/viewbug.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1037,31 +1028,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/statistic.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/projectpage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/userpage/SelectUserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding>
             <element signature="method#selectUserName#0;class#SelectUserInfo#0" expanded="false" />
             <element signature="method#selectUserPositionName#0;class#SelectUserInfo#0" expanded="false" />
             <element signature="method#selectCountAllYourBugs#0;class#SelectUserInfo#0" expanded="false" />
             <element signature="method#selectCountOpenYourBugs#0;class#SelectUserInfo#0" expanded="false" />
             <element signature="method#selectCountCloseYourBugs#0;class#SelectUserInfo#0" expanded="false" />
-            <marker date="1512906930263" expanded="true" signature="380:429" ph="SELECT first... users" />
-            <marker date="1512906930263" expanded="true" signature="1051:1218" ph="SELECT posit... users" />
             <marker date="1512906930263" expanded="true" signature="1797:1832" ph="SELECT email... id" />
-            <marker date="1512906930263" expanded="true" signature="2345:2401" ph="SELECT count... bugs" />
-            <marker date="1512906930263" expanded="true" signature="2916:3005" ph="SELECT count... bugs" />
-            <marker date="1512906930263" expanded="true" signature="3522:3611" ph="SELECT count... bugs" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/statistic.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="945">
+          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="38" />
+          <folding>
+            <element signature="n#div#3;n#body#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

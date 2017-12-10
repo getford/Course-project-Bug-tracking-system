@@ -19,9 +19,9 @@
     <script src="resources/formissue.js"></script>
     <script>
         $(document).ready(function () {
-            $("#bugsInput").on("keyup", () => {
+            $("#bugsInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
-                $("#bugsTable tr").filter(() => {
+                $("#bugsTable tr").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
