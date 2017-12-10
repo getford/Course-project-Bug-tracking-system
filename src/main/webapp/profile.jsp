@@ -1,5 +1,5 @@
 <%@ page import="bugs.SelectAllYourBug" %>
-<%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="cookie.ParseCookie" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

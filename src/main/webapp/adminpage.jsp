@@ -1,5 +1,5 @@
 <%@ page import="adminpage.SelectPosition" %>
-<%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="cookie.ParseCookie" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="userpage.SelectAllYourProject" %>

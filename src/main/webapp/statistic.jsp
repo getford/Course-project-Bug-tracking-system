@@ -1,6 +1,10 @@
-<%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="statistic.OpenIssues" %>
 <%@ page import="cookie.ParseCookie" %>
+<%@ page import="userpage.SelectAllYourProject" %>
+<%@ page import="createissue.SelectTypeIssue" %>
+<%@ page import="createissue.SelectPriorityIssue" %>
+<%@ page import="createissue.SelectAllUsers" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,6 +17,10 @@
         OpenIssues openIssues = new OpenIssues();
         ParseCookie parseCookie = new ParseCookie(request);
         SelectUserInfo selectUserInfo = new SelectUserInfo();
+        SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
+        SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
+        SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();
+        SelectAllUsers selectAllUsers = new SelectAllUsers();
     %>
     <title>Statistic - <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
     </title>
@@ -27,7 +35,7 @@
                     <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                    <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="userpage.jsp">Dashboard</a></li>
                     <li><a href="profile.jsp">Profile</a></li>
                     <li class="disabled"><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
