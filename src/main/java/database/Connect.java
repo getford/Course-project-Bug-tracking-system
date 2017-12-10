@@ -1,22 +1,42 @@
 package database;
 
+import com.google.gson.Gson;
+import database.classes.ParamConnect;
 import org.apache.log4j.Logger;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Connect {
     private static final Logger log = Logger.getLogger(Connect.class);
+    private Map<String, String> paramConnectMap = new HashMap<>();
     private Connection connection;
 
-    private static final String url = "jdbc:postgresql://localhost:5432/bts";
-    private static final String login = "postgres";
-    private static final String password = "root";
+    private void readParamConnectJSON() {
+        try {
+            String path = getClass().getResource("/param_database.json").getPath();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+            ParamConnect paramConnectObject = new Gson().fromJson(bufferedReader, ParamConnect.class);
+
+            paramConnectMap.put("url", paramConnectObject.getUrl());
+            paramConnectMap.put("login", paramConnectObject.getLogin());
+            paramConnectMap.put("password", paramConnectObject.getPassword());
+            paramConnectMap.put("driver", paramConnectObject.getDriver());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public Connect() throws SQLException, ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
-        setConnection((Connection) DriverManager.getConnection(url, login, password));
+        readParamConnectJSON();
+        Class.forName(paramConnectMap.get("driver"));
+        setConnection((Connection) DriverManager.getConnection(paramConnectMap.get("url"), paramConnectMap.get("login"), paramConnectMap.get("password")));
         if (connection != null) {
             log.info("Access granted.");
         } else {

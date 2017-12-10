@@ -57,8 +57,6 @@
 <p>All open issue: <%=openIssues.countAllOpenIssues()%>
 </p>
 
-
-
 <div id="issue">
     <div id="popupIssue">
         <h2 class="heading_is">Creare Issue

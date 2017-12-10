@@ -1,6 +1,6 @@
 {
-  "database": {
-    "host": "",
-    "port": ""
-  }
+  "url": "jdbc:postgresql://localhost:5432/bts",
+  "login": "postgres",
+  "password": "root",
+  "driver": "org.postgresql.Driver"
 }
