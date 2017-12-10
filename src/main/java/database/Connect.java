@@ -1,4 +1,4 @@
-package adminpage;
+package database;
 
 import org.apache.log4j.Logger;
 
@@ -14,7 +14,7 @@ public class Connect {
     private static final String login = "postgres";
     private static final String password = "root";
 
-    Connect() throws SQLException, ClassNotFoundException {
+    public Connect() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
         setConnection((Connection) DriverManager.getConnection(url, login, password));
         if (connection != null) {
@@ -24,7 +24,7 @@ public class Connect {
         }
     }
 
-    void close() throws SQLException {
+    public void close() throws SQLException {
         getConnection().close();
     }
 

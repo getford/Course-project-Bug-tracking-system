@@ -1,5 +1,6 @@
 package userpage;
 
+import database.Connect;
 import org.apache.log4j.Logger;
 import userpage.classes.Project;
 

@@ -1,6 +1,7 @@
 package bugs;
 
 import bugs.classes.BugStat;
+import database.Connect;
 import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;

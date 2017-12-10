@@ -1,5 +1,7 @@
 package createissue;
 
+import cookie.ParseCookie;
+import database.Connect;
 import helpinfo.SelectUserInfo;
 import mail.SendMail;
 import org.apache.log4j.Logger;

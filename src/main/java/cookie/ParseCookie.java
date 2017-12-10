@@ -1,4 +1,4 @@
-package userpage;
+package cookie;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

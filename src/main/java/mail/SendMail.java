@@ -1,24 +1,43 @@
 package mail;
 
+import com.google.gson.Gson;
+import mail.classes.ParamMail;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class SendMail {
+    private Map<String, String> paramMailMap = new HashMap<>();
 
-    private final static String to = "zeie2ozw.iyg@20email.eu";
+    private final static String to = "xtudocr4.uz5@20mm.eu";
 
-    /*    JsonParser jsonParser = new JsonParser();
-    JsonElement jsonElement = jsonParser.parse();*/
+    public SendMail() {
+        readParamMailJSON();
+    }
+
+    private void readParamMailJSON() {
+        try {
+            String path = getClass().getResource("/param_mail.json").getPath();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+            ParamMail paramMailObject = new Gson().fromJson(bufferedReader, ParamMail.class);
+
+            paramMailMap.put("host", paramMailObject.getHost());
+            paramMailMap.put("port", paramMailObject.getPort());
+            paramMailMap.put("from", paramMailObject.getFrom());
+            paramMailMap.put("password", paramMailObject.getPassword());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void sendMailRegistration(String email, String login, String password_) {
-        final String host = "smtp.gmail.com";
-        final String port = "587";
-
-        final String from = "java.lab.test.mail@gmail.com";
-        final String password = "123456qwe";
-
         String subject = "Successfully registration";
         String mailBody = "<p>Hello,</p>" +
                 "<p>You will be successfully registered in Bug Tracking System</p>" +
@@ -28,23 +47,22 @@ public class SendMail {
                 "</p>" +
                 "<p>You profile: <a href=\"http://localhost:8080/profile.jsp\">http://localhost:8080/profile.jsp</a></p>";
 
-        System.out.println("TLSEmail Start");
         Properties props = new Properties();
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", port);
+        props.put("mail.smtp.host", paramMailMap.get("host"));
+        props.put("mail.smtp.port", paramMailMap.get("port"));
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
 
         Authenticator auth = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, password);
+                return new PasswordAuthentication(paramMailMap.get("from"), paramMailMap.get("password"));
             }
         };
         Session session = Session.getInstance(props, auth);
 
         try {
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress(paramMailMap.get("from")));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
             message.setContent(mailBody, "text/html; charset=utf-8");
@@ -57,11 +75,6 @@ public class SendMail {
     }
 
     public void sendMailAssignee(String emailAssignee, String userReporter, String emailReporter, String urlBug, String idBug) {
-        final String host = "smtp.gmail.com";
-        final String port = "587";
-
-        final String from = "java.lab.test.mail@gmail.com";
-        final String password = "123456qwe";
 
         String subject = "You have new assignee to bug [" + idBug + "]";
         String mailBody = "<p>Hello,</p>" +
@@ -69,23 +82,22 @@ public class SendMail {
                 "<p>Check the link, to see bug:" +
                 "<a href=\"" + urlBug + "\">" + urlBug + "</a></p>";
 
-
         Properties props = new Properties();
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", port);
+        props.put("mail.smtp.host", paramMailMap.get("host"));
+        props.put("mail.smtp.port", paramMailMap.get("port"));
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
 
         Authenticator auth = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(from, password);
+                return new PasswordAuthentication(paramMailMap.get("from"), paramMailMap.get("password"));
             }
         };
         Session session = Session.getInstance(props, auth);
 
         try {
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress(paramMailMap.get("from")));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
             message.setContent(mailBody, "text/html; charset=utf-8");

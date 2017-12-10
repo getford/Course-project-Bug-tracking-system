@@ -1,11 +1,11 @@
+<%@ page import="bugs.SelectYourAssigneedBug" %>
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
 <%@ page import="createissue.SelectTypeIssue" %>
-<%@ page import="userpage.ParseCookie" %>
+<%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="cookie.ParseCookie" %>
 <%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="bugs.SelectYourAssigneedBug" %>
-<%@ page import="helpinfo.SelectUserInfo" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,14 +15,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="resources/createissue.css" rel="stylesheet">
-    <%--<link href="resources/table.css" rel="stylesheet">--%>
     <script src="resources/formissue.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $("#bugsInput").on("keyup", function () {
+        $(document).ready(() => {
+            $("#bugsInput").on("keyup", () => {
                 var value = $(this).val().toLowerCase();
-                $("#bugsTable tr").filter(function () {
+                $("#bugsTable tr").filter(() => {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
@@ -30,10 +29,10 @@
     </script>
 
     <script>
-        $(document).ready(function () {
-            $("#projectInput").on("keyup", function () {
+        $(document).ready(() => {
+            $("#projectInput").on("keyup", () => {
                 var value = $(this).val().toLowerCase();
-                $("#projectTable tr").filter(function () {
+                $("#projectTable tr").filter(() => {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
@@ -88,10 +87,6 @@
         </div>
     </div>
 </div>
-<p>
-    <%--ID: <%=parseCookie.getUserIdFromToken()%>--%>
-    <%--Position: <%=parseCookie.getPositionIdFromToken()%>--%>
-</p>
 
 <div class="panel panel-warning">
     <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>

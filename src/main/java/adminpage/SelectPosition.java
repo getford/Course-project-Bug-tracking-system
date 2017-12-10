@@ -2,6 +2,7 @@ package adminpage;
 
 import adminpage.classes.UserPosition;
 import bugs.SelectAllBugsProject;
+import database.Connect;
 import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;

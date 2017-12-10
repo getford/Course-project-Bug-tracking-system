@@ -1,6 +1,7 @@
 package bugs;
 
 import bugs.classes.Bug;
+import database.Connect;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

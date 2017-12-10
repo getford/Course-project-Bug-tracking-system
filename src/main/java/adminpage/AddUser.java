@@ -1,5 +1,6 @@
 package adminpage;
 
+import database.Connect;
 import mail.SendMail;
 import org.apache.log4j.Logger;
 

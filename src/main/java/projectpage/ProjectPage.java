@@ -1,5 +1,6 @@
 package projectpage;
 
+import database.Connect;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;

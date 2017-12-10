@@ -1,6 +1,6 @@
-<%@ page import="userpage.ParseCookie" %>
-<%@ page import="helpinfo.SelectUserInfo" %>
 <%@ page import="bugs.SelectAllYourBug" %>
+<%@ page import="helpinfo.SelectUserInfo" %>
+<%@ page import="cookie.ParseCookie" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -32,7 +32,7 @@
                     <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                    <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="userpage.jsp">Dashboard</a></li>
                     <li class="disabled"><a href="profile.jsp">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
