@@ -6,6 +6,7 @@
 <%@ page import="createissue.SelectTypeIssue" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
 <%@ page import="createissue.SelectAllUsers" %>
+<%@ page import="adminpage.SelectAllProjects" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,30 +18,56 @@
     <link href="resources/admin.css" rel="stylesheet">
     <script src="resources/formuser.js"></script>
     <script src="resources/formproject.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#projectInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#projectTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
     <%
+        String userName = null;
+        String position = null;
+
         ParseCookie parseCookie = new ParseCookie(request);
-        SelectUserInfo selectUserInfo = null;
-        if (parseCookie.getPositionIdFromToken() != 0) {
-            response.sendRedirect("/index.jsp");
+        Cookie[] cookies = request.getCookies();
+        boolean flag = false;
+        for (Cookie cooky : cookies) {
+            if (cooky.getName().equals("auth")) {
+                flag = true;
+            }
         }
-        SelectPosition selectPosition = new SelectPosition();
+
+        SelectAllProjects selectAllProjects = null;
         SelectAllYourProject selectAllYourProject = null;
         SelectTypeIssue selectTypeIssue = null;
         SelectPriorityIssue selectPriorityIssue = null;
         SelectAllUsers selectAllUsers = null;
-        try {
-            selectPosition.selectPisition();
-            selectUserInfo = new SelectUserInfo();
-            selectTypeIssue = new SelectTypeIssue();
-            selectPriorityIssue = new SelectPriorityIssue();
-            selectAllUsers = new SelectAllUsers();
-            selectAllYourProject = new SelectAllYourProject();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        assert selectUserInfo != null;%>
-    <title>Admin page - <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-    </title>
+        SelectPosition selectPosition = null;
+        SelectUserInfo selectUserInfo;
+        if (flag)
+            response.sendRedirect("/");
+        else {
+
+            try {
+                selectPosition = new SelectPosition();
+                selectUserInfo = new SelectUserInfo();
+                selectTypeIssue = new SelectTypeIssue();
+                selectPriorityIssue = new SelectPriorityIssue();
+                selectAllUsers = new SelectAllUsers();
+                selectAllYourProject = new SelectAllYourProject();
+                selectAllProjects = new SelectAllProjects();
+                userName = selectUserInfo.selectUserName(parseCookie.getUserIdFromToken());
+                position = selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken());
+            } catch (SQLException | ClassNotFoundException e) {
+                response.sendRedirect("/");
+            }
+        }%>
+    <title>Admin page</title>
 </head>
 <body id="body" style="overflow:hidden;">
 <div class="panel panel-primary">
@@ -48,15 +75,15 @@
         <div class="col-sm-7">
             <div class="dropdown">
                 <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-                    <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-                    <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                    <%=userName%>
+                    <span class="badge"><%=position%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="userpage.jsp">Dashboard</a></li>
                     <li><a href="profile.jsp">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
-                    <li><a href="#">Exit</a></li>
+                    <li><a href="/logout">Exit</a></li>
                 </ul>
             </div>
         </div>
@@ -70,6 +97,62 @@
         </div>
     </div>
 </div>
+
+<div class="panel panel-warning">
+    <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>
+    <div class="panel-body">
+        <input class="form-control" id="projectInput" type="text" placeholder="Search..">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Key</th>
+                <th>Name</th>
+                <th>Leader</th>
+                <th>Control</th>
+            </tr>
+            </thead>
+            <%
+                assert selectAllProjects != null;
+                for (int i = 0; i < selectAllProjects.getProjectArrayList().size(); i++) {
+                    String id = selectAllProjects.getProjectArrayList().get(i).getId();
+                    String key = selectAllProjects.getProjectArrayList().get(i).getKeyName();
+                    String name = selectAllProjects.getProjectArrayList().get(i).getProjectName();
+                    String lead = selectAllProjects.getProjectArrayList().get(i).getFirstLastName();
+            %>
+            <tbody id="projectTable">
+            <tr>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=id%>
+                </a>
+                </td>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=key%>
+                </a>
+                </td>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=name%>
+                </a>
+                </td>
+                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=lead%>
+                </a>
+                </td>
+                <td>
+                    <a href="#">
+                        <img border="0" src="resources/image/edit.png">
+                    </a>
+
+                    <a href="/deleteproject?id=<%=id%>">
+                        <img border="0" src="resources/image/delete.png">
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+            <%
+                }
+            %>
+        </table>
+    </div>
+</div>
+</div>
+
 
 <div id="project">
     <div id="popupProject">

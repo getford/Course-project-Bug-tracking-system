@@ -61,7 +61,6 @@
     %>
 </head>
 <body>
-<body id="body" style="overflow:hidden;">
 <div class="panel panel-primary">
     <div class="panel-body">
         <div class="col-sm-7">
@@ -75,7 +74,7 @@
                     <li><a href="profile.jsp">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
-                    <li><a href="#">Exit</a></li>
+                    <li><a href="/logout">Exit</a></li>
                 </ul>
             </div>
         </div>
@@ -270,6 +269,5 @@
     </div>
 </div>
 <%--<a href="#" id="create_is" onclick="div_show()">Create Issue</a>--%>
-</body>
 </body>
 </html>

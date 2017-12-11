@@ -39,7 +39,7 @@
                     <li><a href="profile.jsp">Profile</a></li>
                     <li class="disabled"><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
-                    <li><a href="#">Exit</a></li>
+                    <li><a href="/logout">Exit</a></li>
                 </ul>
             </div>
         </div>
