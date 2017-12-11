@@ -1,6 +1,6 @@
 <%@ page import="bugs.SelectAllYourBug" %>
-<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="cookie.ParseCookie" %>
+<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -10,30 +10,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%
         ParseCookie parseCookie = new ParseCookie(request);
-        SelectUserInfo selectUserInfo = new SelectUserInfo();
+        SelectUserInfo selectUserInfo = null;
         SelectAllYourBug selectAllYourBug = null;
         try {
+            selectUserInfo = new SelectUserInfo(request);
             selectAllYourBug = new SelectAllYourBug(parseCookie.getUserIdFromToken());
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
     %>
-    <title>Profile - <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-    </title>
+    <title>Profile</title>
 </head>
 <body>
 <div class="panel panel-primary">
     <div class="panel-body">
-        <div class="col-sm-7">
+        <div class="col-sm-4">
             <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-                    <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-                    <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
+                    <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="userpage.jsp">Dashboard</a></li>
-                    <li class="disabled"><a href="profile.jsp">Profile</a></li>
+                    <li class="disabled"><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
@@ -43,7 +43,7 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
                 Create
                 issue
             </button>
@@ -58,11 +58,12 @@
                 <div class="panel-heading" style="text-align: center;"><h3>Profile info</h3>
                 </div>
             </div>
-            <p><b>Name: </b><%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
+            <p>
+                <b>Name: </b><%=selectUserInfo.getUserInfoByLoginArrayList().get(0).getFirstname() + " " + selectUserInfo.getUserInfoByLoginArrayList().get(0).getLastname()%>
             </p>
-            <p><b>Position: </b><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%>
+            <p><b>Position: </b><%=selectUserInfo.getUserInfoByLoginArrayList().get(0).getPosition()%>
             </p>
-            <p><b>Email: </b><%=selectUserInfo.selectUserEmail(parseCookie.getUserIdFromToken())%>
+            <p><b>Email: </b><%=selectUserInfo.getUserInfoByLoginArrayList().get(0).getEmail()%>
             </p>
             <hr>
             <p><b>All you created bug: </b><%=selectUserInfo.selectCountAllYourBugs(parseCookie.getUserIdFromToken())%>
@@ -84,7 +85,8 @@
                     String id = selectAllYourBug.getYourBugArrayList().get(i).getId();
                     String title = selectAllYourBug.getYourBugArrayList().get(i).getTitle();
             %>
-            <p><%=id%> <%=title%></p>
+            <p><%=id%> <%=title%>
+            </p>
             <%
                 }
             %>

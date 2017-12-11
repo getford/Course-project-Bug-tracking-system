@@ -1,10 +1,10 @@
 <%@ page import="bugs.SelectYourAssigneedBug" %>
+<%@ page import="cookie.ParseCookie" %>
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
 <%@ page import="createissue.SelectTypeIssue" %>
-<%@ page import="userpage.SelectUserInfo" %>
-<%@ page import="cookie.ParseCookie" %>
 <%@ page import="userpage.SelectAllYourProject" %>
+<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -46,7 +46,7 @@
         SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
         SelectYourAssigneedBug selectYourAssigneedBug = null;
         SelectAllUsers selectAllUsers = null;
-        SelectUserInfo selectUserInfo = new SelectUserInfo();
+        SelectUserInfo selectUserInfo = new SelectUserInfo(request);
         try {
             selectAllUsers = new SelectAllUsers();
             selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());
@@ -63,15 +63,15 @@
 <body>
 <div class="panel panel-primary">
     <div class="panel-body">
-        <div class="col-sm-7">
+        <div class="col-sm-4">
             <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-                    <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-                    <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
+                    <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
-                    <li><a href="profile.jsp">Profile</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
@@ -81,7 +81,7 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
                 Create
                 issue
             </button>

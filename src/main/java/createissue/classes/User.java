@@ -1,17 +1,17 @@
 package createissue.classes;
 
 public class User {
-    private int id;
-    private int id_position;
+    private String id;
+    private String position;
     private String login;
     private String password;
     private String email;
     private String firstname;
     private String lastname;
 
-    public User(int id, int id_position, String login, String password, String email, String firstname, String lastname) {
+    public User(String id, String position, String login, String password, String email, String firstname, String lastname) {
         this.id = id;
-        this.id_position = id_position;
+        this.position = position;
         this.login = login;
         this.password = password;
         this.email = email;
@@ -19,25 +19,29 @@ public class User {
         this.lastname = lastname;
     }
 
-    public User(String firstname, String lastname) {
+    public User(String id, String position, String login, String email, String firstname, String lastname) {
+        this.id = id;
+        this.position = position;
+        this.login = login;
+        this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getId_position() {
-        return id_position;
+    public String getPosition() {
+        return position;
     }
 
-    public void setId_position(int id_position) {
-        this.id_position = id_position;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getLogin() {

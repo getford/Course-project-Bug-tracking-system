@@ -4,9 +4,9 @@
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
 <%@ page import="createissue.SelectTypeIssue" %>
-<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="projectpage.ProjectPage" %>
 <%@ page import="userpage.SelectAllYourProject" %>
+<%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -34,7 +34,7 @@
     SelectAllBugsProject selectAllBugsProject = new SelectAllBugsProject();
     StatisticsBug statisticsBug = null;
     ParseCookie parseCookie = new ParseCookie(request);
-    SelectUserInfo selectUserInfo = new SelectUserInfo();
+    SelectUserInfo selectUserInfo = new SelectUserInfo(request);
     SelectAllYourProject selectAllYourProject = null;
     SelectTypeIssue selectTypeIssue = null;
     SelectPriorityIssue selectPriorityIssue = null;
@@ -42,7 +42,7 @@
     try {
         selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject"));
         selectAllBugsProject.showBugs();
-        selectUserInfo = new SelectUserInfo();
+        selectUserInfo = new SelectUserInfo(request);
         selectTypeIssue = new SelectTypeIssue();
         selectPriorityIssue = new SelectPriorityIssue();
         selectAllUsers = new SelectAllUsers();
@@ -54,15 +54,15 @@
 %>
 <div class="panel panel-primary">
     <div class="panel-body">
-        <div class="col-sm-7">
+        <div class="col-sm-4">
             <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
-                    <%=selectUserInfo.selectUserName(parseCookie.getUserIdFromToken())%>
-                    <span class="badge"><%=selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken())%></span>
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
+                    <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="userpage.jsp">Dashboard</a></li>
-                    <li><a href="profile.jsp">Profile</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
@@ -72,7 +72,7 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
                 Create
                 issue
             </button>
@@ -100,13 +100,15 @@
             <h3>Status</h3>
             <hr/>
             <%
-                for (int i = 0; i < statisticsBug.getBugStatStatusArrayList().size(); i++) {
-                    String name = statisticsBug.getBugStatStatusArrayList().get(i).getName();
-                    int count = statisticsBug.getBugStatStatusArrayList().get(i).getCount();
+                if (statisticsBug != null) {
+                    for (int i = 0; i < statisticsBug.getBugStatStatusArrayList().size(); i++) {
+                        String name = statisticsBug.getBugStatStatusArrayList().get(i).getName();
+                        int count = statisticsBug.getBugStatStatusArrayList().get(i).getCount();
             %>
             <span><b><%=name%></b>: <span class="badge"> <%=count%></span></span>
             <br>
             <%
+                    }
                 }
             %>
         </div>

@@ -14,30 +14,28 @@ public class SelectAllUsers {
     private ArrayList<User> userArrayList = new ArrayList<User>();
 
     public SelectAllUsers() throws SQLException, ClassNotFoundException {
-        String query = "SELECT * FROM users";
-        Connect connect = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
+        String query = "SELECT " +
+                "  users.id, " +
+                "  position.name, " +
+                "  users.login, " +
+                "  users.password, " +
+                "  users.email, " +
+                "  users.firstname, " +
+                "  users.lastname " +
+                "FROM users " +
+                "  INNER JOIN position ON users.id_position = position.id";
 
-        try {
-            connect = new Connect();
-            statement = connect.getConnection().createStatement();
-            resultSet = statement.executeQuery(query);
+        Connect connect = new Connect();
+        Statement statement = connect.getConnection().createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
 
-            while (resultSet.next()) {
-                userArrayList.add(new User(resultSet.getInt(1), resultSet.getInt(2),
-                        resultSet.getString(3), resultSet.getString(4),
-                        resultSet.getString(5), resultSet.getString(6),
-                        resultSet.getString(7)));
-            }
-            log.info("Array users successfully received");
-        } finally {
-            assert resultSet != null;
-            resultSet.close();
-            statement.close();
-            connect.close();
+        while (resultSet.next()) {
+            userArrayList.add(new User(resultSet.getString(1), resultSet.getString(2),
+                    resultSet.getString(3), resultSet.getString(4),
+                    resultSet.getString(5), resultSet.getString(6),
+                    resultSet.getString(7)));
         }
-
+        log.info("Array users successfully received");
     }
 
     public ArrayList<User> getUserArrayList() {

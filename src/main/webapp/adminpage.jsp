@@ -1,12 +1,12 @@
-<%@ page import="adminpage.SelectPosition" %>
-<%@ page import="userpage.SelectUserInfo" %>
-<%@ page import="cookie.ParseCookie" %>
-<%@ page import="java.sql.SQLException" %>
-<%@ page import="userpage.SelectAllYourProject" %>
-<%@ page import="createissue.SelectTypeIssue" %>
-<%@ page import="createissue.SelectPriorityIssue" %>
-<%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="adminpage.SelectAllProjects" %>
+<%@ page import="adminpage.SelectPosition" %>
+<%@ page import="cookie.ParseCookie" %>
+<%@ page import="createissue.SelectAllUsers" %>
+<%@ page import="createissue.SelectPriorityIssue" %>
+<%@ page import="createissue.SelectTypeIssue" %>
+<%@ page import="userpage.SelectAllYourProject" %>
+<%@ page import="userpage.SelectUserInfo" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -48,14 +48,14 @@
         else {
             try {
                 selectPosition = new SelectPosition();
-                selectUserInfo = new SelectUserInfo();
+                selectUserInfo = new SelectUserInfo(request);
                 selectTypeIssue = new SelectTypeIssue();
                 selectPriorityIssue = new SelectPriorityIssue();
                 selectAllUsers = new SelectAllUsers();
                 selectAllYourProject = new SelectAllYourProject();
                 selectAllProjects = new SelectAllProjects();
-                userName = selectUserInfo.selectUserName(parseCookie.getUserIdFromToken());
-                position = selectUserInfo.selectUserPositionName(parseCookie.getUserIdFromToken());
+                userName = selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken());
+                position = selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken());
             } catch (SQLException | ClassNotFoundException e) {
                 response.sendRedirect("/");
             }
@@ -71,19 +71,29 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#userInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#userTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </head>
 <body id="body" style="overflow:hidden;">
 <div class="panel panel-primary">
     <div class="panel-body">
-        <div class="col-sm-7">
+        <div class="col-sm-4">
             <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
                     <%=userName%>
                     <span class="badge"><%=position%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="userpage.jsp">Dashboard</a></li>
-                    <li><a href="profile.jsp">Profile</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
@@ -93,9 +103,22 @@
         <div class="col-sm-4">
         </div>
         <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-sm btn-block">
-                Create
-                issue
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
+                Create issue
+            </button>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <button id="prj" onclick="div_show_pr()" type="button" class="btn btn-warning btn-md btn-block">
+                Add project
+            </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button id="usr" onclick="div_show_us()" type="button" class="btn btn-warning btn-md btn-block">
+                Add user
             </button>
         </div>
     </div>
@@ -156,7 +179,71 @@
     </div>
 </div>
 </div>
+<div class="panel panel-primary">
+    <div class="panel-heading" style="text-align: center;"><h4>All users</h4></div>
+    <div class="panel-body">
+        <input class="form-control" id="userInput" type="text" placeholder="Search..">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Control</th>
+            </tr>
+            </thead>
+            <%
+                if (selectAllProjects != null) {
+                    for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
+                        String id = selectAllUsers.getUserArrayList().get(i).getId();
+                        String login = selectAllUsers.getUserArrayList().get(i).getLogin();
+                        String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                        String userPosition = selectAllUsers.getUserArrayList().get(i).getPosition();
+                        String firstName = selectAllUsers.getUserArrayList().get(i).getFirstname();
+                        String lastName = selectAllUsers.getUserArrayList().get(i).getLastname();
 
+            %>
+            <tbody id="userTable">
+            <tr>
+                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=id%>
+                </a>
+                </td>
+                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=login%>
+                </a>
+                </td>
+                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=email%>
+                </a>
+                </td>
+                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=userPosition%>
+                </a>
+                </td>
+                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=firstName%>
+                </a>
+                </td>
+                <td><a href="/profile.jsp?logim=<%=login%>" name="<%=login%>"><%=lastName%>
+                </a>
+                </td>
+                <td>
+                    <a href="#">
+                        <img border="0" src="resources/image/edit.png">
+                    </a>
+
+                    <a href="/deleteuser?id=<%=id%>">
+                        <img border="0" src="resources/image/delete.png">
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+            <%
+                    }
+                }
+            %>
+        </table>
+    </div>
+</div>
 
 <div id="project">
     <div id="popupProject">
@@ -266,11 +353,6 @@
             </form>
         </div>
     </div>
-</div>
-<div>
-    <a href="#" id="create_pr" onclick="div_show_pr()">Add Project</a>
-    </br>
-    <a href="#" id="create_us" onclick="div_show_us()">Add user</a>
 </div>
 
 </body>

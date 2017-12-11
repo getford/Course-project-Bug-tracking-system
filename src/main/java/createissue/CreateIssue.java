@@ -2,9 +2,9 @@ package createissue;
 
 import cookie.ParseCookie;
 import database.Connect;
-import userpage.SelectUserInfo;
 import mail.SendMail;
 import org.apache.log4j.Logger;
+import userpage.SelectUserInfo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +21,6 @@ public class CreateIssue extends HttpServlet {
     private static final Logger log = Logger.getLogger(CreateIssue.class);
 
     private SendMail sendMail = new SendMail();
-    private SelectUserInfo selectUserInfo = new SelectUserInfo();
 
     private String EmailUserAssignee = null;
 
@@ -42,6 +41,7 @@ public class CreateIssue extends HttpServlet {
     private void createIssue(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         ParseCookie parseCookie = new ParseCookie(req);
+        SelectUserInfo selectUserInfo = new SelectUserInfo(req);
         try {
             int idProject = selectIdProject(req, resp);
             int idType = selectIdTypeIssue(req, resp);
@@ -76,8 +76,8 @@ public class CreateIssue extends HttpServlet {
 
 
             sendMail.sendMailAssignee(getEmailUserAssignee(),
-                    selectUserInfo.selectUserName(parseCookie.getUserIdFromToken()),
-                    selectUserInfo.selectUserEmail(parseCookie.getUserIdFromToken()),
+                    selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken()),
+                    selectUserInfo.selectUserEmailFromToken(parseCookie.getUserIdFromToken()),
                     urlBug, idBug);
             log.info("Query: " + queryInsert);
         } catch (SQLException | ClassNotFoundException e) {

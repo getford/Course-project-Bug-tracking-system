@@ -28,35 +28,26 @@ public class ParseCookie {
     }
 
     public int getUserIdFromToken() throws IOException {
-        int userId = 0;
         Jws<Claims> jws = Jwts.parser()
                 .setSigningKey("zhigalo".getBytes("UTF-8"))
                 .parseClaimsJws(token);
 
-        userId = Integer.parseInt(String.valueOf(jws.getBody().get("id")));
-
-        return userId;
+        return Integer.parseInt(String.valueOf(jws.getBody().get("id")));
     }
 
     public int getPositionIdFromToken() throws UnsupportedEncodingException {
-        int positionId = 1;
         Jws<Claims> jws = Jwts.parser()
                 .setSigningKey("zhigalo".getBytes("UTF-8"))
                 .parseClaimsJws(token);
 
-        positionId = Integer.parseInt(String.valueOf(jws.getBody().get("position")));
-
-        return positionId;
+        return Integer.parseInt(String.valueOf(jws.getBody().get("position")));
     }
 
     public String getLoginFromToken() throws UnsupportedEncodingException {
-        String login = null;
         Jws<Claims> jws = Jwts.parser()
                 .setSigningKey("zhigalo".getBytes("UTF-8"))
                 .parseClaimsJws(token);
 
-        login = String.valueOf(jws.getBody().get("login"));
-
-        return login;
+        return String.valueOf(jws.getBody().get("login"));
     }
 }

@@ -41,7 +41,7 @@ public class SelectAllYourProject {
                         firstLastNameLead,
                         resultSet.getString(2),
                         resultSet.getString(3)
-                        ));
+                ));
             }
             log.info("Array projects current user was received successfully.");
         } finally {
