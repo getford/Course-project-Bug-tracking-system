@@ -15,11 +15,7 @@ public class DeleteProject extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        String keyId = req.getParameter("id");
-
-        String id = keyId.substring(4);
-
-        System.out.println(id);
+        String id = req.getParameter("id").substring(4);
 
         try {
             Connect connect = new Connect();

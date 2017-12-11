@@ -3,7 +3,6 @@ package adminpage;
 import database.Connect;
 import org.apache.log4j.Logger;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,20 +33,18 @@ public class AddProject extends HttpServlet {
     private void addProject(HttpServletRequest request, HttpServletResponse response)
             throws IOException, SQLException {
         try {
-            int idLead = 0; /*selectIdUser(request, response);*/
+            int idLead = selectIdUser(request);
             String nameProject = request.getParameter("nameProject");
             String keyProject = request.getParameter("keyProject");
 
-            final String queryInsertProject = "INSERT INTO projects (id_user_lead,name,key_name)" +
-                    "VALUES (" + idLead + "," + nameProject + "," + keyProject + ")";
+            String queryInsertProject = "INSERT INTO projects (id_user_lead , name, key_name)" +
+                    "VALUES (" + idLead + ",'" + nameProject + "','" + keyProject + "')";
 
             connect = new Connect();
             statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsertProject);
             log.info("Query: " + queryInsertProject);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             assert resultSet != null;
@@ -58,22 +55,22 @@ public class AddProject extends HttpServlet {
         response.sendRedirect("/adminpage.jsp");
     }
 
-    private int selectIdUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
-        int tmpId = 0;
-        String nameUser = request.getParameter("leadProject");
-        String query = "SELECT id FROM users WHERE name = '" + nameUser + "'";
+    private int selectIdUser(HttpServletRequest request)
+            throws SQLException, ClassNotFoundException {
+        int id = 0;
+        String email = request.getParameter("leader");
+        String query = "SELECT id FROM users WHERE email = '" + email + "'";
 
         connect = new Connect();
         statement = connect.getConnection().createStatement();
         resultSet = statement.executeQuery(query);
         while (resultSet.next())
-            tmpId = resultSet.getInt(1);
+            id = resultSet.getInt(1);
 
         resultSet.close();
         statement.close();
         connect.close();
 
-        return tmpId;
+        return id;
     }
 }

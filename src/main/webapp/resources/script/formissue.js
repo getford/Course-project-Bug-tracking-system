@@ -5,5 +5,4 @@ function div_show() {
 //Function to Hide Popup
 function div_hide() {
     document.getElementById('issue').style.display = "none";
-    alert("bug was add");
 }

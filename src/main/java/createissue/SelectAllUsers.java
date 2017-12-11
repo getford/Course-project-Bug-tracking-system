@@ -13,7 +13,7 @@ public class SelectAllUsers {
     private static final Logger log = Logger.getLogger(SelectAllUsers.class);
     private ArrayList<User> userArrayList = new ArrayList<User>();
 
-    public void selectAll() throws SQLException, ClassNotFoundException {
+    public SelectAllUsers() throws SQLException, ClassNotFoundException {
         String query = "SELECT * FROM users";
         Connect connect = null;
         Statement statement = null;

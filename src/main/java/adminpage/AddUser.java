@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class AddUser extends HttpServlet {
     private static final Logger log = Logger.getLogger(AddUser.class);
 
-    SendMail sendMail = new SendMail();
+    private SendMail sendMail = new SendMail();
 
     private Connect connect = null;
     private Statement statement = null;
@@ -28,43 +28,27 @@ public class AddUser extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         try {
-            addUser(req, resp);
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void addUser(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
-        try {
             int id_position = selectIdPosition(req, resp);
-            String login = req.getParameter("name");
-            String password = getPassword(req, resp);
+            String login = req.getParameter("login");
+            String password = getPassword(req);
             String email = req.getParameter("email");
             String fname = req.getParameter("fname");
             String lname = req.getParameter("lname");
 
-            final String queryInsertUser = "INSERT INTO users (id_position,login,password,email,firstname,lastname)" +
-                    "VALUES (" + id_position + "," + login + "," + password + "," + email + "," + fname + "," + lname + ")";
+            final String queryInsertUser = "INSERT INTO users (id_position, login, password, email, firstname, lastname) " +
+                    "VALUES (" + id_position + ",'" + login + "','" + password + "','" + email + "','" + fname + "','" + lname + "')";
 
             connect = new Connect();
             statement = connect.getConnection().createStatement();
-            resultSet = statement.executeQuery(queryInsertUser);
+            statement.executeUpdate(queryInsertUser);
 
             sendMail.sendMailRegistration(email, login, password);
 
             log.info("Query: " + queryInsertUser);
+            resp.sendRedirect("/adminpage.jsp");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-        } finally {
-            assert resultSet != null;
-            resultSet.close();
-            statement.close();
-            connect.close();
         }
-
-        resp.sendRedirect("/adminpage.jsp");
-
     }
 
     private int selectIdPosition(HttpServletRequest req, HttpServletResponse resp)
@@ -95,11 +79,17 @@ public class AddUser extends HttpServlet {
 
     }
 
-    private String getPassword(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
+    private String getPassword(HttpServletRequest req) {
+        String resultPassword = null;
         String password = req.getParameter("password");
         String passwordV = req.getParameter("passwordv");
 
-        return password;
+        if (password.equals(passwordV))
+            resultPassword = password;
+        else
+            System.out.println("Error password not confirme...........................");
+
+
+        return resultPassword;
     }
 }

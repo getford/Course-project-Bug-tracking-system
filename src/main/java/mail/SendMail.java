@@ -43,7 +43,7 @@ public class SendMail {
                 "<p>You will be successfully registered in Bug Tracking System</p>" +
                 "<p>" +
                 "<b>Your login: </b>" + login + "" +
-                "<b>Your password: </b>" + password_ + "" +
+                "<br/><b>Your password: </b>" + password_ + "" +
                 "</p>" +
                 "<p>You profile: <a href=\"http://localhost:8080/profile.jsp\">http://localhost:8080/profile.jsp</a></p>";
 
@@ -63,11 +63,11 @@ public class SendMail {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(paramMailMap.get("from")));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             message.setSubject(subject);
             message.setContent(mailBody, "text/html; charset=utf-8");
             Transport.send(message);
-            System.out.println("Sent message to [" + to + "] successfully.");
+            System.out.println("Sent message to [" + email + "] successfully.");
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
