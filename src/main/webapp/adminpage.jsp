@@ -89,6 +89,8 @@
     </script>
 </head>
 <body id="body" style="overflow:hidden;">
+<div class = container>
+
 <div class="panel panel-primary">
     <div class="panel-body">
         <div class="col-sm-4">
@@ -129,7 +131,6 @@
         </div>
     </div>
 </div>
-
 <div class="panel panel-info">
     <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
        style="text-align: center;"><h4>All projects</h4>
@@ -331,7 +332,7 @@
         </div>
     </div>
 </div>
-
+    <div/>
 
 <div id="project">
     <div id="popupProject">

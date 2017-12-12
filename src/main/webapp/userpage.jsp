@@ -61,6 +61,7 @@
     %>
 </head>
 <body>
+<div class = "container">
 <div class="panel panel-primary">
     <div class="panel-body">
         <div class="col-sm-4">
@@ -252,7 +253,7 @@
                         <textarea class="form-control" rows="4" id="description"></textarea>
                     </div>
                 </div>
-
+<br>
                 <div class="container">
                     <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create</button>
                     <button type="submit" class="btn btn-danger" onclick="div_hide()">Cancel</button>
@@ -261,6 +262,7 @@
             </form>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
