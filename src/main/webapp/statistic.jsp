@@ -17,7 +17,7 @@
     <%
         OpenIssues openIssues = new OpenIssues();
         ParseCookie parseCookie = new ParseCookie(request);
-        SelectUserInfo selectUserInfo = new SelectUserInfo(request);
+        SelectUserInfo selectUserInfo = new SelectUserInfo();
         SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
         SelectTypeIssue selectTypeIssue = new SelectTypeIssue();
         SelectPriorityIssue selectPriorityIssue = new SelectPriorityIssue();

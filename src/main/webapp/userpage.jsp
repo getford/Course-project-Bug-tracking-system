@@ -46,7 +46,7 @@
         SelectAllYourProject selectAllYourProject = new SelectAllYourProject();
         SelectYourAssigneedBug selectYourAssigneedBug = null;
         SelectAllUsers selectAllUsers = null;
-        SelectUserInfo selectUserInfo = new SelectUserInfo(request);
+        SelectUserInfo selectUserInfo = new SelectUserInfo();
         try {
             selectAllUsers = new SelectAllUsers();
             selectAllYourProject.setUserId(parseCookie.getUserIdFromToken());

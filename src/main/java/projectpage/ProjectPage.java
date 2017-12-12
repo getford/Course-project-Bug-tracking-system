@@ -14,6 +14,7 @@ public class ProjectPage {
     private String nameProject;
     private String keyProject;
     private String leaderName;
+    private String userLogin;
 
     private Connect connect = null;
     private Statement statement = null;
@@ -45,10 +46,13 @@ public class ProjectPage {
                 setKeyProject(resultSet.getString(3));
             }
             resultSet.close();
-            String querySelectNameLead = "SELECT firstname, lastname FROM users WHERE id = " + idUserLead;
+
+            String querySelectNameLead = "SELECT firstname, lastname, login FROM users WHERE id = " + idUserLead;
             resultSet = statement.executeQuery(querySelectNameLead);
-            while (resultSet.next())
+            while (resultSet.next()) {
                 setLeaderName(resultSet.getString(1) + " " + resultSet.getString(2));
+                setUserLogin(resultSet.getString(3));
+            }
 
         } finally {
             assert resultSet != null;
@@ -82,5 +86,11 @@ public class ProjectPage {
         this.leaderName = leaderName;
     }
 
+    public String getUserLogin() {
+        return userLogin;
+    }
 
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
+    }
 }

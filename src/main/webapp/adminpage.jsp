@@ -1,5 +1,7 @@
 <%@ page import="adminpage.SelectAllProjects" %>
 <%@ page import="adminpage.SelectPosition" %>
+<%@ page import="bugs.SelectAllBugsProject" %>
+<%@ page import="cookie.CheckCookie" %>
 <%@ page import="cookie.ParseCookie" %>
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
@@ -30,30 +32,24 @@
         SelectAllUsers selectAllUsers = null;
         SelectPosition selectPosition = null;
         SelectUserInfo selectUserInfo = null;
+        SelectAllBugsProject selectAllBugsProject = null;
 
         ParseCookie parseCookie = new ParseCookie(request);
-        Cookie[] cookies = request.getCookies();
-        boolean flag = false;
-        for (Cookie cooky : cookies) {
-            if (cooky.getName().equals("auth")) {
-                flag = true;
+        CheckCookie checkCookie = new CheckCookie();
 
-            }
-        }
-
-        if (!flag)
+        if (!checkCookie.isAuthorized(request.getCookies()))
             response.sendRedirect("/");
-        if (flag && parseCookie.getPositionIdFromToken() != 0)
+        if (checkCookie.isAuthorized(request.getCookies()) && parseCookie.getPositionIdFromToken() != 0)
             response.sendRedirect("/userpage.jsp");
         else {
             try {
                 selectPosition = new SelectPosition();
-                selectUserInfo = new SelectUserInfo(request);
+                selectUserInfo = new SelectUserInfo();
                 selectTypeIssue = new SelectTypeIssue();
                 selectPriorityIssue = new SelectPriorityIssue();
                 selectAllUsers = new SelectAllUsers();
-                selectAllYourProject = new SelectAllYourProject();
                 selectAllProjects = new SelectAllProjects();
+                selectAllBugsProject = new SelectAllBugsProject();
                 userName = selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken());
                 position = selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken());
             } catch (SQLException | ClassNotFoundException e) {
@@ -76,6 +72,16 @@
             $("#userInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
                 $("#userTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#bugsInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#bugsTable tr").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
@@ -124,126 +130,208 @@
     </div>
 </div>
 
+<div class="panel panel-info">
+    <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+       style="text-align: center;"><h4>All projects</h4>
+    </a>
+    <div id="spoilerProjects" class="collapse">
+        <div class="panel-body">
+            <input class="form-control" id="projectInput" type="text" placeholder="Search..">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Key</th>
+                    <th>Name</th>
+                    <th>Leader</th>
+                    <th>Control</th>
+                </tr>
+                </thead>
+                <%
+                    if (selectAllProjects != null) {
+                        for (int i = 0; i < selectAllProjects.getProjectArrayList().size(); i++) {
+                            String id = selectAllProjects.getProjectArrayList().get(i).getId();
+                            String key = selectAllProjects.getProjectArrayList().get(i).getKeyName();
+                            String name = selectAllProjects.getProjectArrayList().get(i).getProjectName();
+                            String lead = selectAllProjects.getProjectArrayList().get(i).getFirstLastName();
+                %>
+                <tbody id="projectTable">
+                <tr>
+                    <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=id%>
+                    </a>
+                    </td>
+                    <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=key%>
+                    </a>
+                    </td>
+                    <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=name%>
+                    </a>
+                    </td>
+                    <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=lead%>
+                    </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img border="0" src="resources/image/edit.png">
+                        </a>
+
+                        <a href="/deleteproject?id=<%=id%>">
+                            <img border="0" src="resources/image/delete.png">
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+                <%
+                        }
+                    }
+                %>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="panel panel-success">
+    <a href="#spoilerUsers" class="btn btn-success btn-md btn-block" data-toggle="collapse"
+       style="text-align: center;"><h4>All users</h4>
+    </a>
+    <div id="spoilerUsers" class="collapse">
+        <div class="panel-body">
+            <input class="form-control" id="userInput" type="text" placeholder="Search..">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Login</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Control</th>
+                </tr>
+                </thead>
+                <%
+                    if (selectAllProjects != null) {
+                        for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
+                            String id = selectAllUsers.getUserArrayList().get(i).getId();
+                            String login = selectAllUsers.getUserArrayList().get(i).getLogin();
+                            String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                            String userPosition = selectAllUsers.getUserArrayList().get(i).getPosition();
+                            String firstName = selectAllUsers.getUserArrayList().get(i).getFirstname();
+                            String lastName = selectAllUsers.getUserArrayList().get(i).getLastname();
+
+                %>
+                <tbody id="userTable">
+                <tr>
+                    <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=id%>
+                    </a>
+                    </td>
+                    <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=login%>
+                    </a>
+                    </td>
+                    <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=email%>
+                    </a>
+                    </td>
+                    <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=userPosition%>
+                    </a>
+                    </td>
+                    <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=firstName%>
+                    </a>
+                    </td>
+                    <td><a href="/profile.jsp?logim=<%=login%>" name="<%=login%>"><%=lastName%>
+                    </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <img border="0" src="resources/image/edit.png">
+                        </a>
+
+                        <a href="/deleteuser?id=<%=id%>">
+                            <img border="0" src="resources/image/delete.png">
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+                <%
+                        }
+                    }
+                %>
+            </table>
+        </div>
+    </div>
+</div>
 <div class="panel panel-warning">
-    <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>
-    <div class="panel-body">
-        <input class="form-control" id="projectInput" type="text" placeholder="Search..">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Key</th>
-                <th>Name</th>
-                <th>Leader</th>
-                <th>Control</th>
-            </tr>
-            </thead>
-            <%
-                if (selectAllProjects != null) {
-                    for (int i = 0; i < selectAllProjects.getProjectArrayList().size(); i++) {
-                        String id = selectAllProjects.getProjectArrayList().get(i).getId();
-                        String key = selectAllProjects.getProjectArrayList().get(i).getKeyName();
-                        String name = selectAllProjects.getProjectArrayList().get(i).getProjectName();
-                        String lead = selectAllProjects.getProjectArrayList().get(i).getFirstLastName();
-            %>
-            <tbody id="projectTable">
-            <tr>
-                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=id%>
-                </a>
-                </td>
-                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=key%>
-                </a>
-                </td>
-                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=name%>
-                </a>
-                </td>
-                <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=lead%>
-                </a>
-                </td>
-                <td>
-                    <a href="#">
-                        <img border="0" src="resources/image/edit.png">
+    <a href="#spoilerBugs" class="btn btn-warning btn-md btn-block" data-toggle="collapse" style="text-align: center;">
+        <h4>Bugs</h4>
+    </a>
+    <div id="spoilerBugs" class="collapse">
+        <div class="panel-body">
+            <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
+            <br>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Assignee</th>
+                    <th>Reporter</th>
+                    <th>Date Create</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Environment</th>
+                </tr>
+                </thead>
+                <%
+                    for (int i = 0; i < selectAllBugsProject.getAllBugArrayList().size(); i++) {
+                        String id = selectAllBugsProject.getAllBugArrayList().get(i).getIdBug();
+                        String type = selectAllBugsProject.getAllBugArrayList().get(i).getIdType();
+                        String status = selectAllBugsProject.getAllBugArrayList().get(i).getIdStatus();
+                        String priority = selectAllBugsProject.getAllBugArrayList().get(i).getIdPriority();
+                        String assignee = selectAllBugsProject.getAllBugArrayList().get(i).getIdUserAssagniee();
+                        String reporter = selectAllBugsProject.getAllBugArrayList().get(i).getIdUserReporter();
+                        String date = selectAllBugsProject.getAllBugArrayList().get(i).getDateCreate();
+                        String title = selectAllBugsProject.getAllBugArrayList().get(i).getTitle();
+                        String description = selectAllBugsProject.getAllBugArrayList().get(i).getDescription();
+                        String environment = selectAllBugsProject.getAllBugArrayList().get(i).getEnvironment();
+                %>
+                <tbody id="bugsTable">
+                <tr>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=id%>
                     </a>
-
-                    <a href="/deleteproject?id=<%=id%>">
-                        <img border="0" src="resources/image/delete.png">
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=type%>
                     </a>
-                </td>
-            </tr>
-            </tbody>
-            <%
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=status%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=priority%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=assignee%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=reporter%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=date%>
+                    </a>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=title%>
+                    </a>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=description%>
+                    </a>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%>
+                    </a>
+                    </td>
+                </tr>
+                </tbody>
+                <%
                     }
-                }
-            %>
-        </table>
+                %>
+            </table>
+        </div>
     </div>
 </div>
-</div>
-<div class="panel panel-primary">
-    <div class="panel-heading" style="text-align: center;"><h4>All users</h4></div>
-    <div class="panel-body">
-        <input class="form-control" id="userInput" type="text" placeholder="Search..">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Login</th>
-                <th>Email</th>
-                <th>Position</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Control</th>
-            </tr>
-            </thead>
-            <%
-                if (selectAllProjects != null) {
-                    for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
-                        String id = selectAllUsers.getUserArrayList().get(i).getId();
-                        String login = selectAllUsers.getUserArrayList().get(i).getLogin();
-                        String email = selectAllUsers.getUserArrayList().get(i).getEmail();
-                        String userPosition = selectAllUsers.getUserArrayList().get(i).getPosition();
-                        String firstName = selectAllUsers.getUserArrayList().get(i).getFirstname();
-                        String lastName = selectAllUsers.getUserArrayList().get(i).getLastname();
 
-            %>
-            <tbody id="userTable">
-            <tr>
-                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=id%>
-                </a>
-                </td>
-                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=login%>
-                </a>
-                </td>
-                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=email%>
-                </a>
-                </td>
-                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=userPosition%>
-                </a>
-                </td>
-                <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=firstName%>
-                </a>
-                </td>
-                <td><a href="/profile.jsp?logim=<%=login%>" name="<%=login%>"><%=lastName%>
-                </a>
-                </td>
-                <td>
-                    <a href="#">
-                        <img border="0" src="resources/image/edit.png">
-                    </a>
-
-                    <a href="/deleteuser?id=<%=id%>">
-                        <img border="0" src="resources/image/delete.png">
-                    </a>
-                </td>
-            </tr>
-            </tbody>
-            <%
-                    }
-                }
-            %>
-        </table>
-    </div>
-</div>
 
 <div id="project">
     <div id="popupProject">

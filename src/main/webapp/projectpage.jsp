@@ -34,7 +34,7 @@
     SelectAllBugsProject selectAllBugsProject = new SelectAllBugsProject();
     StatisticsBug statisticsBug = null;
     ParseCookie parseCookie = new ParseCookie(request);
-    SelectUserInfo selectUserInfo = new SelectUserInfo(request);
+    SelectUserInfo selectUserInfo = null;
     SelectAllYourProject selectAllYourProject = null;
     SelectTypeIssue selectTypeIssue = null;
     SelectPriorityIssue selectPriorityIssue = null;
@@ -42,7 +42,7 @@
     try {
         selectAllBugsProject.returnIdSelectedProject(request.getParameter("nameproject"));
         selectAllBugsProject.showBugs();
-        selectUserInfo = new SelectUserInfo(request);
+        selectUserInfo = new SelectUserInfo();
         selectTypeIssue = new SelectTypeIssue();
         selectPriorityIssue = new SelectPriorityIssue();
         selectAllUsers = new SelectAllUsers();
@@ -85,7 +85,7 @@
     <br>
     <b>Key name: </b><%=projectPage.getKeyProject()%>
     <br>
-    <b>Leader: </b><a href="/userpage.jsp"><%=projectPage.getLeaderName()%>
+    <b>Leader: </b><a href="/userpage.jsp?login=<%=projectPage.getUserLogin()%>"><%=projectPage.getLeaderName()%>
 </a>
 
 </p>
@@ -144,73 +144,77 @@
 </div>
 <br>
 <div class="panel panel-success">
-    <div class="panel-heading" style="text-align: center;"><h4>Bugs</h4></div>
-    <div class="panel-body">
-        <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
-        <br>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th>Priority</th>
-                <th>Assignee</th>
-                <th>Reporter</th>
-                <th>Date Create</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Environment</th>
-            </tr>
-            </thead>
-            <%
-                for (int i = 0; i < selectAllBugsProject.getBugArrayList().size(); i++) {
-                    String id = selectAllBugsProject.getBugArrayList().get(i).getIdBug();
-                    String type = selectAllBugsProject.getBugArrayList().get(i).getIdType();
-                    String status = selectAllBugsProject.getBugArrayList().get(i).getIdStatus();
-                    String priority = selectAllBugsProject.getBugArrayList().get(i).getIdPriority();
-                    String assignee = selectAllBugsProject.getBugArrayList().get(i).getIdUserAssagniee();
-                    String reporter = selectAllBugsProject.getBugArrayList().get(i).getIdUserReporter();
-                    String date = selectAllBugsProject.getBugArrayList().get(i).getDateCreate();
-                    String title = selectAllBugsProject.getBugArrayList().get(i).getTitle();
-                    String description = selectAllBugsProject.getBugArrayList().get(i).getDescription();
-                    String environment = selectAllBugsProject.getBugArrayList().get(i).getEnvironment();
-            %>
-            <tbody id="bugsTable">
-            <tr>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=id%>
-                </a>
-                </td>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=type%>
-                </a>
-                </td>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=status%>
-                </a>
-                </td>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=priority%>
-                </a>
-                </td>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=assignee%>
-                </a>
-                </td>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=reporter%>
-                </a>
-                </td>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=date%>
-                </a>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=title%>
-                </a>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=description%>
-                </a>
-                <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%>
-                </a>
-                </td>
-            </tr>
-            </tbody>
-            <%
-                }
-            %>
-        </table>
+    <a href="#spoilerBugs" class="btn btn-success btn-md btn-block" data-toggle="collapse" style="text-align: center;">
+        <h4>Bugs</h4>
+    </a>
+    <div id="spoilerBugs" class="collapse">
+        <div class="panel-body">
+            <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
+            <br>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Assignee</th>
+                    <th>Reporter</th>
+                    <th>Date Create</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Environment</th>
+                </tr>
+                </thead>
+                <%
+                    for (int i = 0; i < selectAllBugsProject.getBugArrayList().size(); i++) {
+                        String id = selectAllBugsProject.getBugArrayList().get(i).getIdBug();
+                        String type = selectAllBugsProject.getBugArrayList().get(i).getIdType();
+                        String status = selectAllBugsProject.getBugArrayList().get(i).getIdStatus();
+                        String priority = selectAllBugsProject.getBugArrayList().get(i).getIdPriority();
+                        String assignee = selectAllBugsProject.getBugArrayList().get(i).getIdUserAssagniee();
+                        String reporter = selectAllBugsProject.getBugArrayList().get(i).getIdUserReporter();
+                        String date = selectAllBugsProject.getBugArrayList().get(i).getDateCreate();
+                        String title = selectAllBugsProject.getBugArrayList().get(i).getTitle();
+                        String description = selectAllBugsProject.getBugArrayList().get(i).getDescription();
+                        String environment = selectAllBugsProject.getBugArrayList().get(i).getEnvironment();
+                %>
+                <tbody id="bugsTable">
+                <tr>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=id%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=type%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=status%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=priority%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=assignee%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=reporter%>
+                    </a>
+                    </td>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=date%>
+                    </a>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=title%>
+                    </a>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=description%>
+                    </a>
+                    <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%>
+                    </a>
+                    </td>
+                </tr>
+                </tbody>
+                <%
+                    }
+                %>
+            </table>
+        </div>
     </div>
 </div>
 

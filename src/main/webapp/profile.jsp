@@ -1,5 +1,6 @@
 <%@ page import="bugs.SelectAllYourBug" %>
 <%@ page import="cookie.ParseCookie" %>
+<%@ page import="userpage.SelectUniqueUserInfo" %>
 <%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,8 +13,10 @@
         ParseCookie parseCookie = new ParseCookie(request);
         SelectUserInfo selectUserInfo = null;
         SelectAllYourBug selectAllYourBug = null;
+        SelectUniqueUserInfo selectUniqueUserInfo = null;
         try {
-            selectUserInfo = new SelectUserInfo(request);
+            selectUniqueUserInfo = new SelectUniqueUserInfo(request);
+            selectUserInfo = new SelectUserInfo();
             selectAllYourBug = new SelectAllYourBug(parseCookie.getUserIdFromToken());
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -33,7 +36,8 @@
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="userpage.jsp">Dashboard</a></li>
-                    <li class="disabled"><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                    <li class="disabled"><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a>
+                    </li>
                     <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
@@ -59,11 +63,11 @@
                 </div>
             </div>
             <p>
-                <b>Name: </b><%=selectUserInfo.getUserInfoByLoginArrayList().get(0).getFirstname() + " " + selectUserInfo.getUserInfoByLoginArrayList().get(0).getLastname()%>
+                <b>Name: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getFirstname() + " " + selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getLastname()%>
             </p>
-            <p><b>Position: </b><%=selectUserInfo.getUserInfoByLoginArrayList().get(0).getPosition()%>
+            <p><b>Position: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getPosition()%>
             </p>
-            <p><b>Email: </b><%=selectUserInfo.getUserInfoByLoginArrayList().get(0).getEmail()%>
+            <p><b>Email: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getEmail()%>
             </p>
             <hr>
             <p><b>All you created bug: </b><%=selectUserInfo.selectCountAllYourBugs(parseCookie.getUserIdFromToken())%>

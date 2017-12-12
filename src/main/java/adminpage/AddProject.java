@@ -1,6 +1,7 @@
 package adminpage;
 
 import database.Connect;
+import mail.SendMail;
 import org.apache.log4j.Logger;
 
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,8 @@ import java.sql.Statement;
 @WebServlet(urlPatterns = "/addproject")
 public class AddProject extends HttpServlet {
     private static final Logger log = Logger.getLogger(AddProject.class);
+
+    private SendMail sendMail = new SendMail();
 
     private Connect connect = null;
     private Statement statement = null;
@@ -35,7 +38,7 @@ public class AddProject extends HttpServlet {
         try {
             int idLead = selectIdUser(request);
             String nameProject = request.getParameter("nameProject");
-            String keyProject = request.getParameter("keyProject");
+            String keyProject = request.getParameter("keyProject").toUpperCase();
 
             String queryInsertProject = "INSERT INTO projects (id_user_lead , name, key_name)" +
                     "VALUES (" + idLead + ",'" + nameProject + "','" + keyProject + "')";
@@ -43,6 +46,14 @@ public class AddProject extends HttpServlet {
             connect = new Connect();
             statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsertProject);
+
+            String emailLeader = null;
+            String queryMailLeader = "SELECT email FROM users WHERE id = " + idLead;
+            resultSet = statement.executeQuery(queryMailLeader);
+            while (resultSet.next())
+                emailLeader = resultSet.getString(1);
+
+            sendMail.sendMailLeaderProject(emailLeader, nameProject);
             log.info("Query: " + queryInsertProject);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

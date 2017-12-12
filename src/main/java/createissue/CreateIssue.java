@@ -41,7 +41,7 @@ public class CreateIssue extends HttpServlet {
     private void createIssue(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         ParseCookie parseCookie = new ParseCookie(req);
-        SelectUserInfo selectUserInfo = new SelectUserInfo(req);
+        SelectUserInfo selectUserInfo = new SelectUserInfo();
         try {
             int idProject = selectIdProject(req, resp);
             int idType = selectIdTypeIssue(req, resp);
