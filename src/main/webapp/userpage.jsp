@@ -256,7 +256,7 @@
 <br>
                 <div class="container">
                     <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create</button>
-                    <button type="submit" class="btn btn-danger" onclick="div_hide()">Cancel</button>
+                        <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
                 </div>
                 <p></p>
             </form>
