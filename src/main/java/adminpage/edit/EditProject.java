@@ -10,7 +10,6 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/editproject")
 public class EditProject extends HttpServlet{
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

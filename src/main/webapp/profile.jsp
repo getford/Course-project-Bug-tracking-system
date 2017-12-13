@@ -47,6 +47,7 @@
                     <li><a href="userpage.jsp">Dashboard</a></li>
                     <li class="disabled"><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a>
                     </li>
+                    <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
                 </ul>
@@ -62,6 +63,7 @@
         </div>
     </div>
 </div>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-4">

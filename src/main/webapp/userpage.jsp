@@ -63,40 +63,42 @@
     %>
 </head>
 <body>
-<div class="panel panel-primary">
-    <div class="panel-body">
-        <div class="col-sm-4">
-            <div class="dropdown">
-                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
-                    <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
-                    <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <%
-                        if (checkCookie.isAdmin(request.getCookies(), parseCookie.getPositionIdFromToken())) {
-                    %>
-                    <li><a href="adminpage.jsp">Admin dashboard</a></li>
-                    <%
-                        }
-                    %>
-                    <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
-                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
-                    <hr/>
-                    <li><a href="/logout">Exit</a></li>
-                </ul>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="col-sm-4">
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                        <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
+                        <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <%
+                            if (checkCookie.isAdmin(request.getCookies(), parseCookie.getPositionIdFromToken())) {
+                        %>
+                        <li><a href="adminpage.jsp">Admin dashboard</a></li>
+                        <%
+                            }
+                        %>
+                        <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
+                        <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                        <li><a href="statistic.jsp">Statistic</a></li>
+                        <hr/>
+                        <li><a href="/logout">Exit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
+                    Create
+                    issue
+                </button>
             </div>
         </div>
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
-                Create
-                issue
-            </button>
-        </div>
     </div>
-</div>
-<div class="container">
+
     <div class="panel panel-warning">
         <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>
         <div class="panel-body">
@@ -185,95 +187,93 @@
             </table>
         </div>
     </div>
-</div>
-<%-- Create issue --%>
-<div id="issue">
-    <div id="popupIssue">
-        <h2 class="heading_is">Creare Issue
-        </h2>
-        <div class="popup-content">
-            <form action="/createissue" method="post" id="form" name="form">
-                <div class="form-body">
-                    <div class="form-group">
-                        <label for="project">Project*</label>
-                        <select name="nameProject" class="form-control" id="project">
-                            <%
-                                for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
-                                    String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
-                            %>
-                            <option value="<%=name%>"><%=name%>
-                            </option>
-                            <%}%>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="type">Type issue*</label>
-                        <select name="nameTypeIssue" class="form-control" id="type">
-                            <%
-                                for (int i = 0; i < selectTypeIssue.getTypeIssueArrayList().size(); i++) {
-                                    String name = selectTypeIssue.getTypeIssueArrayList().get(i).getName();
-                            %>
-                            <option value="<%=name%>"><%=name%>
-                            </option>
-                            <%}%>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="title">Title*</label>
-                        <input class="form-control" type="text" name="title_issue" id="title"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="priority">Severity*</label>
-                        <select name="namePriority" class="form-control" id="priority">
-                            <%
-                                for (int i = 0; i < selectPriorityIssue.getPriorityIssueArrayList().size(); i++) {
-                                    String name = selectPriorityIssue.getPriorityIssueArrayList().get(i).getName();
-                            %>
-                            <option value="<%=name%>"><%=name%>
-                            </option>
-                            <% }%>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="duedate">Due Date* </label>
-                        <input class="form-control" type="date" name="date_issue" id="duedate"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="userassignee">User Assignee*</label>
-                        <select name="userAssignee" class="form-control" id="userassignee">
-                            <%
-                                for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
-                                    String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
-                                            + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
-                                            + selectAllUsers.getUserArrayList().get(i).getEmail();
-                                    String email = selectAllUsers.getUserArrayList().get(i).getEmail();
-                            %>
-                            <option value="<%=email%>"><%=infoUser %>
-                            </option>
-                            <%} %>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="environment">Environment</label>
-                        <textarea class="form-control" rows="4" id="environment"></textarea>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="description">Description*</label>
-                        <textarea class="form-control" rows="4" id="description"></textarea>
+    <%-- Create issue --%>
+    <div id="issue">
+        <div id="popupIssue">
+            <h2 class="heading_is">Creare Issue
+            </h2>
+            <div class="popup-content">
+                <form action="/createissue" method="post" id="form" name="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label for="project">Project*</label>
+                            <select name="nameProject" class="form-control" id="project">
+                                <%
+                                    for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
+                                        String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
+                                %>
+                                <option value="<%=name%>"><%=name%>
+                                </option>
+                                <%}%>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type issue*</label>
+                            <select name="nameTypeIssue" class="form-control" id="type">
+                                <%
+                                    for (int i = 0; i < selectTypeIssue.getTypeIssueArrayList().size(); i++) {
+                                        String name = selectTypeIssue.getTypeIssueArrayList().get(i).getName();
+                                %>
+                                <option value="<%=name%>"><%=name%>
+                                </option>
+                                <%}%>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Title*</label>
+                            <input class="form-control" type="text" name="title_issue" id="title"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="priority">Severity*</label>
+                            <select name="namePriority" class="form-control" id="priority">
+                                <%
+                                    for (int i = 0; i < selectPriorityIssue.getPriorityIssueArrayList().size(); i++) {
+                                        String name = selectPriorityIssue.getPriorityIssueArrayList().get(i).getName();
+                                %>
+                                <option value="<%=name%>"><%=name%>
+                                </option>
+                                <% }%>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duedate">Due Date* </label>
+                            <input class="form-control" type="date" name="date_issue" id="duedate"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="userassignee">User Assignee*</label>
+                            <select name="userAssignee" class="form-control" id="userassignee">
+                                <%
+                                    for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
+                                        String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
+                                                + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
+                                                + selectAllUsers.getUserArrayList().get(i).getEmail();
+                                        String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                                %>
+                                <option value="<%=email%>"><%=infoUser %>
+                                </option>
+                                <%} %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="environment">Environment</label>
+                            <textarea class="form-control" rows="4" id="environment"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description*</label>
+                            <textarea class="form-control" rows="4" id="description"></textarea>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="bottom_container">
-                    <div class="buttons">
-                        <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">
-                            Create
+                    <br>
+                    <div class="container">
+                        <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create
                         </button>
                         <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
                     </div>
-                </div>
-                <p></p>
-            </form>
+                    <p></p>
+                </form>
+            </div>
         </div>
     </div>
 </div>
