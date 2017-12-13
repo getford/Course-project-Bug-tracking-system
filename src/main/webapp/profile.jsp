@@ -3,6 +3,7 @@
 <%@ page import="userpage.SelectUniqueUserInfo" %>
 <%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="cookie.CheckCookie" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%
         ParseCookie parseCookie = new ParseCookie(request);
+        CheckCookie checkCookie = new CheckCookie();
         SelectUserInfo selectUserInfo = null;
         SelectAllYourBug selectAllYourBug = null;
         SelectUniqueUserInfo selectUniqueUserInfo = null;
@@ -35,10 +37,16 @@
                     <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
+                    <%
+                        if (checkCookie.isAdmin(request.getCookies(), parseCookie.getPositionIdFromToken())) {
+                    %>
+                    <li><a href="adminpage.jsp">Admin dashboard</a></li>
+                    <%
+                        }
+                    %>
                     <li><a href="userpage.jsp">Dashboard</a></li>
                     <li class="disabled"><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a>
                     </li>
-                    <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
                 </ul>
@@ -54,7 +62,6 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-sm-4">

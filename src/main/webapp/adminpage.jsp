@@ -92,6 +92,7 @@
     </script>
 </head>
 <body id="body" style="overflow:hidden;">
+<<<<<<< HEAD
 <div class=container>
 
     <div class="panel panel-primary">
@@ -103,6 +104,7 @@
                         <span class="badge"><%=position%></span>
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu">
+                        <li class="disabled"><a href="adminpage.jsp">Admin dashboard</a></li>
                         <li><a href="userpage.jsp">Dashboard</a></li>
                         <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
                         <li><a href="statistic.jsp">Statistic</a></li>
@@ -117,23 +119,43 @@
                 <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
                     Create issue
                 </button>
+=======
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=userName%>
+                    <span class="badge"><%=position%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                    <hr/>
+                    <li><a href="/logout">Exit</a></li>
+                </ul>
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
             </div>
         </div>
-        <div class="panel-body">
-            <div class="col-sm-4">
-                <button id="prj" onclick="div_show_pr()" type="button" class="btn btn-warning btn-md btn-block">
-                    Add project
-                </button>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
-                <button id="usr" onclick="div_show_us()" type="button" class="btn btn-warning btn-md btn-block">
-                    Add user
-                </button>
-            </div>
+        <div class="col-sm-4">
         </div>
     </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <button id="prj" onclick="div_show_pr()" type="button" class="btn btn-warning btn-md btn-block">
+                Add project
+            </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button id="usr" onclick="div_show_us()" type="button" class="btn btn-warning btn-md btn-block">
+                Add user
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container">
     <div class="panel panel-info">
         <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
            style="text-align: center;"><h4>All projects</h4>
@@ -244,7 +266,7 @@
                         </td>
                         <td>
                             <a href="#">
-                                <img  border="0" src="resources/image/edit.png" onclick="div_show_usEdit()">
+                                <img border="0" src="resources/image/edit.png" onclick="div_show_usEdit()">
                             </a>
 
                             <a href="/deleteuser?id=<%=id%>">
@@ -327,6 +349,15 @@
                         <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%>
                         </a>
                         </td>
+                        <td>
+                            <a href="#">
+                                <img border="0" src="resources/image/edit.png" onclick="">
+                            </a>
+
+                            <a href="/deletebug?id=<%=id%>">
+                                <img border="0" src="resources/image/delete.png">
+                            </a>
+                        </td>
                     </tr>
                     </tbody>
                     <%
@@ -336,125 +367,60 @@
             </div>
         </div>
     </div>
-
-    <div id="project">
-        <div id="popupProject">
-            <h2 class="heading_pr">Add project
-            </h2>
-            <div class="popup-content">
-                <form action="/addproject" method="post" id="form" name="formus">
-                    <div class="form-body_pr">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input class="form-control" type="text" name="nameProject" id="name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="keyname">Key name</label>
-                            <input class="form-control" type="text" name="keyProject" id="keyname"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="projectleader">Project leader</label>
-                            <select name="leader" class="form-control" id="projectleader">
-                                <%
-                                    if (selectAllUsers != null) {
-                                        for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
-                                            String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
-                                                    + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
-                                                    + selectAllUsers.getUserArrayList().get(i).getEmail();
-                                            String email = selectAllUsers.getUserArrayList().get(i).getEmail();
-                                %>
-                                <option value="<%=email%>"><%=infoUser %>
-                                </option>
-                                <%
-                                        }
+</div>
+<div id="project">
+    <div id="popupProject">
+        <h2 class="heading_pr">Add project
+        </h2>
+        <div class="popup-content">
+            <form action="/addproject" method="post" id="form" name="formus">
+                <div class="form-body_pr">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="nameProject" id="name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="keyname">Key name</label>
+                        <input class="form-control" type="text" name="keyProject" id="keyname"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectleader">Project leader</label>
+                        <select name="leader" class="form-control" id="projectleader">
+                            <%
+                                if (selectAllUsers != null) {
+                                    for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
+                                        String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
+                                                + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
+                                                + selectAllUsers.getUserArrayList().get(i).getEmail();
+                                        String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                            %>
+                            <option value="<%=email%>"><%=infoUser %>
+                            </option>
+                            <%
                                     }
-                                %>
-                            </select>
-                        </div>
+                                }
+                            %>
+                        </select>
                     </div>
-                    <div class="bottom_container">
-                        <div class="buttons">
-                            <button type="submit" class="btn btn-success" onclick="div_hide_pr()" value="Create">
-                                Create
-                            </button>
-                            <a class="btn btn-danger" onclick="div_hide_pr()">Cancel</a>
-                        </div>
+                </div>
+                <div class="bottom_container">
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-success" onclick="div_hide_pr()" value="Create">
+                            Create
+                        </button>
+                        <a class="btn btn-danger" onclick="div_hide_pr()">Cancel</a>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
-    <div id="user">
-        <div id="popupUser">
-            <h2 class="heading_us">Add user
-            </h2>
-            <div class="popup-content">
-                <form action="/adduser" method="post" id="formus" name="formus">
-                    <div class="form-body_us">
-                        <div class="content">
-                            <div class="field-group">
-                                <label>Position</label>
-                                <select name="position">
-                                    <%
-                                        if (selectPosition != null) {
-                                            for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
-                                                String name = selectPosition.getUserPositionsArraylist().get(i).getName();
-                                    %>
-                                    <option value="<%=name%>">
-                                        <%=name%>
-                                    </option>
-                                    <%
-                                            }
-                                        }
-                                    %>
-                                </select>
-
-                            </div>
-                            <div class="field-group">
-                                <label>Login</label>
-                                <input type="text" name="login">
-                            </div>
-                            <div class="field-group">
-                                <label>Password</label>
-                                <input type="password" name="password"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Verify password</label>
-                                <input type="password" name="passwordv"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Email</label>
-                                <input type="email" name="email"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Firstname</label>
-                                <input type="text" name="fname"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Lastname</label>
-                                <input type="text" name="lname"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom_container">
-                        <div class="buttons">
-                            <button type="submit" class="btn btn-success" onclick="div_hide_us()" value="Create">
-                                Create
-                            </button>
-                            <a class="btn btn-danger" onclick="div_hide_us()">Cancel</a>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
+<<<<<<< HEAD
     <div id="projectEdit">
         <div id="popupProjectEdit">
             <h2 class="heading_pr">Edit project
             </h2>
             <div class="popup-content">
-                <form action="/addproject" method="post" id="formProjectEdit" name="formus">
+                <form action="/editproject" method="post" id="formProjectEdit" name="formus">
                     <div class="form-body_pr">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -467,184 +433,201 @@
                         <div class="form-group">
                             <label for="projectleader">Project leader</label>
                             <select name="leader" class="form-control" id="projectleaderEdit">
+=======
+</div>
+<div id="user">
+    <div id="popupUser">
+        <h2 class="heading_us">Add user
+        </h2>
+        <div class="popup-content">
+            <form action="/adduser" method="post" id="formus" name="formus">
+                <div class="form-body_us">
+                    <div class="content">
+                        <div class="field-group">
+                            <label>Position</label>
+                            <select name="position">
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                                 <%
-                                    if (selectAllUsers != null) {
-                                        for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
-                                            String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
-                                                    + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
-                                                    + selectAllUsers.getUserArrayList().get(i).getEmail();
-                                            String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                                    if (selectPosition != null) {
+                                        for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
+                                            String name = selectPosition.getUserPositionsArraylist().get(i).getName();
                                 %>
-                                <option value="<%=email%>"><%=infoUser %>
+                                <option value="<%=name%>">
+                                    <%=name%>
                                 </option>
                                 <%
                                         }
                                     }
                                 %>
                             </select>
+
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="bottom_container">
                         <div class="buttons">
                             <button type="submit" class="btn btn-success" onclick="div_hide_prEdit()" value="Create">
-                                Create
+                                Edit
                             </button>
                             <a class="btn btn-danger" onclick="div_hide_prEdit()">Cancel</a>
+=======
+                        <div class="field-group">
+                            <label>Login</label>
+                            <input type="text" name="login">
+                        </div>
+                        <div class="field-group">
+                            <label>Password</label>
+                            <input type="password" name="password"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Verify password</label>
+                            <input type="password" name="passwordv"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Email</label>
+                            <input type="email" name="email"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Firstname</label>
+                            <input type="text" name="fname"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Lastname</label>
+                            <input type="text" name="lname"/>
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+                <div class="bottom_container">
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-success" onclick="div_hide_us()" value="Create">
+                            Create
+                        </button>
+                        <a class="btn btn-danger" onclick="div_hide_us()">Cancel</a>
+                    </div>
+                </div>
+
+            </form>
         </div>
     </div>
-    <div id="userEdit">
-        <div id="popupUserEdit">
-            <h2 class="heading_us">Edit user
-            </h2>
-            <div class="popup-content">
-                <form action="/edituser" method="post" id="formusEdit" name="userEdit">
-                    <div class="form-body_us">
-                        <div class="content">
-                            <div class="field-group">
-                                <label>Position</label>
-                                <select name="position">
-                                    <%
-                                        if (selectPosition != null) {
-                                            for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
-                                                String name = selectPosition.getUserPositionsArraylist().get(i).getName();
-                                    %>
-                                    <option value="<%=name%>">
-                                        <%=name%>
-                                    </option>
-                                    <%
-                                            }
-                                        }
-                                    %>
-                                </select>
-
-                            </div>
-                            <div class="field-group">
-                                <label>Login</label>
-                                <input type="text" name="login">
-                            </div>
-                            <div class="field-group">
-                                <label>Password</label>
-                                <input type="password" name="password"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Verify password</label>
-                                <input type="password" name="passwordv"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Email</label>
-                                <input type="email" name="email"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Firstname</label>
-                                <input type="text" name="fname"/>
-                            </div>
-                            <div class="field-group">
-                                <label>Lastname</label>
-                                <input type="text" name="lname"/>
-                            </div>
-                        </div>
+</div>
+<div id="projectEdit">
+    <div id="popupProjectEdit">
+        <h2 class="heading_pr">Edit project
+        </h2>
+        <div class="popup-content">
+            <form action="/addproject" method="post" id="formProjectEdit" name="formus">
+                <div class="form-body_pr">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="nameProject" id="nameEdit"/>
                     </div>
-                    <div class="bottom_container">
-                        <div class="buttons">
-                            <button type="submit" class="btn btn-success" onclick="div_hide_usEdit()" value="Create">
-                                Create
-                            </button>
-                            <a class="btn btn-danger" onclick="div_hide_usEdit()">Cancel</a>
-                        </div>
+                    <div class="form-group">
+                        <label for="keyname">Key name</label>
+                        <input class="form-control" type="text" name="keyProject" id="keynameEdit"/>
                     </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="issue">
-        <div id="popupIssue">
-            <h2 class="heading_is">Edit Issue
-            </h2>
-            <div class="popup-content">
-                <form action="/createissue" method="post" id="formIssueEdit" name="form">
-                    <div class="form-body">
-                        <div class="form-group">
-                            <label for="project">Project*</label>
-                            <select name="nameProject" class="form-control" id="issueProjectEdit">
-                                <%
-                                    for (int i = 0; i < selectAllYourProject.getProjectArrayList().size(); i++) {
-                                        String name = selectAllYourProject.getProjectArrayList().get(i).getNameProject();
-                                %>
-                                <option value="<%=name%>"><%=name%>
-                                </option>
-                                <%}%>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="type">Type issue*</label>
-                            <select name="nameTypeIssue" class="form-control" id="type">
-                                <%
-                                    for (int i = 0; i < selectTypeIssue.getTypeIssueArrayList().size(); i++) {
-                                        String name = selectTypeIssue.getTypeIssueArrayList().get(i).getName();
-                                %>
-                                <option value="<%=name%>"><%=name%>
-                                </option>
-                                <%}%>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="title">Title*</label>
-                            <input class="form-control" type="text" name="title_issue" id="title"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="priority">Severity*</label>
-                            <select name="namePriority" class="form-control" id="priority">
-                                <%
-                                    for (int i = 0; i < selectPriorityIssue.getPriorityIssueArrayList().size(); i++) {
-                                        String name = selectPriorityIssue.getPriorityIssueArrayList().get(i).getName();
-                                %>
-                                <option value="<%=name%>"><%=name%>
-                                </option>
-                                <% }%>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="duedate">Due Date* </label>
-                            <input class="form-control" type="date" name="date_issue" id="duedate"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="userassignee">User Assignee*</label>
-                            <select name="userAssignee" class="form-control" id="userassignee">
-                                <%
+                    <div class="form-group">
+                        <label for="projectleader">Project leader</label>
+                        <select name="leader" class="form-control" id="projectleaderEdit">
+                            <%
+                                if (selectAllUsers != null) {
                                     for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
                                         String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
                                                 + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
                                                 + selectAllUsers.getUserArrayList().get(i).getEmail();
                                         String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                            %>
+                            <option value="<%=email%>"><%=infoUser %>
+                            </option>
+                            <%
+                                    }
+                                }
+                            %>
+                        </select>
+                    </div>
+                </div>
+                <div class="bottom_container">
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-success" onclick="div_hide_prEdit()" value="Create">
+                            Create
+                        </button>
+                        <a class="btn btn-danger" onclick="div_hide_prEdit()">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="userEdit">
+    <div id="popupUserEdit">
+        <h2 class="heading_us">Edit user
+        </h2>
+        <div class="popup-content">
+            <form action="/edituser" method="post" id="formusEdit" name="userEdit">
+                <div class="form-body_us">
+                    <div class="content">
+                        <div class="field-group">
+                            <label>Position</label>
+                            <select name="position">
+                                <%
+                                    if (selectPosition != null) {
+                                        for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
+                                            String name = selectPosition.getUserPositionsArraylist().get(i).getName();
                                 %>
-                                <option value="<%=email%>"><%=infoUser %>
+                                <option value="<%=name%>">
+                                    <%=name%>
                                 </option>
-                                <%} %>
+                                <%
+                                        }
+                                    }
+                                %>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="environment">Environment</label>
-                            <textarea class="form-control" rows="4" id="environment"></textarea>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="description">Description*</label>
-                            <textarea class="form-control" rows="4" id="description"></textarea>
+                        </div>
+                        <div class="field-group">
+                            <label>Login</label>
+                            <input type="text" name="login">
+                        </div>
+                        <div class="field-group">
+                            <label>Password</label>
+                            <input type="password" name="password"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Verify password</label>
+                            <input type="password" name="passwordv"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Email</label>
+                            <input type="email" name="email"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Firstname</label>
+                            <input type="text" name="fname"/>
+                        </div>
+                        <div class="field-group">
+                            <label>Lastname</label>
+                            <input type="text" name="lname"/>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <br>
                     <div class="container">
-                        <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create</button>
+                        <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create
+                        </button>
                         <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
+=======
+                </div>
+                <div class="bottom_container">
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-success" onclick="div_hide_usEdit()" value="Create">
+                            Create
+                        </button>
+                        <a class="btn btn-danger" onclick="div_hide_usEdit()">Cancel</a>
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                     </div>
-                    <p></p>
-                </form>
-            </div>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>
