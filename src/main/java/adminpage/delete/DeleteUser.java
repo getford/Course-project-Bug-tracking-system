@@ -1,4 +1,4 @@
-package adminpage;
+package adminpage.delete;
 
 import database.Connect;
 

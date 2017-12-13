@@ -284,6 +284,7 @@
                         <th>Title</th>
                         <th>Description</th>
                         <th>Environment</th>
+                        <th>Control</th>
                     </tr>
                     </thead>
                     <%

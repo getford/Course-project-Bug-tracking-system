@@ -25,7 +25,7 @@ public class SelectAllYourBug {
                 " bugs.title " +
                 "FROM bugs " +
                 " INNER JOIN projects ON bugs.id_project = projects.id " +
-                "WHERE bugs.id_user_assignee = " + idUserAssignee;
+                "WHERE bugs.id_user_reporter = " + idUserAssignee;
         ResultSet resultSet = statement.executeQuery(querySelectBugs);
         log.info("Query: " + querySelectBugs);
         while (resultSet.next()) {

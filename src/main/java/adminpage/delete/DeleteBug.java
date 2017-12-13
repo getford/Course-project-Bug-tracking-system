@@ -1,4 +1,4 @@
-package adminpage;
+package adminpage.delete;
 
 import database.Connect;
 
@@ -15,18 +15,13 @@ import java.sql.Statement;
 public class DeleteBug extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id").substring(4);
+        String id = req.getParameter("idBug").substring(4);
 
         try {
             Connect connect = new Connect();
             Statement statement = connect.getConnection().createStatement();
-            String queryDeleteProject = "DELETE FROM projects WHERE id = " + Integer.parseInt(id);
-            String queryDeleteUserFromProject = "DELETE FROM user_project WHERE id_project = " + Integer.parseInt(id);
-            String queryDeleteBugs = "DELETE FROM bugs WHERE id_project = " + Integer.parseInt(id);
-            statement.execute(queryDeleteBugs);
-            statement.execute(queryDeleteUserFromProject);
-            statement.execute(queryDeleteProject);
-
+            String queryDeleteBug = "DELETE FROM bugs WHERE id = " + Integer.parseInt(id);
+            statement.execute(queryDeleteBug);
             resp.sendRedirect("/adminpage.jsp");
 
         } catch (SQLException | ClassNotFoundException | IOException e) {

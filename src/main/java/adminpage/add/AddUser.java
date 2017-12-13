@@ -1,4 +1,4 @@
-package adminpage;
+package adminpage.add;
 
 import database.Connect;
 import mail.SendMail;
