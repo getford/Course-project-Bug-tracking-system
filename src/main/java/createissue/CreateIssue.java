@@ -51,8 +51,8 @@ public class CreateIssue extends HttpServlet {
             int idUserReporter = parseCookie.getUserIdFromToken();
             String dateCreate = req.getParameter("date_issue");
             String title = req.getParameter("title_issue");
-            String description = req.getParameter("description_issue");
-            String environment = req.getParameter("environment_issue");
+            String description = req.getParameter("description");
+            String environment = req.getParameter("environment");
 
             final String queryInsert = "INSERT INTO bugs (id_project, id_type, id_status, id_priority, id_user_assignee, " +
                     "id_user_reporter, date_create, title, description, environment)" +
@@ -63,7 +63,6 @@ public class CreateIssue extends HttpServlet {
             connect = new Connect();
             statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsert);
-
 
             int maxId = 0;
             String queryMaxIdBug = "SELECT MAX(id) FROM bugs";

@@ -22,10 +22,12 @@ public class DeleteUser extends HttpServlet {
             Statement statement = connect.getConnection().createStatement();
             String queryDeleteUser = "DELETE FROM users WHERE id = " + Integer.parseInt(id);
             String queryDeleteUserFromProject = "DELETE FROM user_project WHERE id_user = " + Integer.parseInt(id);
+            String queryDeleteUserFromProjectLeader = "DELETE FROM projects WHERE id_user_lead = " + Integer.parseInt(id);
             String queryDeleteUserBugs = "DELETE FROM bugs WHERE " +
                     "id_user_assignee = " + Integer.parseInt(id) + "" +
                     " OR id_user_reporter = " + Integer.parseInt(id);
-            statement.execute(queryDeleteUserFromProject);
+            statement.execute(queryDeleteUserBugs);
+            statement.execute(queryDeleteUserFromProjectLeader);
             statement.execute(queryDeleteUserFromProject);
             statement.execute(queryDeleteUser);
 
