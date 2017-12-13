@@ -24,7 +24,7 @@ public class DeleteBug extends HttpServlet {
             statement.execute(queryDeleteBug);
             resp.sendRedirect("/adminpage.jsp");
 
-        } catch (SQLException | ClassNotFoundException | IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
     }

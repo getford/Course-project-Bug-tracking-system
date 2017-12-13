@@ -20,7 +20,7 @@ public class SelectUserInfo {
             while (resultSet.next()) {
                 namePosition = resultSet.getString(1);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return namePosition;
@@ -37,7 +37,7 @@ public class SelectUserInfo {
             while (resultSet.next()) {
                 nameSurname = resultSet.getString(1) + " " + resultSet.getString(2);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return nameSurname;
@@ -72,7 +72,7 @@ public class SelectUserInfo {
             while (resultSet.next()) {
                 count = resultSet.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -89,7 +89,7 @@ public class SelectUserInfo {
             while (resultSet.next()) {
                 countOpen = resultSet.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -106,7 +106,7 @@ public class SelectUserInfo {
             while (resultSet.next()) {
                 countClose = resultSet.getInt(1);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

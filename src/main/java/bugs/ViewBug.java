@@ -15,7 +15,7 @@ public class ViewBug {
     private Statement statement = null;
     private ResultSet resultSet = null;
 
-    public ViewBug(String idKey) throws SQLException, ClassNotFoundException {
+    public ViewBug(String idKey) throws SQLException {
         String id = idKey.substring(4);
 
         String querySelectInfoBug =

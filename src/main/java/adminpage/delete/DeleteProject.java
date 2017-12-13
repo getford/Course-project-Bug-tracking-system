@@ -29,7 +29,7 @@ public class DeleteProject extends HttpServlet {
 
             resp.sendRedirect("/adminpage.jsp");
 
-        } catch (SQLException | ClassNotFoundException | IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
     }

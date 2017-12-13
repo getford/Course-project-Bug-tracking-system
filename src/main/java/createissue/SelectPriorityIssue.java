@@ -13,7 +13,7 @@ public class SelectPriorityIssue {
     private static final Logger log = Logger.getLogger(SelectPriorityIssue.class);
     private ArrayList<PriorityIssue> priorityIssueArrayList = new ArrayList<PriorityIssue>();
 
-    public void selectAllPriorityIssue() throws SQLException, ClassNotFoundException {
+    public void selectAllPriorityIssue() throws SQLException {
         String query = "SELECT * FROM priority";
         Connect connect = null;
         Statement statement = null;

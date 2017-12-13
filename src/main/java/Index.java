@@ -101,8 +101,6 @@ public class Index extends HttpServlet {
             } catch (SQLException e) {
                 req.setAttribute("err", e);
                 e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
         } else {
             printWriter.println("Login or password clear");

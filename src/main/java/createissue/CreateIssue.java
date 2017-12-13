@@ -92,7 +92,7 @@ public class CreateIssue extends HttpServlet {
     }
 
     private int selectIdProject(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
+            throws SQLException, ClassNotFoundException {
         int tmpId = 0;
         String nameProject = req.getParameter("nameProject");
         String query = "SELECT id FROM projects WHERE name = '" + nameProject + "'";

@@ -13,7 +13,7 @@ public class SelectAllYourBug {
     private static final Logger log = Logger.getLogger(SelectAllYourBug.class);
     private ArrayList<YourBug> yourBugArrayList = new ArrayList<YourBug>();
 
-    public SelectAllYourBug(int idUserAssignee) throws SQLException, ClassNotFoundException {
+    public SelectAllYourBug(int idUserAssignee) throws SQLException {
 
 
         Connect connect = new Connect();

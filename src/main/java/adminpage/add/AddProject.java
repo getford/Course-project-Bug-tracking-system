@@ -54,7 +54,8 @@ public class AddProject extends HttpServlet {
                 emailLeader = resultSet.getString(1);
 
             sendMail.sendMailLeaderProject(emailLeader, nameProject, request);
-            log.info("Query: " + queryInsertProject);
+            log.debug("Query: " + queryInsertProject);
+            log.info("Project: " + nameProject + ", key: " + " add successfully");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {

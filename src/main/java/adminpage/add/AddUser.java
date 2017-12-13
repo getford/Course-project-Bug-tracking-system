@@ -46,13 +46,12 @@ public class AddUser extends HttpServlet {
 
             log.info("Query: " + queryInsertUser);
             resp.sendRedirect("/adminpage.jsp");
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private int selectIdPosition(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException, SQLException, ClassNotFoundException {
+    private int selectIdPosition(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
         int tmpIdPosition = 0;
         try {
             String namePosition = req.getParameter("position");
@@ -65,8 +64,6 @@ public class AddUser extends HttpServlet {
             while (resultSet.next())
                 tmpIdPosition = resultSet.getInt(1);
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             assert resultSet != null;

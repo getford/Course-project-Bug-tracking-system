@@ -33,7 +33,7 @@ public class DeleteUser extends HttpServlet {
 
             resp.sendRedirect("/adminpage.jsp");
 
-        } catch (SQLException | ClassNotFoundException | IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
     }

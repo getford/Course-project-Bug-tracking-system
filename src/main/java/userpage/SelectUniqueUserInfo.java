@@ -42,7 +42,7 @@ public class SelectUniqueUserInfo {
                         resultSet.getString(5),
                         resultSet.getString(6)));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {

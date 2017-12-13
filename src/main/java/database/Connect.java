@@ -30,17 +30,21 @@ public class Connect {
             paramConnectMap.put("driver", paramConnectObject.getDriver());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            log.error(e);
         }
     }
 
-    public Connect() throws SQLException, ClassNotFoundException {
+    public Connect() {
         readParamConnectJSON();
-        Class.forName(paramConnectMap.get("driver"));
-        setConnection((Connection) DriverManager.getConnection(paramConnectMap.get("url"), paramConnectMap.get("login"), paramConnectMap.get("password")));
-        if (connection != null) {
-            log.info("Access granted.");
-        } else {
-            log.error("Access denied.");
+        try {
+            Class.forName(paramConnectMap.get("driver"));
+            setConnection((Connection) DriverManager.getConnection(paramConnectMap.get("url"), paramConnectMap.get("login"), paramConnectMap.get("password")));
+            if (connection == null) {
+                log.error("Access denied.");
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            log.error(e);
         }
     }
 

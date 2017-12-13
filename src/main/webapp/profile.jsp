@@ -20,7 +20,7 @@
             selectUniqueUserInfo = new SelectUniqueUserInfo(request);
             selectUserInfo = new SelectUserInfo();
             selectAllYourBug = new SelectAllYourBug(parseCookie.getUserIdFromToken());
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -47,7 +47,6 @@
                     <li><a href="userpage.jsp">Dashboard</a></li>
                     <li class="disabled"><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a>
                     </li>
-                    <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
                 </ul>

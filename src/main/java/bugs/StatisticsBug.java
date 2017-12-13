@@ -19,7 +19,7 @@ public class StatisticsBug {
     private Statement statement = null;
     private ResultSet resultSet = null;
 
-    public StatisticsBug(int idProject) throws SQLException, ClassNotFoundException {
+    public StatisticsBug(int idProject) throws SQLException {
         String queryPriorityStatistics =
                 "SELECT" +
                         "  name, " +

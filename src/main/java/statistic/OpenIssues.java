@@ -14,7 +14,7 @@ public class OpenIssues {
     private Statement statement = null;
     private ResultSet resultSet = null;
 
-    public int countAllOpenIssues() throws SQLException, ClassNotFoundException {
+    public int countAllOpenIssues() throws SQLException {
         int countAllOpenIssues = 0;
         String queryAllOpenIssue = "SELECT count(*) FROM bugs WHERE bugs.id_status = 0";
 

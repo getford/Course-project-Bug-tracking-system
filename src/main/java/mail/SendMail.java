@@ -2,6 +2,7 @@ package mail;
 
 import com.google.gson.Gson;
 import mail.classes.ParamMail;
+import org.apache.log4j.Logger;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -17,8 +18,9 @@ import java.util.Map;
 import java.util.Properties;
 
 public class SendMail {
+    private static final Logger log = Logger.getLogger(SendMail.class);
     private Map<String, String> paramMailMap = new HashMap<>();
-    URL url = null;
+    private URL url = null;
 
     private final static String to = "xtudocr4.uz5@20mm.eu";
 
@@ -36,6 +38,7 @@ public class SendMail {
             paramMailMap.put("port", paramMailObject.getPort());
             paramMailMap.put("from", paramMailObject.getFrom());
             paramMailMap.put("password", paramMailObject.getPassword());
+            log.info("Parameters from json [" + path + "] read successfully.");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -63,6 +66,7 @@ public class SendMail {
             message.setContent(mailBody, "text/html; charset=utf-8");
             Transport.send(message);
             System.out.println("Sent message to [" + email + "] successfully.");
+            log.info("Sent message to [" + email + "] successfully.");
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
@@ -130,12 +134,12 @@ public class SendMail {
         }
     }
 
-    public void sendMailCloseBug(String emailWhoCloseBug, String emailReporter, String idBug, HttpServletRequest request){
+    public void sendMailCloseBug(String emailWhoCloseBug, String emailReporter, String idBug, HttpServletRequest request) {
         try {
             url = new URL(request.getRequestURL().toString());
             String subject = "Close your bug";
             String body = "<p>Hello,</p>" +
-                    "<p>The bug was you create, has been closed by"+emailWhoCloseBug+"</p>" +
+                    "<p>The bug was you create, has been closed by" + emailWhoCloseBug + "</p>" +
                     "<p>Check the link to see bug: <a href=\"" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/viewbug.jsp?idbug=" + idBug + "\">" +
                     "" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/viewbug.jsp?idbug=" + idBug + "</a></p>";
 

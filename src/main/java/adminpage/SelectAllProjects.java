@@ -2,6 +2,7 @@ package adminpage;
 
 import adminpage.classes.Project;
 import database.Connect;
+import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,9 +10,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SelectAllProjects {
+    private static final Logger log = Logger.getLogger(SelectAllProjects.class);
     private ArrayList<Project> projectArrayList = new ArrayList<Project>();
 
-    public SelectAllProjects() throws SQLException, ClassNotFoundException {
+    public SelectAllProjects() throws SQLException {
         Connect connect = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -26,6 +28,7 @@ public class SelectAllProjects {
                     "  projects.name " +
                     "FROM projects" +
                     "  INNER JOIN users ON projects.id_user_lead = users.id;";
+            log.debug(query);
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 String firstLastNameLead = resultSet.getString(1) + " " + resultSet.getString(2);
@@ -37,6 +40,7 @@ public class SelectAllProjects {
                         resultSet.getString(5)
                 ));
             }
+            log.info("Select all project");
         } finally {
             assert resultSet != null;
             resultSet.close();
