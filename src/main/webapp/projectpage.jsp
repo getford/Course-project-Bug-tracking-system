@@ -302,8 +302,8 @@
                 </div>
                 <div class="bottom_container">
                     <div class="buttons">
-                        <input type="submit" onclick="div_hide()" value="Create"/>
-                        <a href="#" onclick="div_hide()">Cancel</a>
+                        <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create</button>
+                        <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
                     </div>
                 </div>
 
