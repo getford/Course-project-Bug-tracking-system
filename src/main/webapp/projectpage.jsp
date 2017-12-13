@@ -63,7 +63,6 @@
                 <ul class="dropdown-menu">
                     <li><a href="userpage.jsp">Dashboard</a></li>
                     <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
-                    <li><a href="statistic.jsp">Statistic</a></li>
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
                 </ul>
