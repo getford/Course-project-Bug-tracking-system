@@ -170,17 +170,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+            <state relative-caret-position="350">
+              <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckCookie.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CheckCookie.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -277,8 +277,8 @@
         <option value="$PROJECT_DIR$/src/main/java/mail/SendMail.java" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/DeleteUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
       </list>
     </option>
   </component>
@@ -728,7 +728,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82897000" />
+    <option name="totallyTimeSpent" value="83015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -1347,18 +1347,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
           <folding />
         </state>
       </provider>
