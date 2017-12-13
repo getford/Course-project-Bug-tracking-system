@@ -67,33 +67,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1464">
-              <caret line="114" column="18" lean-forward="true" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
+              <caret line="114" column="18" lean-forward="false" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formuser.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/formuser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteBug.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/DeleteBug.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1513172635474" expanded="true" signature="795:827" ph="DELETE FROM projects... " />
-                <marker date="1513172635474" expanded="true" signature="902:946" ph="DELETE FROM user_project... " />
-                <marker date="1513172635474" expanded="true" signature="1010:1046" ph="DELETE FROM bugs... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/mail/SendMail.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="398">
-              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#654#655#0" expanded="true" />
@@ -153,6 +128,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AddUser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/AddUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="44" column="69" lean-forward="false" selection-start-line="44" selection-start-column="69" selection-end-line="44" selection-end-column="69" />
+              <folding>
+                <element signature="method#selectIdPosition#0;class#AddUser#0" expanded="false" />
+                <marker date="1513174175799" expanded="true" signature="1256:1469" ph="INSERT INTO users... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/AddProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="55" column="76" lean-forward="false" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
+              <folding>
+                <element signature="method#selectIdUser#0;class#AddProject#0" expanded="false" />
+                <marker date="1513174175803" expanded="true" signature="1363:1506" ph="INSERT INTO projects... " />
+                <marker date="1513174175803" expanded="true" signature="1749:1784" ph="SELECT email... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CreateIssue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -170,11 +172,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+            <state relative-caret-position="975">
+              <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -184,7 +186,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -253,7 +255,6 @@
         <option value="$PROJECT_DIR$/src/main/java/adminpage/SelectPosition.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/formissue.js" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/DeleteProject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/adminpage/AddUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/SelectAllUsers.java" />
         <option value="$PROJECT_DIR$/src/main/java/userpage/classes/UserInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/classes/User.java" />
@@ -270,7 +271,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/projectpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/adminpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/admin.css" />
-        <option value="$PROJECT_DIR$/src/main/java/adminpage/AddProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/EditProject.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/createissue.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/script/formissue.js" />
@@ -279,6 +279,8 @@
         <option value="$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java" />
         <option value="$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/adminpage/AddProject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/adminpage/AddUser.java" />
       </list>
     </option>
   </component>
@@ -728,16 +730,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83015000" />
+    <option name="totallyTimeSpent" value="83197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37243047" sideWeight="0.52360517" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.48855507" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21387696" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21387696" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -754,8 +755,8 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902583" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31680775" sideWeight="0.4828326" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35308343" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31680775" sideWeight="0.4828326" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35308343" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24678111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -882,13 +883,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/classes/ParamConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/param_database.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1158,7 +1152,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/mail/SendMail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#654#655#0" expanded="true" />
@@ -1259,16 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/AddUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="82" column="37" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-          <folding>
-            <element signature="method#selectIdPosition#0;class#AddUser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectAllUsers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1276,16 +1260,6 @@
           <folding>
             <marker date="1513003554471" expanded="true" signature="500:821" ph="SELECT * FRO... users" />
             <marker date="1513003554471" expanded="true" signature="500:876" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/AddProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="66" column="5" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="method#selectIdUser#0;class#AddProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1342,7 +1316,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1464">
-          <caret line="114" column="18" lean-forward="true" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
+          <caret line="114" column="18" lean-forward="false" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1350,16 +1324,52 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="80" column="29" lean-forward="false" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+        <state relative-caret-position="975">
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/DeleteBug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1513172635474" expanded="true" signature="795:827" ph="DELETE FROM projects... " />
+            <marker date="1513172635474" expanded="true" signature="902:946" ph="DELETE FROM user_project... " />
+            <marker date="1513172635474" expanded="true" signature="1010:1046" ph="DELETE FROM bugs... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/AddProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="55" column="76" lean-forward="false" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
+          <folding>
+            <element signature="method#selectIdUser#0;class#AddProject#0" expanded="false" />
+            <marker date="1513174175803" expanded="true" signature="1363:1506" ph="INSERT INTO projects... " />
+            <marker date="1513174175803" expanded="true" signature="1749:1784" ph="SELECT email... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/AddUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="44" column="69" lean-forward="false" selection-start-line="44" selection-start-column="69" selection-end-line="44" selection-end-column="69" />
+          <folding>
+            <element signature="method#selectIdPosition#0;class#AddUser#0" expanded="false" />
+            <marker date="1513174175799" expanded="true" signature="1256:1469" ph="INSERT INTO users... " />
+          </folding>
         </state>
       </provider>
     </entry>

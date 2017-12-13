@@ -53,7 +53,7 @@ public class AddProject extends HttpServlet {
             while (resultSet.next())
                 emailLeader = resultSet.getString(1);
 
-            sendMail.sendMailLeaderProject(emailLeader, nameProject);
+            sendMail.sendMailLeaderProject(emailLeader, nameProject, request);
             log.info("Query: " + queryInsertProject);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

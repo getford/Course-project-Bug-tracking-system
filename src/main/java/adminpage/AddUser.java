@@ -42,7 +42,7 @@ public class AddUser extends HttpServlet {
             statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsertUser);
 
-            sendMail.sendMailRegistration(email, login, password);
+            sendMail.sendMailRegistration(email, login, password, req);
 
             log.info("Query: " + queryInsertUser);
             resp.sendRedirect("/adminpage.jsp");
