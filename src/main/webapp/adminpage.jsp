@@ -93,6 +93,7 @@
 </head>
 <body id="body" style="overflow:hidden;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class=container>
 
     <div class="panel panel-primary">
@@ -120,6 +121,8 @@
                     Create issue
                 </button>
 =======
+=======
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
 <div class="panel panel-primary">
     <div class="panel-body">
         <div class="col-sm-4">
@@ -134,6 +137,9 @@
                     <hr/>
                     <li><a href="/logout">Exit</a></li>
                 </ul>
+<<<<<<< HEAD
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
+=======
 >>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
             </div>
         </div>
@@ -415,6 +421,7 @@
         </div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div id="projectEdit">
         <div id="popupProjectEdit">
             <h2 class="heading_pr">Edit project
@@ -434,6 +441,8 @@
                             <label for="projectleader">Project leader</label>
                             <select name="leader" class="form-control" id="projectleaderEdit">
 =======
+=======
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
 </div>
 <div id="user">
     <div id="popupUser">
@@ -446,6 +455,9 @@
                         <div class="field-group">
                             <label>Position</label>
                             <select name="position">
+<<<<<<< HEAD
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
+=======
 >>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                                 <%
                                     if (selectPosition != null) {
@@ -463,6 +475,7 @@
 
                         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     </div>
                     <div class="bottom_container">
                         <div class="buttons">
@@ -471,6 +484,8 @@
                             </button>
                             <a class="btn btn-danger" onclick="div_hide_prEdit()">Cancel</a>
 =======
+=======
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                         <div class="field-group">
                             <label>Login</label>
                             <input type="text" name="login">
@@ -494,6 +509,9 @@
                         <div class="field-group">
                             <label>Lastname</label>
                             <input type="text" name="lname"/>
+<<<<<<< HEAD
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
+=======
 >>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                         </div>
                     </div>
@@ -610,12 +628,15 @@
                         </div>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <br>
                     <div class="container">
                         <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create
                         </button>
                         <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
 =======
+=======
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                 </div>
                 <div class="bottom_container">
                     <div class="buttons">
@@ -623,6 +644,9 @@
                             Create
                         </button>
                         <a class="btn btn-danger" onclick="div_hide_usEdit()">Cancel</a>
+<<<<<<< HEAD
+>>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
+=======
 >>>>>>> 8096cfa2cd1c5f1522e912d5ff97a921698e6ab4
                     </div>
                 </div>
