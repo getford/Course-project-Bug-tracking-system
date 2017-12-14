@@ -13,7 +13,7 @@ public class SelectAllYourBug {
     private static final Logger log = Logger.getLogger(SelectAllYourBug.class);
     private ArrayList<YourBug> yourBugArrayList = new ArrayList<YourBug>();
 
-    public SelectAllYourBug(int idUserAssignee) throws SQLException {
+    public SelectAllYourBug(int id) throws SQLException {
 
 
         Connect connect = new Connect();
@@ -25,7 +25,7 @@ public class SelectAllYourBug {
                 " bugs.title " +
                 "FROM bugs " +
                 " INNER JOIN projects ON bugs.id_project = projects.id " +
-                "WHERE bugs.id_user_reporter = " + idUserAssignee;
+                "WHERE bugs.id_user_reporter = " + id;
         ResultSet resultSet = statement.executeQuery(querySelectBugs);
         log.info("Query: " + querySelectBugs);
         while (resultSet.next()) {

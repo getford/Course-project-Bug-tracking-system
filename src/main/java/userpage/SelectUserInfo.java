@@ -64,7 +64,7 @@ public class SelectUserInfo {
 
     public int selectCountAllYourBugs(int id) {
         int count = 0;
-        String queryAll = "SELECT count(*) FROM bugs WHERE bugs.id_user_assignee = " + id;
+        String queryAll = "SELECT count(*) FROM bugs WHERE bugs.id_user_reporter = " + id;
         try {
             connect = new Connect();
             statement = connect.getConnection().createStatement();

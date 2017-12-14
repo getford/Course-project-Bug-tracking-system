@@ -1,9 +1,9 @@
 <%@ page import="bugs.SelectAllYourBug" %>
+<%@ page import="cookie.CheckCookie" %>
 <%@ page import="cookie.ParseCookie" %>
 <%@ page import="userpage.SelectUniqueUserInfo" %>
 <%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="cookie.CheckCookie" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -125,10 +125,12 @@
                     %>
                     <tr>
                         <td>
-                            <%=id%>
+                            <a href="/viewbug.jsp?idbug=<%=id%>"><%=id%>
+                            </a>
                         </td>
                         <td>
-                            <%=title%>
+                            <a href="/viewbug.jsp?idbug=<%=id%>"><%=title%>
+                            </a>
                         </td>
                     </tr>
                     <%
