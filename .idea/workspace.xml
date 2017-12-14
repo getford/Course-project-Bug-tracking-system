@@ -58,69 +58,30 @@
         <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="bts@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bts: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projects: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminpage.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
+      <file leaf-file-name="editbug.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/editbug.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1600">
-              <caret line="136" column="33" lean-forward="false" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectAllUsers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectAllUsers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="161" column="55" lean-forward="false" selection-start-line="161" selection-start-column="55" selection-end-line="161" selection-end-column="55" />
               <folding>
-                <element signature="method#SelectAllUsers#1;class#SelectAllUsers#0" expanded="false" />
-                <marker date="1513246116706" expanded="true" signature="571:892" ph="SELECT * FRO... users" />
-                <marker date="1513246116706" expanded="true" signature="571:947" ph="SELECT * FRO... users" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditUser.java">
+      <file leaf-file-name="SelectTypeIssue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+            <state relative-caret-position="135">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="method#selectIdPosition#0;class#EditUser#0" expanded="false" />
-                <marker date="1513255279223" expanded="true" signature="1368:1419" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1420" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1454" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1484" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1502" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1533" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1534" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1554" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1582" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1583" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1600" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1632" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1633" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1654" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1685" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1686" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1715" ph="UPDATE users... " />
-                <marker date="1513255279223" expanded="true" signature="1368:1716" ph="UPDATE users... " />
+                <marker date="1512868092121" expanded="true" signature="531:549" ph="SELECT * FRO... type" />
               </folding>
             </state>
           </provider>
@@ -129,9 +90,105 @@
       <file leaf-file-name="userpage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+            <state relative-caret-position="380">
+              <caret line="55" column="54" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="54" />
+              <folding>
+                <element signature="e#3417#3561#0#JSP" expanded="false" />
+                <element signature="e#3663#3722#0#JSP" expanded="false" />
+                <element signature="e#4923#5370#0#JSP" expanded="false" />
+                <element signature="e#6101#6144#0#JSP" expanded="false" />
+                <element signature="e#6779#7515#0#JSP" expanded="false" />
+                <element signature="e#8276#8319#0#JSP" expanded="false" />
+                <element signature="e#8914#9187#0#JSP" expanded="false" />
+                <element signature="e#9641#9901#0#JSP" expanded="false" />
+                <element signature="e#10602#10878#0#JSP" expanded="false" />
+                <element signature="e#11600#12185#0#JSP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectStatusIssue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectStatusIssue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setStatusIssueArrayList#0;class#SelectStatusIssue#0" expanded="false" />
+                <marker date="1513259083651" expanded="true" signature="381:401" ph="SELECT * FRO... status" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditBug.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <marker date="1513259083646" expanded="true" signature="1654:1655" ph="UPDATE bugs... " />
+                <marker date="1513259083646" expanded="true" signature="1705:2340" ph="UPDATE bugs... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bugs" pinned="false" current-in-tab="false">
+        <entry file="das://table:/dd0cbf28/b4172a17-7f3a-4f23-9f91-93c01718fc15/bts.public.bugs">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b4172a17-7f3a-4f23-9f91-93c01718fc15/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectInfoEditBug.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectInfoEditBug.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2813#2814#0" expanded="true" />
+                <element signature="e#2852#2853#0" expanded="true" />
+                <element signature="e#2924#2925#0" expanded="true" />
+                <element signature="e#2980#2981#0" expanded="true" />
+                <marker date="1513259779171" expanded="true" signature="632:1591" ph="SELECT bugs.... bugs" />
+                <marker date="1513259779171" expanded="true" signature="632:1592" ph="SELECT bugs.... bugs" />
+                <marker date="1513259779171" expanded="true" signature="902:968" ph="SELECT first... users" />
+                <marker date="1513259779171" expanded="true" signature="998:1063" ph="SELECT lastn... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectAllBugsProject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectAllBugsProject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="982">
+              <caret line="85" column="13" lean-forward="false" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+              <folding>
+                <marker date="1513083260791" expanded="true" signature="1056:2123" ph="SELECT bugs.... bugs" />
+                <marker date="1513083260791" expanded="true" signature="1328:1394" ph="SELECT first... users" />
+                <marker date="1513083260791" expanded="true" signature="1424:1489" ph="SELECT lastn... users" />
+                <marker date="1513083260791" expanded="true" signature="3674:4636" ph="SELECT bugs.... bugs" />
+                <marker date="1513083260791" expanded="true" signature="3944:4010" ph="SELECT first... users" />
+                <marker date="1513083260791" expanded="true" signature="4040:4105" ph="SELECT lastn... users" />
+                <marker date="1513083260791" expanded="true" signature="6230:6288" ph="SELECT id FR... projects" />
+                <marker date="1513083260791" expanded="true" signature="6578:6642" ph="SELECT key_n... projects" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,67 +196,12 @@
       <file leaf-file-name="EditProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <marker date="1513256106419" expanded="true" signature="1209:1369" ph="UPDATE projects... " />
                 <marker date="1513256106419" expanded="true" signature="1209:1401" ph="UPDATE projects... " />
                 <marker date="1513256106419" expanded="true" signature="2127:2174" ph="SELECT email... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SendMail.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mail/SendMail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="152" column="137" lean-forward="false" selection-start-line="152" selection-start-column="137" selection-end-line="152" selection-end-column="137" />
-              <folding>
-                <element signature="method#readParamMailJSON#0;class#SendMail#0" expanded="false" />
-                <element signature="method#paramMessage#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailRegistration#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailAssignee#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailLeaderProject#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailEditBug#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailEditUser#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailEditProject#0;class#SendMail#0" expanded="false" />
-                <element signature="method#sendMailCloseBug#0;class#SendMail#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editproject.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/editproject.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="95" column="83" lean-forward="false" selection-start-line="95" selection-start-column="67" selection-end-line="95" selection-end-column="83" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectAllProjects.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/SelectAllProjects.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-              <folding>
-                <element signature="e#485#494#0" expanded="true" />
-                <element signature="e#3385#3386#0" expanded="true" />
-                <element signature="e#3424#3425#0" expanded="true" />
-                <element signature="e#3500#3501#0" expanded="true" />
-                <element signature="e#3556#3557#0" expanded="true" />
-                <element signature="method#setProjectForEditArrayList#0;class#SelectAllProjects#0" expanded="false" />
-                <marker date="1513252724856" expanded="true" signature="815:821" ph="SELECT user_... user_project" />
-                <marker date="1513252724856" expanded="true" signature="815:1152" ph="SELECT\n use... projects" />
-                <marker date="1513252724856" expanded="true" signature="2143:2480" ph="SELECT users... projects" />
-                <marker date="1513252724856" expanded="true" signature="2143:2523" ph="SELECT users... projects" />
-                <marker date="1513252724856" expanded="true" signature="2143:2525" ph="SELECT users... projects" />
-                <marker date="1513252724856" expanded="true" signature="2143:2526" ph="SELECT users... projects" />
               </folding>
             </state>
           </provider>
@@ -211,8 +213,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSON" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -251,10 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/adminpage/classes/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/adminpage/EditDeleteProject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Logout.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/formissue.js" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/DeleteProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/userpage/classes/UserInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/classes/User.java" />
@@ -266,11 +264,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/createissue.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/script/formissue.js" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/DeleteUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java" />
         <option value="$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/AddProject.java" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/AddUser.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/projectpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/statistic.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/bugs/SelectAllYourBug.java" />
@@ -289,19 +285,25 @@
         <option value="$PROJECT_DIR$/src/main/webapp/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/viewbug.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java" />
         <option value="$PROJECT_DIR$/src/main/java/cookie/ParseCookie.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/script/formuseredit.js" />
         <option value="$PROJECT_DIR$/src/main/java/createissue/SelectAllUsers.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/adminpage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/SelectAllProjects.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/edituser.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/edit/EditUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/mail/SendMail.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/editproject.jsp" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b4172a17-7f3a-4f23-9f91-93c01718fc15/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/adminpage/edit/EditProject.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/adminpage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/createissue/classes/StatusIssue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/createissue/SelectStatusIssue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bugs/SelectInfoEditBug.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/userpage.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b4172a17-7f3a-4f23-9f91-93c01718fc15/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/editbug.jsp" />
       </list>
     </option>
   </component>
@@ -444,6 +446,40 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bugs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugTrackingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course-project-Bug-tracking-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bugs" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugTrackingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course-project-Bug-tracking-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="createissue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugTrackingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course-project-Bug-tracking-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="createissue" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugTrackingSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Course-project-Bug-tracking-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -475,15 +511,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BugTrackingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Course-project-Bug-tracking-system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -738,7 +765,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110870000" />
+    <option name="totallyTimeSpent" value="115698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -766,7 +793,7 @@
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37243047" sideWeight="0.4828326" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35308343" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32164448" sideWeight="0.49485862" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24391988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24391988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -877,17 +904,44 @@
           <properties />
           <option name="timeStamp" value="258" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="261" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/bugs/SelectInfoEditBug.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="259" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="267" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="selectAllUsers.getUserArrayList()" language="JSP" />
+        <watch expression="selectInfoEditBug.getBugInfoArrayList()" language="JSP" />
+        <watch expression="selectTypeIssue.getTypeIssueArrayList()" language="JSP" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>selectTypeIssue.getTypeIssueArrayList()</expression-string>
+        <language-id>JSP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>selectInfoEditBug.getBugInfoArrayList()</expression-string>
+        <language-id>JSP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>selectAllUsers.getUserArrayList()</expression-string>
         <language-id>JSP</language-id>
@@ -939,89 +993,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/dd0cbf28/b4172a17-7f3a-4f23-9f91-93c01718fc15/bts.public.position">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/ChangePassword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/classes/UserInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <marker date="1512868092121" expanded="true" signature="531:549" ph="SELECT * FRO... type" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/userpage/SelectUniqueUserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/dd0cbf28/b4172a17-7f3a-4f23-9f91-93c01718fc15/bts.public.bugs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectAllBugsProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projectpage/ProjectPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts</OriginalElement>
-          <nodes>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.6271393643031785" x="411.0" y="399.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1054,14 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="58" column="56" lean-forward="false" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cookie/CheckCookie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1082,14 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectAllYourBug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1235,14 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1308,11 +1255,11 @@
         <state relative-caret-position="481">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <element signature="e#485#494#0" expanded="true" />
-            <element signature="e#3385#3386#0" expanded="true" />
-            <element signature="e#3424#3425#0" expanded="true" />
-            <element signature="e#3500#3501#0" expanded="true" />
-            <element signature="e#3556#3557#0" expanded="true" />
+            <element signature="e#485#494#0" expanded="false" />
+            <element signature="e#3385#3386#0" expanded="false" />
+            <element signature="e#3424#3425#0" expanded="false" />
+            <element signature="e#3500#3501#0" expanded="false" />
+            <element signature="e#3556#3557#0" expanded="false" />
             <element signature="method#setProjectForEditArrayList#0;class#SelectAllProjects#0" expanded="false" />
             <marker date="1513252724856" expanded="true" signature="815:821" ph="SELECT user_... user_project" />
             <marker date="1513252724856" expanded="true" signature="815:1152" ph="SELECT\n use... projects" />
@@ -1349,44 +1296,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mail/SendMail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="136" column="33" lean-forward="false" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/editproject.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="95" column="83" lean-forward="false" selection-start-line="95" selection-start-column="67" selection-end-line="95" selection-end-column="83" />
+        <state relative-caret-position="262">
+          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="method#readParamMailJSON#0;class#SendMail#0" expanded="false" />
+            <element signature="method#paramMessage#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailRegistration#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailAssignee#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailLeaderProject#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailEditBug#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailEditUser#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailEditProject#0;class#SendMail#0" expanded="false" />
+            <element signature="method#sendMailCloseBug#0;class#SendMail#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b4172a17-7f3a-4f23-9f91-93c01718fc15/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="375">
+          <caret line="331" column="78" lean-forward="false" selection-start-line="331" selection-start-column="78" selection-end-line="331" selection-end-column="78" />
+          <folding>
+            <element signature="e#1372#3014#0#JSP" expanded="false" />
+            <element signature="e#3096#3401#0#HTML" expanded="false" />
+            <element signature="e#3153#3389#0#HTML" expanded="false" />
+            <element signature="e#3269#3373#0#HTML" expanded="false" />
+            <element signature="e#3469#3768#0#HTML" expanded="false" />
+            <element signature="e#3523#3756#0#HTML" expanded="false" />
+            <element signature="e#3636#3740#0#HTML" expanded="false" />
+            <element signature="e#3836#4135#0#HTML" expanded="false" />
+            <element signature="e#3890#4123#0#HTML" expanded="false" />
+            <element signature="e#4003#4107#0#HTML" expanded="false" />
+            <element signature="e#6750#7365#0#JSP" expanded="false" />
+            <element signature="e#8581#8662#0#JSP" expanded="false" />
+            <element signature="e#9583#10381#0#JSP" expanded="false" />
+            <element signature="e#11885#11966#0#JSP" expanded="false" />
+            <element signature="e#13085#14313#0#JSP" expanded="false" />
+            <element signature="e#16125#16176#0#JSP" expanded="false" />
+            <element signature="e#17272#17943#0#JSP" expanded="false" />
+            <element signature="e#18092#18209#0#JSP" expanded="false" />
+            <element signature="e#19338#19694#0#JSP" expanded="false" />
+            <element signature="e#19890#20019#0#JSP" expanded="false" />
+            <element signature="e#23001#23672#0#JSP" expanded="false" />
+            <element signature="e#23821#23938#0#JSP" expanded="false" />
+            <element signature="e#25089#25445#0#JSP" expanded="false" />
+            <element signature="e#25641#25770#0#JSP" expanded="false" />
+            <element signature="e#28238#28511#0#JSP" expanded="false" />
+            <element signature="e#28965#29225#0#JSP" expanded="false" />
+            <element signature="e#29926#30202#0#JSP" expanded="false" />
+            <element signature="e#30924#31509#0#JSP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="65" column="46" lean-forward="false" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+        <state relative-caret-position="637">
+          <caret line="62" column="9" lean-forward="true" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
           <folding>
             <element signature="method#selectIdPosition#0;class#EditUser#0" expanded="false" />
             <marker date="1513255279223" expanded="true" signature="1368:1419" ph="UPDATE users... " />
@@ -1413,8 +1381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <marker date="1513256106419" expanded="true" signature="1209:1369" ph="UPDATE projects... " />
             <marker date="1513256106419" expanded="true" signature="1209:1401" ph="UPDATE projects... " />
@@ -1423,20 +1391,191 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mail/SendMail.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/classes/StatusIssue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="152" column="137" lean-forward="false" selection-start-line="152" selection-start-column="137" selection-end-line="152" selection-end-column="137" />
+        <state relative-caret-position="90">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
           <folding>
-            <element signature="method#readParamMailJSON#0;class#SendMail#0" expanded="false" />
-            <element signature="method#paramMessage#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailRegistration#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailAssignee#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailLeaderProject#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailEditBug#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailEditUser#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailEditProject#0;class#SendMail#0" expanded="false" />
-            <element signature="method#sendMailCloseBug#0;class#SendMail#0" expanded="false" />
+            <element signature="e#227#228#0" expanded="false" />
+            <element signature="e#252#253#0" expanded="false" />
+            <element signature="e#285#286#0" expanded="false" />
+            <element signature="e#313#314#0" expanded="false" />
+            <element signature="e#344#345#0" expanded="false" />
+            <element signature="e#371#372#0" expanded="false" />
+            <element signature="e#411#412#0" expanded="false" />
+            <element signature="e#443#444#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/CreateIssue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="134" column="62" lean-forward="false" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="62" />
+          <folding>
+            <element signature="method#doPost#0;class#CreateIssue#0" expanded="false" />
+            <element signature="method#createIssue#0;class#CreateIssue#0" expanded="false" />
+            <element signature="method#selectIdProject#0;class#CreateIssue#0" expanded="false" />
+            <element signature="method#selectKeyNameProject#0;class#CreateIssue#0" expanded="false" />
+            <element signature="method#selectIdPriority#0;class#CreateIssue#0" expanded="false" />
+            <element signature="method#selectIdUserAssignee#0;class#CreateIssue#0" expanded="false" />
+            <element signature="method#selectIdStatus#0;class#CreateIssue#0" expanded="false" />
+            <marker date="1513259083634" expanded="false" signature="2096:2534" ph="INSERT INTO bugs... " />
+            <marker date="1513259083634" expanded="false" signature="2756:2780" ph="SELECT MAX(i... bugs" />
+            <marker date="1513259083634" expanded="false" signature="3972:4030" ph="SELECT id FR... projects" />
+            <marker date="1513259083634" expanded="false" signature="4661:4725" ph="SELECT key_n... projects" />
+            <marker date="1513259083634" expanded="false" signature="5361:5417" ph="SELECT id FR... type" />
+            <marker date="1513259083634" expanded="false" signature="6052:6103" ph="SELECT id FR... priority" />
+            <marker date="1513259083634" expanded="false" signature="6754:6821" ph="SELECT id FR... users" />
+            <marker date="1513259083634" expanded="true" signature="7462:7517" ph="SELECT id FR... status" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectAllYourBug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <marker date="1513197934258" expanded="true" signature="625:892" ph="SELECT bugs.... bugs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectPriorityIssue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding>
+            <marker date="1513197934267" expanded="true" signature="535:557" ph="SELECT * FRO... priority" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectAllBugsProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="982">
+          <caret line="85" column="13" lean-forward="false" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding>
+            <marker date="1513083260791" expanded="true" signature="1056:2123" ph="SELECT bugs.... bugs" />
+            <marker date="1513083260791" expanded="true" signature="1328:1394" ph="SELECT first... users" />
+            <marker date="1513083260791" expanded="true" signature="1424:1489" ph="SELECT lastn... users" />
+            <marker date="1513083260791" expanded="true" signature="3674:4636" ph="SELECT bugs.... bugs" />
+            <marker date="1513083260791" expanded="true" signature="3944:4010" ph="SELECT first... users" />
+            <marker date="1513083260791" expanded="true" signature="4040:4105" ph="SELECT lastn... users" />
+            <marker date="1513083260791" expanded="true" signature="6230:6288" ph="SELECT id FR... projects" />
+            <marker date="1513083260791" expanded="true" signature="6578:6642" ph="SELECT key_n... projects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bugs/classes/Bug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/editproject.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="115" column="14" lean-forward="false" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bugs/SelectInfoEditBug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2852#2853#0" expanded="true" />
+            <element signature="e#2924#2925#0" expanded="true" />
+            <element signature="e#2980#2981#0" expanded="true" />
+            <marker date="1513259779171" expanded="true" signature="632:1591" ph="SELECT bugs.... bugs" />
+            <marker date="1513259779171" expanded="true" signature="632:1592" ph="SELECT bugs.... bugs" />
+            <marker date="1513259779171" expanded="true" signature="902:968" ph="SELECT first... users" />
+            <marker date="1513259779171" expanded="true" signature="998:1063" ph="SELECT lastn... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectStatusIssue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setStatusIssueArrayList#0;class#SelectStatusIssue#0" expanded="false" />
+            <marker date="1513259083651" expanded="true" signature="381:401" ph="SELECT * FRO... status" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/userpage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="55" column="54" lean-forward="false" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="54" />
+          <folding>
+            <element signature="e#3417#3561#0#JSP" expanded="false" />
+            <element signature="e#3663#3722#0#JSP" expanded="false" />
+            <element signature="e#4923#5370#0#JSP" expanded="false" />
+            <element signature="e#6101#6144#0#JSP" expanded="false" />
+            <element signature="e#6779#7515#0#JSP" expanded="false" />
+            <element signature="e#8276#8319#0#JSP" expanded="false" />
+            <element signature="e#8914#9187#0#JSP" expanded="false" />
+            <element signature="e#9641#9901#0#JSP" expanded="false" />
+            <element signature="e#10602#10878#0#JSP" expanded="false" />
+            <element signature="e#11600#12185#0#JSP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b4172a17-7f3a-4f23-9f91-93c01718fc15/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/dd0cbf28/b4172a17-7f3a-4f23-9f91-93c01718fc15/bts.public.bugs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/editbug.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="161" column="55" lean-forward="false" selection-start-line="161" selection-start-column="55" selection-end-line="161" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/createissue/SelectTypeIssue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1512868092121" expanded="true" signature="531:549" ph="SELECT * FRO... type" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <marker date="1513259083646" expanded="true" signature="1654:1655" ph="UPDATE bugs... " />
+            <marker date="1513259083646" expanded="true" signature="1705:2340" ph="UPDATE bugs... " />
           </folding>
         </state>
       </provider>

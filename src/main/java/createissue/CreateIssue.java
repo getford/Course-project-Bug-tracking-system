@@ -129,7 +129,7 @@ public class CreateIssue extends HttpServlet {
         return keyName;
     }
 
-    private int selectIdTypeIssue(HttpServletRequest req, HttpServletResponse resp)
+    public int selectIdTypeIssue(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         int tmpIdTypeIssue = 0;
         String nameTypeIssue = req.getParameter("nameTypeIssue");
@@ -148,7 +148,7 @@ public class CreateIssue extends HttpServlet {
         return tmpIdTypeIssue;
     }
 
-    private int selectIdPriority(HttpServletRequest req, HttpServletResponse resp)
+    public int selectIdPriority(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         int tmpIdPriority = 0;
         String name = req.getParameter("namePriority");
@@ -167,7 +167,7 @@ public class CreateIssue extends HttpServlet {
         return tmpIdPriority;
     }
 
-    private int selectIdUserAssignee(HttpServletRequest req, HttpServletResponse resp)
+    public int selectIdUserAssignee(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         int tmpIdUserAssignee = 0;
 
@@ -187,6 +187,28 @@ public class CreateIssue extends HttpServlet {
         connect.close();
 
         return tmpIdUserAssignee;
+    }
+
+    public int selectIdStatus(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+        int idStatus = 0;
+
+        String nameStatus = req.getParameter("statusName");
+
+        String query = "SELECT id FROM status WHERE name = '" + nameStatus + "'";
+
+        connect = new Connect();
+        statement = connect.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
+
+        while (resultSet.next())
+            idStatus = resultSet.getInt(1);
+
+        resultSet.close();
+        statement.close();
+        connect.close();
+
+        return idStatus;
     }
 
     public String getEmailUserAssignee() {

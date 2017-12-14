@@ -328,13 +328,12 @@
                         </a>
                         </td>
                         <td>
-                            <a href="#">
-                                <img border="0" src="resources/image/edit.png" name="<%=id%>">
-                            </a>
+                            <a href="/editbug.jsp?id=<%=id%>">
+                                <img border="0" src="resources/image/edit.png">
 
-                            <a href="/deletebug?id=<%=id%>">
-                                <img border="0" src="resources/image/delete.png">
-                            </a>
+                                <a href="/deletebug?id=<%=id%>">
+                                    <img border="0" src="resources/image/delete.png">
+                                </a>
                         </td>
                     </tr>
                     </tbody>
