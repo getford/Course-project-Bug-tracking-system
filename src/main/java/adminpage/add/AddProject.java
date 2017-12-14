@@ -36,16 +36,30 @@ public class AddProject extends HttpServlet {
     private void addProject(HttpServletRequest request, HttpServletResponse response)
             throws IOException, SQLException {
         try {
+            connect = new Connect();
+            statement = connect.getConnection().createStatement();
+
             int idLead = selectIdUser(request);
             String nameProject = request.getParameter("nameProject");
             String keyProject = request.getParameter("keyProject").toUpperCase();
 
             String queryInsertProject = "INSERT INTO projects (id_user_lead , name, key_name)" +
                     "VALUES (" + idLead + ",'" + nameProject + "','" + keyProject + "')";
-
-            connect = new Connect();
-            statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsertProject);
+            statement.close();
+
+            int idNewProject = 0;
+            String queryIdNewProject = "SELECT id FROM projects WHERE key_name = '" + keyProject + "'";
+            resultSet = statement.executeQuery(queryIdNewProject);
+            while (resultSet.next())
+                idNewProject = resultSet.getInt(1);
+            resultSet.close();
+            statement.close();
+
+            String queryInserUserProject = "INSERT INTO user_project (id_user, id_project) " +
+                    "VALUES (" + idLead + ", " + idNewProject + ")";
+
+            statement.executeUpdate(queryInserUserProject);
 
             String emailLeader = null;
             String queryMailLeader = "SELECT email FROM users WHERE id = " + idLead;
