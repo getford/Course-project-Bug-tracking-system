@@ -128,6 +128,7 @@
     </div>
 </div>
 <div class="container">
+
     <div class="panel panel-info">
         <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
            style="text-align: center;"><h4>All projects</h4>
@@ -186,6 +187,7 @@
             </div>
         </div>
     </div>
+
     <div class="panel panel-success">
         <a href="#spoilerUsers" class="btn btn-success btn-md btn-block" data-toggle="collapse"
            style="text-align: center;"><h4>All users</h4>
@@ -338,6 +340,7 @@
             </div>
         </div>
     </div>
+
 
     <div id="project">
         <div id="popupProject">

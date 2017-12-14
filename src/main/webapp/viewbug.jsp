@@ -75,32 +75,107 @@
 
 <div class="container">
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div>
-            <p><b>ID: </b><%=viewBug.getBugArrayList().get(0).getIdBug()%>
-            </p>
-            <p><b>Type: </b><%=viewBug.getBugArrayList().get(0).getIdType()%>
-            </p>
-            <p><b>Status: </b><%=viewBug.getBugArrayList().get(0).getIdStatus()%>
-            </p>
-            <p><b>Priority: </b><%=viewBug.getBugArrayList().get(0).getIdPriority()%>
-            </p>
-            <p><b>Assignee: </b><%=viewBug.getBugArrayList().get(0).getIdUserAssagniee()%>
-            </p>
-            <p><b>Reporter: </b><%=viewBug.getBugArrayList().get(0).getIdUserReporter()%>
-            </p>
-            <p><b>Date create: </b><%=viewBug.getBugArrayList().get(0).getDateCreate()%>
-            </p>
-            <p><b>Title: </b><%=viewBug.getBugArrayList().get(0).getTitle()%>
-            </p>
-            <p><b>Description: </b><%=viewBug.getBugArrayList().get(0).getDescription()%>
-            </p>
-            <p><b>Environment: </b><%=viewBug.getBugArrayList().get(0).getEnvironment()%>
-            </p>
+    <div class="panel panel-default">
+
+        <div class="modal-header">
+            <h3><%=viewBug.getBugArrayList().get(0).getIdBug()%>
+            </h3>
+            <h2><b><%=viewBug.getBugArrayList().get(0).getTitle()%>
+            </b></h2>
         </div>
+
+        <div class="panel panel-info">
+            <a href="#details" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+               style="text-align: center;"><h4>Details</h4>
+            </a>
+            <div id="details" class="collapse">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><b>Type</b></th>
+                        <th><b>Priority</b></th>
+                        <th><b>Status</b></th>
+                        <th><b>Environment</b></th>
+                    </tr>
+                    </thead>
+                    <tbody id="detailsTable">
+                    <tr>
+                        <td><%=viewBug.getBugArrayList().get(0).getIdType()%>
+                        </td>
+                        <td><%=viewBug.getBugArrayList().get(0).getIdPriority()%>
+                        </td>
+                        <td><%=viewBug.getBugArrayList().get(0).getIdStatus()%>
+                        </td>
+                        <td><%=viewBug.getBugArrayList().get(0).getEnvironment()%>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <a href="#people" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+               style="text-align: center;"><h4>People</h4>
+            </a>
+            <div id="people" class="collapse">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><b>Assignee</b></th>
+                        <th><b>Reporter</b></th>
+                    </tr>
+                    </thead>
+                    <tbody id="peopleTable">
+                    <tr>
+                        <td><%=viewBug.getBugArrayList().get(0).getIdUserAssagniee()%>
+                        </td>
+                        <td><%=viewBug.getBugArrayList().get(0).getIdUserReporter()%>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <a href="#date" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+               style="text-align: center;"><h4>Date</h4>
+            </a>
+            <div id="date" class="collapse">
+                <table class="table table-hover">
+                    <thead>
+                    </thead>
+                    <tbody id="dateTable">
+                    <tr>
+                        <td><%=viewBug.getBugArrayList().get(0).getDateCreate()%>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <a href="#description" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+               style="text-align: center;"><h4>Description</h4>
+            </a>
+            <div id="description" class="collapse">
+                <table class="table table-hover">
+                    <thead>
+                    </thead>
+                    <tbody id="projectTable">
+                    <tr>
+                        <td><%=viewBug.getBugArrayList().get(0).getDescription()%>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
-</div>
+
 </div>
 </body>
 </html>
