@@ -134,6 +134,38 @@ public class SendMail {
         }
     }
 
+    public void sendMailEditUser(String emailUser, String emailEditor, String flName, String login, HttpServletRequest request) {
+        try {
+            url = new URL(request.getRequestURL().toString());
+            String subject = "Profile was edit";
+            String body = "<p>Hello,</p>" +
+                    "<p>The you profile was successfully edit</p>" +
+                    "<p>The profile was edit by: " + flName + " [" + emailEditor + "]</p>" +
+                    "<p>Check the link, to view you profile: <a href=\"" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/profile.jsp?login=" + login + "\">" +
+                    "" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/profile.jsp?login=" + login + "</a></p>";
+
+            paramMessage(emailUser, subject, body);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMailEditProject(String emailUser, String emailEditor, String nameProject, String flName, HttpServletRequest request) {
+        try {
+            url = new URL(request.getRequestURL().toString());
+            String subject = "Project was edit";
+            String body = "<p>Hello, project leader</p>" +
+                    "<p>The project: " + nameProject + " was successfully edit</p>" +
+                    "<p>The project was edit by: <b>" + flName + "</b> [" + emailEditor + "]</p>" +
+                    "<p>Check link to see project page: <a href=\"" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/projectpage.jsp?nameproject=" + nameProject + "\">" +
+                    "" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/projectpage.jsp?nameproject=" + nameProject + "</a></p>";
+
+            paramMessage(emailUser, subject, body);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void sendMailCloseBug(String emailWhoCloseBug, String emailReporter, String idBug, HttpServletRequest request) {
         try {
             url = new URL(request.getRequestURL().toString());

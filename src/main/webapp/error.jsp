@@ -5,6 +5,6 @@
 </head>
 <body>
 <h1>404 - Not Found!</h1>
-<p>Plese authorized <a href="index.jsp">Home</a></p>
+<p>Please authorized <a href="index.jsp"><h1>Home</h1></a></p>
 </body>
 </html>

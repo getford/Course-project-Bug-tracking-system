@@ -174,8 +174,8 @@
                         </a>
                         </td>
                         <td>
-                            <a href="#">
-                                <img border="0" src="resources/image/edit.png" onclick="div_show_prEdit()">
+                            <a href="/editproject.jsp?id=<%=id%>">
+                                <img border="0" src="resources/image/edit.png">
                             </a>
 
                             <a href="/deleteproject?id=<%=id%>">
@@ -239,14 +239,13 @@
                         <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=firstName%>
                         </a>
                         </td>
-                        <td><a href="/profile.jsp?logim=<%=login%>" name="<%=login%>"><%=lastName%>
+                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=lastName%>
                         </a>
                         </td>
                         <td>
-                            <a href="#">
-                                <img border="0" src="resources/image/edit.png" onclick="div_show_usEdit()">
+                            <a href="/edituser.jsp?id=<%=id%>">
+                                <img border="0" src="resources/image/edit.png">
                             </a>
-
                             <a href="/deleteuser?id=<%=id%>">
                                 <img border="0" src="resources/image/delete.png">
                             </a>
@@ -330,7 +329,7 @@
                         </td>
                         <td>
                             <a href="#">
-                                <img border="0" src="resources/image/edit.png" onclick="">
+                                <img border="0" src="resources/image/edit.png" name="<%=id%>">
                             </a>
 
                             <a href="/deletebug?id=<%=id%>">
@@ -659,5 +658,6 @@
         </div>
     </div>
 </div>
+<div id="helper"></div>
 </body>
 </html>
