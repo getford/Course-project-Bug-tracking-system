@@ -54,7 +54,7 @@
     <title>Edit project</title>
 </head>
 <body>
-<div class=container>
+
 
     <div class="panel panel-primary">
         <div class="panel-body">
@@ -79,13 +79,12 @@
             </div>
         </div>
     </div>
-
+    <div class=container>
     <div class="panel panel-success">
-        <a href="#" class="btn btn-default btn-md btn-block" style="text-align: center">
+        <a href="#" class="btn btn-warning btn-md btn-block" style="text-align: center">
             <h4>Edit user</h4>
         </a>
         <div class="panel-body">
-            <div class="content">
                 <form action="/editbug" method="post" id="form" name="form">
                     <input type="hidden" name="idBug" value="<%=id%>">
                     <div class="form-body">
@@ -171,15 +170,14 @@
                         </div>
                     </div>
                     <br>
-                    <div class="container">
-                        <button type="submit" class="btn btn-success" value="Create">Create
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-success" value="Create">Edit
                         </button>
+                        <a href="adminpage.jsp" class="btn btn-danger">Cancel</a>
                     </div>
-                    <p></p>
                 </form>
                 <br/>
-                <a href="adminpage.jsp" class="btn btn-danger">Cancel</a>
-            </div>
+
         </div>
     </div>
 </div>

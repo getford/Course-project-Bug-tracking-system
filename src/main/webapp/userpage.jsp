@@ -63,46 +63,46 @@
     %>
 </head>
 <body>
-<div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-body">
-            <div class="col-sm-4">
-                <div class="dropdown">
-                    <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
-                        <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
-                        <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <%
-                            if (checkCookie.isAdmin(request.getCookies(), parseCookie.getPositionIdFromToken())) {
-                        %>
-                        <li><a href="adminpage.jsp">Admin dashboard</a></li>
-                        <%
-                            }
-                        %>
-                        <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
-                        <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
-                        <hr/>
-                        <li><a href="/logout">Exit</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
-                <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
-                    Create
-                    issue
-                </button>
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken())%>
+                    <span class="badge"><%=selectUserInfo.selectUserPositionNameFromToken(parseCookie.getUserIdFromToken())%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <%
+                        if (checkCookie.isAdmin(request.getCookies(), parseCookie.getPositionIdFromToken())) {
+                    %>
+                    <li><a href="adminpage.jsp">Admin dashboard</a></li>
+                    <%
+                        }
+                    %>
+                    <li class="disabled"><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                    <hr/>
+                    <li><a href="/logout">Exit</a></li>
+                </ul>
             </div>
         </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
+                Create
+                issue
+            </button>
+        </div>
     </div>
-
+</div>
+<div class="container">
     <div class="panel panel-warning">
         <div class="panel-heading" style="text-align: center;"><h4>Your projects</h4></div>
         <div class="panel-body">
             <input class="form-control" id="projectInput" type="text" placeholder="Search..">
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -142,7 +142,7 @@
         <div class="panel-heading" style="text-align: center;"><h4>Your tasks</h4></div>
         <div class="panel-body">
             <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
-            <table class="table table-striped">
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -186,7 +186,6 @@
             </table>
         </div>
     </div>
-
     <%-- Create issue --%>
     <div id="issue">
         <div id="popupIssue">
@@ -265,10 +264,12 @@
                         </div>
                     </div>
                     <br>
-                    <div class="container">
-                        <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create
-                        </button>
-                        <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
+                    <div class="bottom_container">
+                        <div class="buttons">
+                            <button type="submit" class="btn btn-success" onclick="div_hide()" value="Create">Create
+                            </button>
+                            <a class="btn btn-danger" onclick="div_hide()">Cancel</a>
+                        </div>
                     </div>
                     <p></p>
                 </form>

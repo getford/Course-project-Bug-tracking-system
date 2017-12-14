@@ -44,92 +44,95 @@
     <title>Edit user</title>
 </head>
 <body>
-<div class=container>
 
-    <div class="panel panel-primary">
-        <div class="panel-body">
-            <div class="col-sm-4">
-                <div class="dropdown">
-                    <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
-                        <%=userName%>
-                        <span class="badge"><%=position%></span>
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="adminpage.jsp">Admin dashboard</a></li>
-                        <li><a href="userpage.jsp">Dashboard</a></li>
-                        <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
-                        <hr/>
-                        <li><a href="/logout">Exit</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=userName%>
+                    <span class="badge"><%=position%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="adminpage.jsp">Admin dashboard</a></li>
+                    <li><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                    <hr/>
+                    <li><a href="/logout">Exit</a></li>
+                </ul>
             </div>
         </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
     </div>
-
+</div>
+<div class=container>
     <div class="panel panel-success">
-        <a href="#" class="btn btn-default btn-md btn-block" style="text-align: center">
+        <a href="#" class="btn btn-success btn-md btn-block" style="text-align: center">
             <h4>Edit user</h4>
         </a>
         <div class="panel-body">
-            <div class="content">
-                <form action="/edituser" method="post">
-                    <input type="hidden" name="idUser" value="<%=id%>">
-                    <div class="form-group">
-                        <label>Position</label>
-                        <select class="form-control" name="position">
-                            <option value="<%=selectAllUsers.getUserInfoArrayList().get(0).getPosition()%>"
-                                    selected="selected">
-                                <%=selectAllUsers.getUserInfoArrayList().get(0).getPosition()%>
-                            </option>
-                            <%
-                                if (selectPosition != null) {
-                                    for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
-                                        String name = selectPosition.getUserPositionsArraylist().get(i).getName();
-                            %>
-                            <option value="<%=name%>">
-                                <%=name%>
-                            </option>
-                            <%
-                                    }
+            <form action="/edituser" method="post">
+                <input type="hidden" name="idUser" value="<%=id%>">
+                <div class="form-group">
+                    <label>Position</label>
+                    <select class="form-control" name="position">
+                        <option value="<%=selectAllUsers.getUserInfoArrayList().get(0).getPosition()%>"
+                                selected="selected">
+                            <%=selectAllUsers.getUserInfoArrayList().get(0).getPosition()%>
+                        </option>
+                        <%
+                            if (selectPosition != null) {
+                                for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
+                                    String name = selectPosition.getUserPositionsArraylist().get(i).getName();
+                        %>
+                        <option value="<%=name%>">
+                            <%=name%>
+                        </option>
+                        <%
                                 }
-                            %>
-                        </select>
+                            }
+                        %>
+                    </select>
 
-                    </div>
-                    <div class="form-group">
-                        <label>Login</label>
-                        <input class="form-control" type="text" name="login"
-                               value="<%=selectAllUsers.getUserInfoArrayList().get(0).getLogin()%>"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input class="form-control" type="password" name="password"
-                               value="<%=selectAllUsers.getUserInfoArrayList().get(0).getPassword()%>"/>
-                    </div>
-                    <div class="from-group">
-                        <label>Email</label>
-                        <input class="form-control" type="email" name="email"
-                               value="<%=selectAllUsers.getUserInfoArrayList().get(0).getEmail()%>"/>
-                    </div>
-                    <div class="from-group">
-                        <label>Firstname</label>
-                        <input class="form-control" type="text" name="fname"
-                               value="<%=selectAllUsers.getUserInfoArrayList().get(0).getFirstname()%>"/>
-                    </div>
-                    <div class="from-group">
-                        <label>Lastname</label>
-                        <input class="form-control" type="text" name="lname"
-                               value="<%=selectAllUsers.getUserInfoArrayList().get(0).getLastname()%>"/>
-                    </div>
-
-                    <button type="submit" class="btn btn-success" id="edt" name="edt">Click</button>
-                </form>
-                <a href="adminpage.jsp" class="btn btn-danger">Cancel</a>
-            </div>
+                </div>
+                <div class="form-group">
+                    <label>Login</label>
+                    <input class="form-control" type="text" name="login"
+                           value="<%=selectAllUsers.getUserInfoArrayList().get(0).getLogin()%>"/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password"
+                           value="<%=selectAllUsers.getUserInfoArrayList().get(0).getPassword()%>"/>
+                </div>
+                <div class="from-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email"
+                           value="<%=selectAllUsers.getUserInfoArrayList().get(0).getEmail()%>"/>
+                </div>
+                <br>
+                <div class="from-group">
+                    <label>Firstname</label>
+                    <input class="form-control" type="text" name="fname"
+                           value="<%=selectAllUsers.getUserInfoArrayList().get(0).getFirstname()%>"/>
+                </div>
+                <br>
+                <div class="from-group">
+                    <label>Lastname</label>
+                    <input class="form-control" type="text" name="lname"
+                           value="<%=selectAllUsers.getUserInfoArrayList().get(0).getLastname()%>"/>
+                </div>
+                <br>
+                <div class="buttons">
+                    <button type="submit" class="btn btn-success" value="Create">Edit
+                    </button>
+                    <a href="adminpage.jsp" class="btn btn-danger">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>

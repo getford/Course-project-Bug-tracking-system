@@ -70,21 +70,10 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
-                Create
-                issue
-            </button>
-        </div>
     </div>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-body">
-    </div>
-</div>
+<div class="container">
 
 <div class="panel panel-default">
     <div class="panel-body">
@@ -112,6 +101,6 @@
         </div>
     </div>
 </div>
-
+</div>
 </body>
 </html>

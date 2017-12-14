@@ -92,48 +92,42 @@
     </script>
 </head>
 <body id="body" style="overflow:hidden;">
-<div class=container>
-
-    <div class="panel panel-primary">
-        <div class="panel-body">
-            <div class="col-sm-4">
-                <div class="dropdown">
-                    <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
-                        <%=userName%>
-                        <span class="badge"><%=position%></span>
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li class="disabled"><a href="adminpage.jsp">Admin dashboard</a></li>
-                        <li><a href="userpage.jsp">Dashboard</a></li>
-                        <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
-                        <hr/>
-                        <li><a href="/logout">Exit</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
-                <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
-                    Create issue
-                </button>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=userName%>
+                    <span class="badge"><%=position%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="disabled"><a href="adminpage.jsp">Admin dashboard</a></li>
+                    <li><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                    <hr/>
+                    <li><a href="/logout">Exit</a></li>
+                </ul>
             </div>
         </div>
-        <div class="panel-body">
-            <div class="col-sm-4">
-                <button id="prj" onclick="div_show_pr()" type="button" class="btn btn-warning btn-md btn-block">
-                    Add project
-                </button>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
-                <button id="usr" onclick="div_show_us()" type="button" class="btn btn-warning btn-md btn-block">
-                    Add user
-                </button>
-            </div>
+        <div class="col-sm-4">
         </div>
     </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <button id="prj" onclick="div_show_pr()" type="button" class="btn btn-warning btn-md btn-block">
+                Add project
+            </button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <button id="usr" onclick="div_show_us()" type="button" class="btn btn-warning btn-md btn-block">
+                Add user
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container">
     <div class="panel panel-info">
         <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
            style="text-align: center;"><h4>All projects</h4>
@@ -141,7 +135,7 @@
         <div id="spoilerProjects" class="collapse">
             <div class="panel-body">
                 <input class="form-control" id="projectInput" type="text" placeholder="Search..">
-                <table class="table table-striped">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -199,7 +193,7 @@
         <div id="spoilerUsers" class="collapse">
             <div class="panel-body">
                 <input class="form-control" id="userInput" type="text" placeholder="Search..">
-                <table class="table table-striped">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -269,7 +263,7 @@
             <div class="panel-body">
                 <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
                 <br>
-                <table class="table table-striped">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -330,10 +324,10 @@
                         <td>
                             <a href="/editbug.jsp?id=<%=id%>">
                                 <img border="0" src="resources/image/edit.png">
-
-                                <a href="/deletebug?id=<%=id%>">
-                                    <img border="0" src="resources/image/delete.png">
-                                </a>
+                            </a>
+                            <a href="/deletebug?id=<%=id%>">
+                                <img border="0" src="resources/image/delete.png">
+                            </a>
                         </td>
                     </tr>
                     </tbody>
@@ -350,7 +344,7 @@
             <h2 class="heading_pr">Add project
             </h2>
             <div class="popup-content">
-                <form action="/addproject" method="post" id="form" name="formus">
+                <form action="/addproject" method="post" id="formpr" name="formpr">
                     <div class="form-body_pr">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -394,15 +388,13 @@
     </div>
     <div id="user">
         <div id="popupUser">
-            <h2 class="heading_us">Add user
-            </h2>
+            <h2 class="heading_us">Add user</h2>
             <div class="popup-content">
                 <form action="/adduser" method="post" id="formus" name="formus">
                     <div class="form-body_us">
-                        <div class="content">
-                            <div class="field-group">
-                                <label>Position</label>
-                                <select name="position">
+                            <div class="form-group">
+                                <label for="position">Position</label>
+                                <select name="position" class="form-control" id="position">
                                     <%
                                         if (selectPosition != null) {
                                             for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
@@ -416,33 +408,32 @@
                                         }
                                     %>
                                 </select>
+                            </div>
 
-                            </div>
-                            <div class="field-group">
+                            <div class="form-group">
                                 <label>Login</label>
-                                <input type="text" name="login">
+                                <input class="form-control" type="text" name="login">
                             </div>
-                            <div class="field-group">
+                            <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password"/>
+                                <input class="form-control" type="password" name="password"/>
                             </div>
-                            <div class="field-group">
+                            <div class="form-group">
                                 <label>Verify password</label>
-                                <input type="password" name="passwordv"/>
+                                <input class="form-control" type="password" name="passwordv"/>
                             </div>
-                            <div class="field-group">
+                            <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" name="email"/>
+                                <input class="form-control" type="email" name="email"/>
                             </div>
-                            <div class="field-group">
+                            <div class="form-group">
                                 <label>Firstname</label>
-                                <input type="text" name="fname"/>
+                                <input class="form-control" type="text" name="fname"/>
                             </div>
-                            <div class="field-group">
+                            <div class="form-group">
                                 <label>Lastname</label>
-                                <input type="text" name="lname"/>
+                                <input class="form-control" type="text" name="lname"/>
                             </div>
-                        </div>
                     </div>
                     <div class="bottom_container">
                         <div class="buttons">
@@ -656,7 +647,7 @@
             </div>
         </div>
     </div>
+    <div id="helper"></div>
 </div>
-<div id="helper"></div>
 </body>
 </html>

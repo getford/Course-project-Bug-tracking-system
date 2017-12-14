@@ -52,14 +52,6 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
-            <button id="create_is" onclick="div_show()" type="button" class="btn btn-danger btn-md btn-block">
-                Create
-                issue
-            </button>
-        </div>
     </div>
 </div>
 
@@ -70,38 +62,81 @@
                 <div class="panel-heading" style="text-align: center;"><h3>Profile info</h3>
                 </div>
             </div>
-            <p>
-                <b>Name: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getFirstname() + " " + selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getLastname()%>
-            </p>
-            <p><b>Position: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getPosition()%>
-            </p>
-            <p><b>Email: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getEmail()%>
-            </p>
-            <hr>
-            <p><b>All you created bug: </b><%=selectUserInfo.selectCountAllYourBugs(parseCookie.getUserIdFromToken())%>
-            </p>
-            <p><b>Open bug: </b><%=selectUserInfo.selectCountOpenYourBugs(parseCookie.getUserIdFromToken())%>
-            </p>
-            <p><b>Close bug: </b><%=selectUserInfo.selectCountCloseYourBugs(parseCookie.getUserIdFromToken())%>
-            </p>
+            <table class="table table-condensed">
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Name: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getFirstname() + " " + selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getLastname()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Position: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getPosition()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Email: </b><%=selectUniqueUserInfo.getUserInfoByLoginArrayList().get(0).getEmail()%>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th><b>Created bugs</b></th>
+                    <th><b>Open bugs</b></th>
+                    <th><b>Closed bugs</b></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <%=selectUserInfo.selectCountAllYourBugs(parseCookie.getUserIdFromToken())%>
+                    </td>
+                    <td>
+                        <%=selectUserInfo.selectCountOpenYourBugs(parseCookie.getUserIdFromToken())%>
+                    </td>
+                    <td>
+                        </b><%=selectUserInfo.selectCountCloseYourBugs(parseCookie.getUserIdFromToken())%>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
         </div>
         <div></div>
         <div class="col-sm-7">
             <div class="panel panel-warning">
                 <div class="panel-heading" style="text-align: center;"><h3>Your added bugs</h3>
                 </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID bug</th>
+                        <th>Summary</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                        assert selectAllYourBug != null;
+                        for (int i = 0; i < selectAllYourBug.getYourBugArrayList().size(); i++) {
+                            String id = selectAllYourBug.getYourBugArrayList().get(i).getId();
+                            String title = selectAllYourBug.getYourBugArrayList().get(i).getTitle();
+                    %>
+                    <tr>
+                        <td>
+                            <%=id%>
+                        </td>
+                        <td>
+                            <%=title%>
+                        </td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                    </tbody>
+                </table>
             </div>
-            <%
-                assert selectAllYourBug != null;
-                for (int i = 0; i < selectAllYourBug.getYourBugArrayList().size(); i++) {
-                    String id = selectAllYourBug.getYourBugArrayList().get(i).getId();
-                    String title = selectAllYourBug.getYourBugArrayList().get(i).getTitle();
-            %>
-            <p><%=id%> <%=title%>
-            </p>
-            <%
-                }
-            %>
         </div>
     </div>
 </div>

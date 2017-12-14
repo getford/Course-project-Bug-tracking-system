@@ -12,6 +12,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="resources/css/createissue.css" rel="stylesheet">
     <script src="resources/script/formissue.js"></script>
+    <link href="resources/css/admin.css" rel="stylesheet">
+    <script src="resources/script/formissue.js"></script>
     <%
         String userName = null;
         String position = null;
@@ -45,53 +47,52 @@
     <title>Edit project</title>
 </head>
 <body>
-<div class=container>
 
-    <div class="panel panel-primary">
-        <div class="panel-body">
-            <div class="col-sm-4">
-                <div class="dropdown">
-                    <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
-                        <%=userName%>
-                        <span class="badge"><%=position%></span>
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="adminpage.jsp">Admin dashboard</a></li>
-                        <li><a href="userpage.jsp">Dashboard</a></li>
-                        <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
-                        <hr/>
-                        <li><a href="/logout">Exit</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-4">
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <%=userName%>
+                    <span class="badge"><%=position%></span>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="adminpage.jsp">Admin dashboard</a></li>
+                    <li><a href="userpage.jsp">Dashboard</a></li>
+                    <li><a href="profile.jsp?login=<%=parseCookie.getLoginFromToken()%>">Profile</a></li>
+                    <hr/>
+                    <li><a href="/logout">Exit</a></li>
+                </ul>
             </div>
         </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+        </div>
     </div>
-
+</div>
+<div class=container>
     <div class="panel panel-success">
-        <a href="#" class="btn btn-default btn-md btn-block" style="text-align: center">
+        <a href="#" class="btn btn-info btn-md btn-block" style="text-align: center">
             <h4>Edit user</h4>
         </a>
         <div class="panel-body">
-            <div class="content">
                 <form action="/editproject" method="post">
                     <input type="hidden" name="idProject" value="<%=id%>">
-                    <div class="form-group">
-                        <div class="from-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" name="pName"
-                                   value="<%=selectAllProjects.getProjectForEditArrayList().get(0).getProjectName()%>"/>
-                        </div>
-                        <div class="from-group">
-                            <label>Key Name</label>
-                            <input class="form-control" type="text" name="kName"
-                                   value="<%=selectAllProjects.getProjectForEditArrayList().get(0).getKeyName()%>"/>
-                        </div>
-                        <label>Leader</label>
-                        <select class="form-control" name="idLead">
+                    <div class="from-group">
+                        <label>Name</label>
+                        <input class="form-control" type="text" name="pName"
+                               value="<%=selectAllProjects.getProjectForEditArrayList().get(0).getProjectName()%>"/>
+                    </div>
+                    <div class="from-group">
+                        <label>Key Name</label>
+                        <input class="form-control" type="text" name="kName"
+                               value="<%=selectAllProjects.getProjectForEditArrayList().get(0).getKeyName()%>"/>
+                    </div>
+                    <div class="from-group">
+                        <label for="lead">Leader</label>
+                        <select class="form-control" name="idLead" id="lead">
                             <%
                                 for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
                                     String idLeader = selectAllUsers.getUserArrayList().get(i).getId();
@@ -106,13 +107,13 @@
                                 }
                             %>
                         </select>
-
                     </div>
-
-                    <button type="submit" class="btn btn-success" id="edt" name="edt">Click</button>
+                </br>
+                    <div class="buttons">
+                            <button type="submit" class="btn btn-success" id="edt" name="edt">Click</button>
+                            <a href="adminpage.jsp" class="btn btn-danger">Cancel</a>
+                    </div>
                 </form>
-                <a href="adminpage.jsp" class="btn btn-danger">Cancel</a>
-            </div>
         </div>
     </div>
 </div>
