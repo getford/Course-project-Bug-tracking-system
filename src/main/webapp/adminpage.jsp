@@ -130,7 +130,7 @@
 <div class="container">
 
     <div class="panel-group" id="accordion">
-        <div class="panel panel-info">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
@@ -195,10 +195,10 @@
             </div>
         </div>
 
-        <div class="panel panel-success">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a href="#spoilerUsers" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+                    <a href="#spoilerUsers" class="btn btn-success btn-md btn-block" data-toggle="collapse"
                        data-parent="#accordion"
                        style="text-align: center;"><h4>All Users</h4>
                     </a>
@@ -270,10 +270,10 @@
             </div>
         </div>
 
-        <div class="panel panel-warning">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a href="#spoilerBugs" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+                    <a href="#spoilerBugs" class="btn btn-warning btn-md btn-block" data-toggle="collapse"
                        data-parent="#accordion"
                        style="text-align: center;"><h4>All bugs</h4>
                     </a>
