@@ -25,6 +25,7 @@ public class SelectPosition {
                 userPositionsArraylist.add(new UserPosition(resultSet.getInt(1), resultSet.getString(2)));
             }
             log.debug(query);
+            connect.close();
         } catch (SQLException e) {
             e.printStackTrace();
             log.debug(e);

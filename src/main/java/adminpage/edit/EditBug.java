@@ -30,6 +30,7 @@ public class EditBug extends HttpServlet {
         CheckCookie checkCookie = new CheckCookie();
         SelectUserInfo selectUserInfo = new SelectUserInfo();
         CreateIssue createIssue = new CreateIssue();
+        EditProject editProject = new EditProject();
 
         SendMail sendMail = new SendMail();
         int id = Integer.parseInt(req.getParameter("idBug").substring(4));
@@ -60,10 +61,15 @@ public class EditBug extends HttpServlet {
             statement.executeUpdate(queryUpdate);
 
 
+            sendMail.sendMailEditBug(editProject.leaderEmail(createIssue.selectIdUserAssignee(req, resp)),
+                    selectUserInfo.selectUserEmailFromToken(parseCookie.getUserIdFromToken()),
+                    req.getParameter("idBug"), req);
             if (checkCookie.isAdmin(req.getCookies(), parseCookie.getPositionIdFromToken()))
                 resp.sendRedirect("/adminpage.jsp");
             else
                 resp.sendRedirect("/userpage.jsp");
+
+            connect.close();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

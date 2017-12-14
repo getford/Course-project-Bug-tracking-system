@@ -56,7 +56,7 @@ public class EditUser extends HttpServlet {
                     selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken()),
                     login,
                     req);
-
+            connect.close();
             resp.sendRedirect("/adminpage.jsp");
         } catch (SQLException e) {
             e.printStackTrace();

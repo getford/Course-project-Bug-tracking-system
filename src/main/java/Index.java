@@ -97,7 +97,7 @@ public class Index extends HttpServlet {
                     log.debug("Login is wrong");
                     printWriter.println("Login is wrong.");
                 }
-
+                connect.close();
             } catch (SQLException e) {
                 req.setAttribute("err", e);
                 e.printStackTrace();

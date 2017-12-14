@@ -50,14 +50,14 @@ public class EditProject extends HttpServlet {
                     nameP,
                     selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken()),
                     req);
-
+            connect.close();
             resp.sendRedirect("/adminpage.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private String leaderEmail(int id) {
+     String leaderEmail(int id) {
         String email = null;
         String query = "SELECT email FROM users WHERE id = '" + id + "'";
 
