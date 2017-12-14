@@ -129,218 +129,237 @@
 </div>
 <div class="container">
 
-    <div class="panel panel-info">
-        <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-           style="text-align: center;"><h4>All projects</h4>
-        </a>
-        <div id="spoilerProjects" class="collapse">
-            <div class="panel-body">
-                <input class="form-control" id="projectInput" type="text" placeholder="Search..">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Key</th>
-                        <th>Name</th>
-                        <th>Leader</th>
-                        <th>Control</th>
-                    </tr>
-                    </thead>
-                    <%
-                        if (selectAllProjects != null) {
-                            for (int i = 0; i < selectAllProjects.getProjectArrayList().size(); i++) {
-                                String id = selectAllProjects.getProjectArrayList().get(i).getId();
-                                String key = selectAllProjects.getProjectArrayList().get(i).getKeyName();
-                                String name = selectAllProjects.getProjectArrayList().get(i).getProjectName();
-                                String lead = selectAllProjects.getProjectArrayList().get(i).getFirstLastName();
-                    %>
-                    <tbody id="projectTable">
-                    <tr>
-                        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=id%>
-                        </a>
-                        </td>
-                        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=key%>
-                        </a>
-                        </td>
-                        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=name%>
-                        </a>
-                        </td>
-                        <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=lead%>
-                        </a>
-                        </td>
-                        <td>
-                            <a href="/editproject.jsp?id=<%=id%>">
-                                <img border="0" src="resources/image/edit.png">
-                            </a>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#spoilerProjects" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+                       data-parent="#accordion"
+                       style="text-align: center;"><h4>All projects</h4>
+                    </a>
+                </h4>
 
-                            <a href="/deleteproject?id=<%=id%>">
-                                <img border="0" src="resources/image/delete.png">
+            </div>
+            <div id="spoilerProjects" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <input class="form-control" id="projectInput" type="text" placeholder="Search..">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Key</th>
+                            <th>Name</th>
+                            <th>Leader</th>
+                            <th>Control</th>
+                        </tr>
+                        </thead>
+                        <%
+                            if (selectAllProjects != null) {
+                                for (int i = 0; i < selectAllProjects.getProjectArrayList().size(); i++) {
+                                    String id = selectAllProjects.getProjectArrayList().get(i).getId();
+                                    String key = selectAllProjects.getProjectArrayList().get(i).getKeyName();
+                                    String name = selectAllProjects.getProjectArrayList().get(i).getProjectName();
+                                    String lead = selectAllProjects.getProjectArrayList().get(i).getFirstLastName();
+                        %>
+                        <tbody id="projectTable">
+                        <tr>
+                            <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=id%>
                             </a>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <%
+                            </td>
+                            <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=key%>
+                            </a>
+                            </td>
+                            <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=name%>
+                            </a>
+                            </td>
+                            <td><a href="/projectpage.jsp?nameproject=<%=name%>" name="<%=name%>"><%=lead%>
+                            </a>
+                            </td>
+                            <td>
+                                <a href="/editproject.jsp?id=<%=id%>">
+                                    <img border="0" src="resources/image/edit.png">
+                                </a>
+
+                                <a href="/deleteproject?id=<%=id%>">
+                                    <img border="0" src="resources/image/delete.png">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <%
+                                }
                             }
-                        }
-                    %>
-                </table>
+                        %>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="panel panel-success">
-        <a href="#spoilerUsers" class="btn btn-success btn-md btn-block" data-toggle="collapse"
-           style="text-align: center;"><h4>All users</h4>
-        </a>
-        <div id="spoilerUsers" class="collapse">
-            <div class="panel-body">
-                <input class="form-control" id="userInput" type="text" placeholder="Search..">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Login</th>
-                        <th>Email</th>
-                        <th>Position</th>
-                        <th>First name</th>
-                        <th>Last name</th>
-                        <th>Control</th>
-                    </tr>
-                    </thead>
-                    <%
-                        if (selectAllProjects != null) {
-                            for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
-                                String id = selectAllUsers.getUserArrayList().get(i).getId();
-                                String login = selectAllUsers.getUserArrayList().get(i).getLogin();
-                                String email = selectAllUsers.getUserArrayList().get(i).getEmail();
-                                String userPosition = selectAllUsers.getUserArrayList().get(i).getPosition();
-                                String firstName = selectAllUsers.getUserArrayList().get(i).getFirstname();
-                                String lastName = selectAllUsers.getUserArrayList().get(i).getLastname();
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#spoilerUsers" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+                       data-parent="#accordion"
+                       style="text-align: center;"><h4>All Users</h4>
+                    </a>
+                </h4>
 
-                    %>
-                    <tbody id="userTable">
-                    <tr>
-                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=id%>
-                        </a>
-                        </td>
-                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=login%>
-                        </a>
-                        </td>
-                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=email%>
-                        </a>
-                        </td>
-                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=userPosition%>
-                        </a>
-                        </td>
-                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=firstName%>
-                        </a>
-                        </td>
-                        <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=lastName%>
-                        </a>
-                        </td>
-                        <td>
-                            <a href="/edituser.jsp?id=<%=id%>">
-                                <img border="0" src="resources/image/edit.png">
+            </div>
+            <div id="spoilerUsers" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <input class="form-control" id="userInput" type="text" placeholder="Search..">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Login</th>
+                            <th>Email</th>
+                            <th>Position</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Control</th>
+                        </tr>
+                        </thead>
+                        <%
+                            if (selectAllProjects != null) {
+                                for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
+                                    String id = selectAllUsers.getUserArrayList().get(i).getId();
+                                    String login = selectAllUsers.getUserArrayList().get(i).getLogin();
+                                    String email = selectAllUsers.getUserArrayList().get(i).getEmail();
+                                    String userPosition = selectAllUsers.getUserArrayList().get(i).getPosition();
+                                    String firstName = selectAllUsers.getUserArrayList().get(i).getFirstname();
+                                    String lastName = selectAllUsers.getUserArrayList().get(i).getLastname();
+
+                        %>
+                        <tbody id="userTable">
+                        <tr>
+                            <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=id%>
                             </a>
-                            <a href="/deleteuser?id=<%=id%>">
-                                <img border="0" src="resources/image/delete.png">
+                            </td>
+                            <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=login%>
                             </a>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <%
+                            </td>
+                            <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=email%>
+                            </a>
+                            </td>
+                            <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=userPosition%>
+                            </a>
+                            </td>
+                            <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=firstName%>
+                            </a>
+                            </td>
+                            <td><a href="/profile.jsp?login=<%=login%>" name="<%=login%>"><%=lastName%>
+                            </a>
+                            </td>
+                            <td>
+                                <a href="/edituser.jsp?id=<%=id%>">
+                                    <img border="0" src="resources/image/edit.png">
+                                </a>
+                                <a href="/deleteuser?id=<%=id%>">
+                                    <img border="0" src="resources/image/delete.png">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <%
+                                }
                             }
-                        }
-                    %>
-                </table>
+                        %>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="panel panel-warning">
-        <a href="#spoilerBugs" class="btn btn-warning btn-md btn-block" data-toggle="collapse"
-           style="text-align: center;">
-            <h4>Bugs</h4>
-        </a>
-        <div id="spoilerBugs" class="collapse">
-            <div class="panel-body">
-                <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
-                <br>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                        <th>Priority</th>
-                        <th>Assignee</th>
-                        <th>Reporter</th>
-                        <th>Date Create</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Environment</th>
-                        <th>Control</th>
-                    </tr>
-                    </thead>
-                    <%
-                        for (int i = 0; i < selectAllBugsProject.getAllBugArrayList().size(); i++) {
-                            String id = selectAllBugsProject.getAllBugArrayList().get(i).getIdBug();
-                            String type = selectAllBugsProject.getAllBugArrayList().get(i).getIdType();
-                            String status = selectAllBugsProject.getAllBugArrayList().get(i).getIdStatus();
-                            String priority = selectAllBugsProject.getAllBugArrayList().get(i).getIdPriority();
-                            String assignee = selectAllBugsProject.getAllBugArrayList().get(i).getIdUserAssagniee();
-                            String reporter = selectAllBugsProject.getAllBugArrayList().get(i).getIdUserReporter();
-                            String date = selectAllBugsProject.getAllBugArrayList().get(i).getDateCreate();
-                            String title = selectAllBugsProject.getAllBugArrayList().get(i).getTitle();
-                            String description = selectAllBugsProject.getAllBugArrayList().get(i).getDescription();
-                            String environment = selectAllBugsProject.getAllBugArrayList().get(i).getEnvironment();
-                    %>
-                    <tbody id="bugsTable">
-                    <tr>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=id%>
-                        </a>
-                        </td>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=type%>
-                        </a>
-                        </td>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=status%>
-                        </a>
-                        </td>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=priority%>
-                        </a>
-                        </td>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=assignee%>
-                        </a>
-                        </td>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=reporter%>
-                        </a>
-                        </td>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=date%>
-                        </a>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=title%>
-                        </a>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=description%>
-                        </a>
-                        <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%>
-                        </a>
-                        </td>
-                        <td>
-                            <a href="/editbug.jsp?id=<%=id%>">
-                                <img border="0" src="resources/image/edit.png">
-                            </a>
-                            <a href="/deletebug?id=<%=id%>">
-                                <img border="0" src="resources/image/delete.png">
-                            </a>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <%
-                        }
-                    %>
-                </table>
-            </div>
-        </div>
-    </div>
 
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#spoilerBugs" class="btn btn-info btn-md btn-block" data-toggle="collapse"
+                       data-parent="#accordion"
+                       style="text-align: center;"><h4>All bugs</h4>
+                    </a>
+                </h4>
+
+            </div>
+            <div id="spoilerBugs" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <input class="form-control" id="bugsInput" type="text" placeholder="Search..">
+                    <br>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Assignee</th>
+                            <th>Reporter</th>
+                            <th>Date Create</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Environment</th>
+                            <th>Control</th>
+                        </tr>
+                        </thead>
+                        <%
+                            for (int i = 0; i < selectAllBugsProject.getAllBugArrayList().size(); i++) {
+                                String id = selectAllBugsProject.getAllBugArrayList().get(i).getIdBug();
+                                String type = selectAllBugsProject.getAllBugArrayList().get(i).getIdType();
+                                String status = selectAllBugsProject.getAllBugArrayList().get(i).getIdStatus();
+                                String priority = selectAllBugsProject.getAllBugArrayList().get(i).getIdPriority();
+                                String assignee = selectAllBugsProject.getAllBugArrayList().get(i).getIdUserAssagniee();
+                                String reporter = selectAllBugsProject.getAllBugArrayList().get(i).getIdUserReporter();
+                                String date = selectAllBugsProject.getAllBugArrayList().get(i).getDateCreate();
+                                String title = selectAllBugsProject.getAllBugArrayList().get(i).getTitle();
+                                String description = selectAllBugsProject.getAllBugArrayList().get(i).getDescription();
+                                String environment = selectAllBugsProject.getAllBugArrayList().get(i).getEnvironment();
+                        %>
+                        <tbody id="bugsTable">
+                        <tr>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=id%>
+                            </a>
+                            </td>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=type%>
+                            </a>
+                            </td>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=status%>
+                            </a>
+                            </td>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=priority%>
+                            </a>
+                            </td>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=assignee%>
+                            </a>
+                            </td>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=reporter%>
+                            </a>
+                            </td>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=date%>
+                            </a>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=title%>
+                            </a>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=description%>
+                            </a>
+                            <td><a href="/viewbug.jsp?idbug=<%=id%>"><%=environment%>
+                            </a>
+                            </td>
+                            <td>
+                                <a href="/editbug.jsp?id=<%=id%>">
+                                    <img border="0" src="resources/image/edit.png">
+                                </a>
+                                <a href="/deletebug?id=<%=id%>">
+                                    <img border="0" src="resources/image/delete.png">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <%
+                            }
+                        %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="project">
         <div id="popupProject">
@@ -395,48 +414,48 @@
             <div class="popup-content">
                 <form action="/adduser" method="post" id="formus" name="formus">
                     <div class="form-body_us">
-                            <div class="form-group">
-                                <label for="position">Position</label>
-                                <select name="position" class="form-control" id="position">
-                                    <%
-                                        if (selectPosition != null) {
-                                            for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
-                                                String name = selectPosition.getUserPositionsArraylist().get(i).getName();
-                                    %>
-                                    <option value="<%=name%>">
-                                        <%=name%>
-                                    </option>
-                                    <%
-                                            }
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <select name="position" class="form-control" id="position">
+                                <%
+                                    if (selectPosition != null) {
+                                        for (int i = 0; i < selectPosition.getUserPositionsArraylist().size(); i++) {
+                                            String name = selectPosition.getUserPositionsArraylist().get(i).getName();
+                                %>
+                                <option value="<%=name%>">
+                                    <%=name%>
+                                </option>
+                                <%
                                         }
-                                    %>
-                                </select>
-                            </div>
+                                    }
+                                %>
+                            </select>
+                        </div>
 
-                            <div class="form-group">
-                                <label>Login</label>
-                                <input class="form-control" type="text" name="login">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input class="form-control" type="password" name="password"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Verify password</label>
-                                <input class="form-control" type="password" name="passwordv"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input class="form-control" type="email" name="email"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Firstname</label>
-                                <input class="form-control" type="text" name="fname"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Lastname</label>
-                                <input class="form-control" type="text" name="lname"/>
-                            </div>
+                        <div class="form-group">
+                            <label>Login</label>
+                            <input class="form-control" type="text" name="login">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Verify password</label>
+                            <input class="form-control" type="password" name="passwordv"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" type="email" name="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Firstname</label>
+                            <input class="form-control" type="text" name="fname"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Lastname</label>
+                            <input class="form-control" type="text" name="lname"/>
+                        </div>
                     </div>
                     <div class="bottom_container">
                         <div class="buttons">

@@ -85,8 +85,7 @@
         </div>
 
         <div class="panel panel-info">
-            <a href="#details" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-               style="text-align: center;"><h4>Details</h4>
+            <a href="#details" class="btn btn-info btn-md btn-block" data-toggle="collapse"><h4>Details</h4>
             </a>
             <div id="details" class="collapse">
                 <table class="table table-hover">
@@ -116,7 +115,7 @@
 
         <div class="panel panel-info">
             <a href="#people" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-               style="text-align: center;"><h4>People</h4>
+             ><h4>People</h4>
             </a>
             <div id="people" class="collapse">
                 <table class="table table-hover">
@@ -140,7 +139,7 @@
 
         <div class="panel panel-info">
             <a href="#date" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-               style="text-align: center;"><h4>Date</h4>
+              ><h4>Date</h4>
             </a>
             <div id="date" class="collapse">
                 <table class="table table-hover">
@@ -158,7 +157,7 @@
 
         <div class="panel panel-info">
             <a href="#description" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-               style="text-align: center;"><h4>Description</h4>
+              ><h4>Description</h4>
             </a>
             <div id="description" class="collapse">
                 <table class="table table-hover">
