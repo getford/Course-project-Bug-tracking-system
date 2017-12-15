@@ -23,6 +23,7 @@
     <script src="resources/script/formprojectedit.js"></script>
     <script src="resources/script/formuseredit.js"></script>
     <script src="resources/script/formissue.js"></script>
+    <script src="resources/script/formassign.js"></script>
 
     <%
         String userName = null;
@@ -119,6 +120,9 @@
             </button>
         </div>
         <div class="col-sm-4">
+            <button id="uspr" onclick="div_show_assign()" type="button" class="btn btn-warning btn-md btn-block">
+                Assignee to project
+            </button>
         </div>
         <div class="col-sm-4">
             <button id="usr" onclick="div_show_us()" type="button" class="btn btn-warning btn-md btn-block">
@@ -296,7 +300,7 @@
                             <th>Date Create</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Environment</th>
+                            <th>Sub task</th>
                             <th>Control</th>
                         </tr>
                         </thead>
@@ -582,6 +586,60 @@
             </div>
         </div>
     </div>
+    <div id="usertoproject">
+        <div id="popupAssign">
+            <h2 class="heading_as">Assign user</h2>
+            <div class="popup-content">
+                <form action="/addusertoproject" method="post" id="formas" name="formas">
+                    <div class="form-body_as">
+                        <div class="form-group">
+                            <label for="useras">User</label>
+                            <select name="useras" class="form-control" id="useras">
+                                <%
+                                    if (selectAllUsers != null) {
+                                        for (int i = 0; i < selectAllUsers.getUserArrayList().size(); i++) {
+                                            String idUser = selectAllUsers.getUserArrayList().get(i).getId();
+                                            String infoUser = selectAllUsers.getUserArrayList().get(i).getFirstname() + " "
+                                                    + selectAllUsers.getUserArrayList().get(i).getLastname() + ", "
+                                                    + selectAllUsers.getUserArrayList().get(i).getEmail();
+                                %>
+                                <option value="<%=idUser%>"><%=infoUser %>
+                                </option>
+                                <%
+                                        }
+                                    }
+                                %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectAs">Project</label>
+                            <select name="projectas" class="form-control" id="projectAs">
+                                <%
+                                    for (int i = 0; i < selectAllProjects.getProjectArrayList().size(); i++) {
+                                        String id = selectAllProjects.getProjectArrayList().get(i).getId();
+                                        String name = selectAllProjects.getProjectArrayList().get(i).getProjectName() + " " +
+                                                selectAllProjects.getProjectArrayList().get(i).getKeyName();
+                                %>
+                                <option value="<%=id%>"><%=name%>
+                                </option>
+                                <%
+                                    }
+                                %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="bottom_container">
+                        <div class="buttons">
+                            <button type="submit" class="btn btn-success" onclick="div_hide_assign()" value="Create">
+                                Create
+                            </button>
+                            <a class="btn btn-danger" onclick="div_hide_assign()">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="issue">
         <div id="popupIssue">
             <h2 class="heading_is">Edit Issue
@@ -649,7 +707,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="environment">Environment</label>
+                            <label for="environment">Sub task</label>
                             <textarea class="form-control" rows="4" id="environment"></textarea>
                         </div>
 

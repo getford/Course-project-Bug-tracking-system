@@ -150,6 +150,22 @@ public class SendMail {
         }
     }
 
+    public void sendMailAddUserToProject(String emailUser, String emailEditor, String nameProject, String flName, HttpServletRequest request) {
+        try {
+            url = new URL(request.getRequestURL().toString());
+            String subject = "Add to project";
+            String body = "<p>Hello, you was been added to project</p>" +
+                    "<p>The project: " + nameProject + " was successfully edit</p>" +
+                    "<p>You been add by: <b>" + flName + "</b> [" + emailEditor + "]</p>" +
+                    "<p>Check link to see project page: <a href=\"" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/projectpage.jsp?nameproject=" + nameProject + "\">" +
+                    "" + url.getProtocol() + "://" + url.getHost() + ":" + url.getPort() + "/projectpage.jsp?nameproject=" + nameProject + "</a></p>";
+
+            paramMessage(emailUser, subject, body);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void sendMailEditProject(String emailUser, String emailEditor, String nameProject, String flName, HttpServletRequest request) {
         try {
             url = new URL(request.getRequestURL().toString());

@@ -1,5 +1,6 @@
 package adminpage.edit;
 
+import cookie.CheckCookie;
 import cookie.ParseCookie;
 import database.Connect;
 import mail.SendMail;
@@ -25,6 +26,7 @@ public class EditProject extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ParseCookie parseCookie = new ParseCookie(req);
+        CheckCookie checkCookie = new CheckCookie();
         SelectUserInfo selectUserInfo = new SelectUserInfo();
         SendMail sendMail = new SendMail();
         String id = req.getParameter("idProject");
@@ -51,7 +53,10 @@ public class EditProject extends HttpServlet {
                     selectUserInfo.selectUserNameFromToken(parseCookie.getUserIdFromToken()),
                     req);
             connect.close();
-            resp.sendRedirect("/adminpage.jsp");
+            if (checkCookie.isAdmin(req.getCookies(), parseCookie.getPositionIdFromToken()))
+                resp.sendRedirect("/adminpage.jsp");
+            else
+                resp.sendRedirect("/userpage.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
         }

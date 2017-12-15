@@ -254,7 +254,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="environment">Environment</label>
+                            <label for="environment">Sub task</label>
                             <textarea class="form-control" rows="4" id="environment"></textarea>
                         </div>
 

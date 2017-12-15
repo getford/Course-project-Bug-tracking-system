@@ -20,11 +20,29 @@ public class SelectUserInfo {
             while (resultSet.next()) {
                 namePosition = resultSet.getString(1);
             }
-            connect.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return namePosition;
+    }
+
+    public int selectUserIdFromLogin(String login) {
+        int id = 0;
+        String query = "SELECT id FROM users WHERE login = '" + login + "'";
+
+        try {
+            connect = new Connect();
+            statement = connect.getConnection().createStatement();
+            resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                id = resultSet.getInt(1);
+            }
+            connect.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
 
     public String selectUserNameFromToken(int id) {

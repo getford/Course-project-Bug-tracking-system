@@ -94,7 +94,7 @@
                         <th><b>Type</b></th>
                         <th><b>Priority</b></th>
                         <th><b>Status</b></th>
-                        <th><b>Environment</b></th>
+                        <th><b>Sub task</b></th>
                     </tr>
                     </thead>
                     <tbody id="detailsTable">

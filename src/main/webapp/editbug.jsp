@@ -157,7 +157,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="environment">Environment</label>
+                            <label for="environment">Sub task</label>
                             <textarea name="environment" class="form-control" rows="4"
                                       id="environment"><%=selectInfoEditBug.getBugInfoArrayList().get(0).getEnvironment()%>
                             </textarea>

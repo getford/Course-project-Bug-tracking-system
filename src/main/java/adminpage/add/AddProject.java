@@ -46,7 +46,6 @@ public class AddProject extends HttpServlet {
             String queryInsertProject = "INSERT INTO projects (id_user_lead , name, key_name)" +
                     "VALUES (" + idLead + ",'" + nameProject + "','" + keyProject + "')";
             statement.executeUpdate(queryInsertProject);
-            statement.close();
 
             int idNewProject = 0;
             String queryIdNewProject = "SELECT id FROM projects WHERE key_name = '" + keyProject + "'";
@@ -54,7 +53,6 @@ public class AddProject extends HttpServlet {
             while (resultSet.next())
                 idNewProject = resultSet.getInt(1);
             resultSet.close();
-            statement.close();
 
             String queryInserUserProject = "INSERT INTO user_project (id_user, id_project) " +
                     "VALUES (" + idLead + ", " + idNewProject + ")";

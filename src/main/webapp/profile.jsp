@@ -16,10 +16,13 @@
         SelectUserInfo selectUserInfo = null;
         SelectAllYourBug selectAllYourBug = null;
         SelectUniqueUserInfo selectUniqueUserInfo = null;
+        int idUser = 0;
         try {
-            selectUniqueUserInfo = new SelectUniqueUserInfo(request);
             selectUserInfo = new SelectUserInfo();
-            selectAllYourBug = new SelectAllYourBug(parseCookie.getUserIdFromToken());
+            idUser = selectUserInfo.selectUserIdFromLogin(request.getParameter("login"));
+            selectUniqueUserInfo = new SelectUniqueUserInfo(request);
+
+            selectAllYourBug = new SelectAllYourBug(idUser);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -91,13 +94,13 @@
                 <tbody>
                 <tr>
                     <td>
-                        <%=selectUserInfo.selectCountAllYourBugs(parseCookie.getUserIdFromToken())%>
+                        <%=selectUserInfo.selectCountAllYourBugs(idUser)%>
                     </td>
                     <td>
-                        <%=selectUserInfo.selectCountOpenYourBugs(parseCookie.getUserIdFromToken())%>
+                        <%=selectUserInfo.selectCountOpenYourBugs(idUser)%>
                     </td>
                     <td>
-                        </b><%=selectUserInfo.selectCountCloseYourBugs(parseCookie.getUserIdFromToken())%>
+                        </b><%=selectUserInfo.selectCountCloseYourBugs(idUser)%>
                     </td>
                 </tr>
                 </tbody>
