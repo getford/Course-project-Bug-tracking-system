@@ -36,8 +36,6 @@ public class AddProject extends HttpServlet {
     private void addProject(HttpServletRequest request, HttpServletResponse response)
             throws IOException, SQLException {
         try {
-            connect = new Connect();
-            statement = connect.getConnection().createStatement();
 
             int idLead = selectIdUser(request);
             String nameProject = request.getParameter("nameProject");
@@ -45,6 +43,8 @@ public class AddProject extends HttpServlet {
 
             String queryInsertProject = "INSERT INTO projects (id_user_lead , name, key_name)" +
                     "VALUES (" + idLead + ",'" + nameProject + "','" + keyProject + "')";
+            connect = new Connect();
+            statement = connect.getConnection().createStatement();
             statement.executeUpdate(queryInsertProject);
 
             int idNewProject = 0;
@@ -70,11 +70,6 @@ public class AddProject extends HttpServlet {
             log.info("Project: " + nameProject + ", key: " + " add successfully");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-        } finally {
-            assert resultSet != null;
-            resultSet.close();
-            statement.close();
-            connect.close();
         }
         response.sendRedirect("/adminpage.jsp");
     }

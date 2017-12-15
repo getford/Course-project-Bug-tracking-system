@@ -2,6 +2,7 @@
 <%@ page import="adminpage.SelectPosition" %>
 <%@ page import="bugs.SelectAllBugsProject" %>
 <%@ page import="bugs.ViewBug" %>
+<%@ page import="cookie.CheckCookie" %>
 <%@ page import="cookie.ParseCookie" %>
 <%@ page import="createissue.SelectAllUsers" %>
 <%@ page import="createissue.SelectPriorityIssue" %>
@@ -9,7 +10,6 @@
 <%@ page import="userpage.SelectAllYourProject" %>
 <%@ page import="userpage.SelectUserInfo" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="cookie.CheckCookie" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -71,12 +71,18 @@
             </div>
         </div>
     </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    </div>
 </div>
 
 <div class="container">
 
     <div class="panel panel-default">
-
+            <a style="text-align: center" href="/editbug.jsp?id=<%=viewBug.getBugArrayList().get(0).getIdBug()%>">
+                <img border="0" src="resources/image/edit.png">
+            </a>
         <div class="modal-header">
             <h3><%=viewBug.getBugArrayList().get(0).getIdBug()%>
             </h3>
@@ -115,7 +121,7 @@
 
         <div class="panel panel-info">
             <a href="#people" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-             ><h4>People</h4>
+            ><h4>People</h4>
             </a>
             <div id="people" class="collapse">
                 <table class="table table-hover">
@@ -139,7 +145,7 @@
 
         <div class="panel panel-info">
             <a href="#date" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-              ><h4>Date</h4>
+            ><h4>Date</h4>
             </a>
             <div id="date" class="collapse">
                 <table class="table table-hover">
@@ -157,7 +163,7 @@
 
         <div class="panel panel-info">
             <a href="#description" class="btn btn-info btn-md btn-block" data-toggle="collapse"
-              ><h4>Description</h4>
+            ><h4>Description</h4>
             </a>
             <div id="description" class="collapse">
                 <table class="table table-hover">

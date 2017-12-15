@@ -1629,3 +1629,429 @@
 2017-12-15 12:39:06 INFO  SelectAllUsers:39 - Array users successfully received
 2017-12-15 12:39:06 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
 2017-12-15 12:39:06 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:47:54 INFO  Index:78 - token create successfully
+2017-12-15 12:47:54 INFO  Index:83 - cookie create successfully
+2017-12-15 12:47:54 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 12:47:55 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:47:55 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:47:55 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:47:55 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:47:55 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:48:12 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 12:48:12 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:48:12 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:48:12 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:48:12 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:48:12 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:48:19 INFO  Index:78 - token create successfully
+2017-12-15 12:48:19 INFO  Index:83 - cookie create successfully
+2017-12-15 12:48:19 INFO  Index:89 - Redirect to /userpage.jsp
+2017-12-15 12:48:19 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MTYsImxvZ2luIjoibW1tIiwicG9zaXRpb24iOjJ9.JZOyEFwR7Ktu_ed3Fb3eZbn_StPLo21onC45JfLUMoyzTVHefFat1mqiUzqhckcL9ydMXrEqoDIwJSkhMXz2ow
+2017-12-15 12:48:19 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:48:19 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 16
+2017-12-15 12:48:19 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 12:48:27 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MTYsImxvZ2luIjoibW1tIiwicG9zaXRpb24iOjJ9.JZOyEFwR7Ktu_ed3Fb3eZbn_StPLo21onC45JfLUMoyzTVHefFat1mqiUzqhckcL9ydMXrEqoDIwJSkhMXz2ow
+2017-12-15 12:48:27 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 16
+2017-12-15 12:49:14 INFO  Index:78 - token create successfully
+2017-12-15 12:49:14 INFO  Index:83 - cookie create successfully
+2017-12-15 12:49:14 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 12:49:14 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:49:14 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:49:14 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:49:14 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:49:14 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:50:05 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:50:05 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:50:05 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:50:05 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:50:05 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:50:28 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:50:28 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:50:28 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:50:28 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:50:28 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:50:38 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 12:51:05 INFO  SendMail:69 - Sent message to [zhigalo.v.y@gmail.com] successfully.
+2017-12-15 12:51:29 DEBUG AddProject:69 - Query: INSERT INTO projects (id_user_lead , name, key_name)VALUES (1,'qqweqweqweqweq','WWW')
+2017-12-15 12:51:29 INFO  AddProject:70 - Project: qqweqweqweqweq, key:  add successfully
+2017-12-15 12:51:29 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:51:29 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:51:29 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:51:29 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:51:29 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:51:36 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:51:36 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 1
+2017-12-15 12:51:37 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:51:38 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:51:38 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 12:51:38 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 12:51:41 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:51:41 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 1
+2017-12-15 12:51:57 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:51:57 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:51:57 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:51:57 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:51:57 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:52:40 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:52:40 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:52:40 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 12:52:40 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 12:52:50 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:52:50 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:52:50 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:52:50 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:52:50 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:52:58 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:52:58 INFO  SelectInfoEditBug:42 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE bugs.id = 7
+2017-12-15 12:52:58 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:02 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:02 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 12:53:02 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 12:53:07 INFO  SendMail:69 - Sent message to [zhigalo.v.y@gmail.com] successfully.
+2017-12-15 12:53:07 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:07 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:53:07 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:07 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:53:07 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:53:12 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:12 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:12 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 12:53:12 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 12:53:14 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:14 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:53:14 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:14 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:53:14 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:53:17 INFO  ProjectPage:42 - Query: SELECT id_user_lead, name, key_name FROM projects WHERE name = 'qwe___'
+2017-12-15 12:53:17 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:18 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'qwe___'
+2017-12-15 12:53:18 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'qwe___'
+2017-12-15 12:53:18 INFO  SelectAllBugsProject:84 - show bugs in selected project
+2017-12-15 12:53:18 INFO  SelectAllBugsProject:110 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE id_project =4
+2017-12-15 12:53:18 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:18 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'qwe___'
+2017-12-15 12:53:18 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'qwe___'
+2017-12-15 12:53:22 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:22 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 1
+2017-12-15 12:53:30 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:30 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:53:30 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:30 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:53:30 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:53:41 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:53:41 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:53:41 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:53:41 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:53:41 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 12:59:27 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 12:59:27 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 12:59:27 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 12:59:27 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 12:59:27 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:00:56 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:00:56 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:00:56 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:00:56 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:02:55 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:02:55 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:02:55 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:02:55 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:02:55 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:04:23 INFO  Index:78 - token create successfully
+2017-12-15 13:04:23 INFO  Index:83 - cookie create successfully
+2017-12-15 13:04:23 INFO  Index:89 - Redirect to /userpage.jsp
+2017-12-15 13:04:24 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:04:24 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:04:24 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 2
+2017-12-15 13:04:24 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:04:33 INFO  Index:78 - token create successfully
+2017-12-15 13:04:33 INFO  Index:83 - cookie create successfully
+2017-12-15 13:04:33 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 13:04:33 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:04:33 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:04:33 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:04:33 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:04:33 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:04:36 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:04:36 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:04:37 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:04:37 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:04:37 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:05:26 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:05:27 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:05:27 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:05:27 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:05:27 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:05:30 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:05:30 INFO  SelectInfoEditBug:42 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE bugs.id = 7
+2017-12-15 13:05:30 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:05:35 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:05:35 INFO  SelectInfoEditBug:42 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE bugs.id = 7
+2017-12-15 13:05:35 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:05:48 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:05:48 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 13:05:48 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 13:05:59 INFO  SendMail:69 - Sent message to [zhigalo.v.y@gmail.com] successfully.
+2017-12-15 13:05:59 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:05:59 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:05:59 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:05:59 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:05:59 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:06:07 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:06:07 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:06:07 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:06:07 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:06:07 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:06:22 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:06:22 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:06:22 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:06:22 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:06:43 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 13:06:43 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:07:22 INFO  Index:78 - token create successfully
+2017-12-15 13:07:22 INFO  Index:83 - cookie create successfully
+2017-12-15 13:07:22 INFO  Index:89 - Redirect to /userpage.jsp
+2017-12-15 13:07:22 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:07:22 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:07:22 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 2
+2017-12-15 13:07:22 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:07:24 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:07:24 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:07:24 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:07:24 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:07:24 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:07:27 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:07:52 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:07:52 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:07:52 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:07:52 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:07:52 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:07:54 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:08:37 INFO  Index:78 - token create successfully
+2017-12-15 13:08:37 INFO  Index:83 - cookie create successfully
+2017-12-15 13:08:37 INFO  Index:89 - Redirect to /userpage.jsp
+2017-12-15 13:08:38 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:08:38 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:08:38 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 2
+2017-12-15 13:08:38 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:08:41 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:08:41 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:08:41 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:08:41 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:08:41 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:08:42 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:09:14 INFO  Index:78 - token create successfully
+2017-12-15 13:09:14 INFO  Index:83 - cookie create successfully
+2017-12-15 13:09:14 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 13:09:15 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:15 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:09:15 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:15 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:09:15 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:09:17 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:17 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:09:17 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:17 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:09:17 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:09:18 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:18 INFO  SelectInfoEditBug:42 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE bugs.id = 7
+2017-12-15 13:09:18 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:28 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:28 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:09:29 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:29 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:09:29 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:09:35 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:35 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:09:35 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:35 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:09:35 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:09:37 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:37 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:09:37 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:37 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:09:37 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:09:43 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:09:43 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:09:43 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:09:43 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:09:43 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:10:03 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:10:03 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:10:03 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:10:03 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:10:03 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:10:45 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:10:45 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:10:45 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:10:45 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:10:45 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:11:06 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:11:06 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:11:06 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:11:06 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:11:06 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:11:46 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:11:47 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:11:47 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:11:47 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:11:47 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:12:00 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:12:00 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:12:00 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:12:00 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:12:00 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:12:06 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:12:06 INFO  SelectInfoEditBug:42 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE bugs.id = 2
+2017-12-15 13:12:06 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:12:10 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:12:10 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:12:10 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:12:10 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:12:16 INFO  Index:78 - token create successfully
+2017-12-15 13:12:16 INFO  Index:83 - cookie create successfully
+2017-12-15 13:12:16 INFO  Index:89 - Redirect to /userpage.jsp
+2017-12-15 13:12:16 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:12:16 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:12:16 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 2
+2017-12-15 13:12:16 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:12:19 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:12:19 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:12:19 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:12:19 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:12:19 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:12:20 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:13:07 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:13:07 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:13:07 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:13:07 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:13:07 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:13:09 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MX0.qWd78Jwnalb7hPyDaLZl30Zl3zXzg8_7LQkTbl3MeaKaDD8EgGOe2iTuxJWJwXXABFY_Bk9_wxyzjQykMY5LwQ
+2017-12-15 13:18:01 INFO  Index:78 - token create successfully
+2017-12-15 13:18:01 INFO  Index:83 - cookie create successfully
+2017-12-15 13:18:01 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 13:18:01 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:18:02 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:18:02 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:18:02 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:18:02 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:18:15 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:18:15 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:18:15 INFO  SelectAllUsers:65 - Array users successfully received
+2017-12-15 13:18:21 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:18:21 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 13:18:26 INFO  SendMail:69 - Sent message to [java.lab.test.mail@gmail.com] successfully.
+2017-12-15 13:18:26 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:18:26 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:18:26 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:18:26 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:18:26 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:18:41 INFO  Index:78 - token create successfully
+2017-12-15 13:18:41 INFO  Index:83 - cookie create successfully
+2017-12-15 13:18:41 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 13:18:41 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MH0.qpaMIP66XI_FerkJg8INGyiNMrABlp-SYHX37DA5jMXQrxsfczxhYWemx-iwyCAAz0agvWhMD11RbpKjZv8slw
+2017-12-15 13:18:41 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:18:41 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:18:41 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:18:41 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:18:50 INFO  ProjectPage:42 - Query: SELECT id_user_lead, name, key_name FROM projects WHERE name = 'test'
+2017-12-15 13:18:50 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MH0.qpaMIP66XI_FerkJg8INGyiNMrABlp-SYHX37DA5jMXQrxsfczxhYWemx-iwyCAAz0agvWhMD11RbpKjZv8slw
+2017-12-15 13:18:50 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'test'
+2017-12-15 13:18:50 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'test'
+2017-12-15 13:18:50 INFO  SelectAllBugsProject:84 - show bugs in selected project
+2017-12-15 13:18:50 INFO  SelectAllBugsProject:110 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE id_project =1
+2017-12-15 13:18:50 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:18:50 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'test'
+2017-12-15 13:18:50 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'test'
+2017-12-15 13:19:08 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MH0.qpaMIP66XI_FerkJg8INGyiNMrABlp-SYHX37DA5jMXQrxsfczxhYWemx-iwyCAAz0agvWhMD11RbpKjZv8slw
+2017-12-15 13:19:08 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:19:09 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 2
+2017-12-15 13:19:09 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:19:15 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MiwibG9naW4iOiJxcXEiLCJwb3NpdGlvbiI6MH0.qpaMIP66XI_FerkJg8INGyiNMrABlp-SYHX37DA5jMXQrxsfczxhYWemx-iwyCAAz0agvWhMD11RbpKjZv8slw
+2017-12-15 13:19:15 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:19:15 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:19:15 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:19:15 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:19:29 INFO  Index:78 - token create successfully
+2017-12-15 13:19:29 INFO  Index:83 - cookie create successfully
+2017-12-15 13:19:29 INFO  Index:86 - Redirect to /adminpage.jsp
+2017-12-15 13:19:29 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:19:29 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:19:29 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:19:29 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:19:29 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:19:33 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:19:33 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:19:33 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:19:33 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:19:37 INFO  ProjectPage:42 - Query: SELECT id_user_lead, name, key_name FROM projects WHERE name = 'test'
+2017-12-15 13:19:37 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:19:37 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'test'
+2017-12-15 13:19:37 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'test'
+2017-12-15 13:19:37 INFO  SelectAllBugsProject:84 - show bugs in selected project
+2017-12-15 13:19:37 INFO  SelectAllBugsProject:110 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE id_project =1
+2017-12-15 13:19:37 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:19:37 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'test'
+2017-12-15 13:19:37 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'test'
+2017-12-15 13:19:44 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:19:44 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 1
+2017-12-15 13:21:30 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:21:30 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:21:30 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:21:30 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:21:30 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:21:32 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:21:32 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 1
+2017-12-15 13:21:49 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:21:49 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:21:49 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:21:49 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:21:55 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:21:55 INFO  SelectAllYourBug:30 - Query: SELECT bugs.id, projects.key_name,  bugs.title FROM bugs  INNER JOIN projects ON bugs.id_project = projects.id WHERE bugs.id_user_reporter = 1
+2017-12-15 13:22:18 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:22:18 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:22:18 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:22:18 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
+2017-12-15 13:22:34 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:22:34 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:22:34 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:22:34 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:22:34 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:22:51 INFO  SendMail:41 - Parameters from json [/Users/vladimirzhigalo/Documents/apache-tomcat-9.0.1/webapps/ROOT/WEB-INF/classes/param_mail.json] read successfully.
+2017-12-15 13:23:02 INFO  SendMail:69 - Sent message to [zhigalo.v.y@gmail.com] successfully.
+2017-12-15 13:23:02 DEBUG AddProject:69 - Query: INSERT INTO projects (id_user_lead , name, key_name)VALUES (1,'ASDSGFWY','ASD')
+2017-12-15 13:23:02 INFO  AddProject:70 - Project: ASDSGFWY, key:  add successfully
+2017-12-15 13:23:02 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:23:02 DEBUG SelectPosition:27 - SELECT * FROM position
+2017-12-15 13:23:02 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:23:02 DEBUG SelectAllProjects:33 - SELECT  users.firstname,   users.lastname,   projects.id,   projects.key_name,   projects.name FROM projects  INNER JOIN users ON projects.id_user_lead = users.id;
+2017-12-15 13:23:02 INFO  SelectAllProjects:45 - Select all project
+2017-12-15 13:23:14 INFO  ProjectPage:42 - Query: SELECT id_user_lead, name, key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:14 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:14 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:14 INFO  SelectAllBugsProject:84 - show bugs in selected project
+2017-12-15 13:23:14 INFO  SelectAllBugsProject:110 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE id_project =17
+2017-12-15 13:23:14 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:23:14 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:14 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:21 INFO  ProjectPage:42 - Query: SELECT id_user_lead, name, key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:21 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:21 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:21 INFO  SelectAllBugsProject:84 - show bugs in selected project
+2017-12-15 13:23:21 INFO  SelectAllBugsProject:110 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE id_project =17
+2017-12-15 13:23:21 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:23:21 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:21 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:28 INFO  ProjectPage:42 - Query: SELECT id_user_lead, name, key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:28 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:23:28 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:28 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:28 INFO  SelectAllBugsProject:84 - show bugs in selected project
+2017-12-15 13:23:28 INFO  SelectAllBugsProject:110 - Query: SELECT bugs.id,  type.name,  status.name,  priority.name,  users.firstname,  users.lastname,  (SELECT firstname FROM users WHERE users.id = bugs.id_user_reporter),  (SELECT lastname FROM users WHERE users.id = bugs.id_user_reporter),  date_create,  title,  description,  environment FROM bugs  INNER JOIN type ON bugs.id_type = type.id  INNER JOIN status ON bugs.id_status = status.id  INNER JOIN priority ON bugs.id_priority = priority.id  INNER JOIN users ON bugs.id_user_assignee = users.id WHERE id_project =17
+2017-12-15 13:23:28 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:23:28 INFO  SelectAllBugsProject:145 - Query: SELECT id FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:28 INFO  SelectAllBugsProject:152 - Query: SELECT key_name FROM projects WHERE name = 'ASDSGFWY'
+2017-12-15 13:23:32 INFO  ParseCookie:24 - token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoVG9rZW4iLCJpZCI6MSwibG9naW4iOiJxd2UiLCJwb3NpdGlvbiI6MH0.GknYrhocyhRJo7VheANK-QacGxeX82zrkE2SRFDm3Ao1ZdpA_IZL_TR5ww8Bu2-STjzQaWFDSlH-3HQyiD9DRw
+2017-12-15 13:23:32 INFO  SelectAllUsers:39 - Array users successfully received
+2017-12-15 13:23:32 INFO  SelectAllYourProject:36 - Query: SELECT  user_project.id_project,  projects.name,  projects.key_name,  users.firstname,  users.lastname FROM user_project  INNER JOIN projects ON user_project.id_project = projects.id  INNER JOIN users ON projects.id_user_lead = users.id WHERE id_user = 1
+2017-12-15 13:23:32 INFO  SelectAllYourProject:46 - Array projects current user was received successfully.
