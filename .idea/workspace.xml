@@ -66,7 +66,7 @@
       <file leaf-file-name="editbug.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/editbug.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
+            <state relative-caret-position="0">
               <caret line="109" column="62" lean-forward="false" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="62" />
               <folding />
             </state>
@@ -76,7 +76,7 @@
       <file leaf-file-name="AddUserToProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/add/AddUserToProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="630">
               <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -93,9 +93,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,7 +101,7 @@
       <file leaf-file-name="ViewBug.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bugs/ViewBug.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="300">
               <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding>
                 <marker date="1513288630655" expanded="true" signature="533:1527" ph="SELECT type.... bugs" />
@@ -114,97 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.SCHEMA:bts.public" pinned="false" current-in-tab="false">
-        <entry file="uml://DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.SCHEMA:bts.public">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>DATABASE</ID>
-              <OriginalElement>b4172a17-7f3a-4f23-9f91-93c01718fc15.SCHEMA:bts.public</OriginalElement>
-              <nodes>
-                <node x="389.5" y="380.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status</node>
-                <node x="256.6931818181818" y="124.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users</node>
-                <node x="573.5" y="358.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects</node>
-                <node x="270.1931818181818" y="0.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position</node>
-                <node x="666.5" y="624.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project</node>
-                <node x="21.5" y="380.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type</node>
-                <node x="85.99999999999994" y="536.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs</node>
-                <node x="205.5" y="380.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
-                  <point x="-54.74999999999994" y="-136.0" />
-                  <point x="140.75" y="506.0" />
-                  <point x="11.0" y="506.0" />
-                  <point x="11.0" y="338.0" />
-                  <point x="328.3181818181818" y="338.0" />
-                  <point x="-23.875" y="92.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority">
-                  <point x="18.250000000000057" y="-136.0" />
-                  <point x="213.75" y="496.0" />
-                  <point x="287.5" y="496.0" />
-                  <point x="0.0" y="37.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
-                  <point x="41.0" y="-48.0" />
-                  <point x="789.5" y="516.0" />
-                  <point x="778.0" y="516.0" />
-                  <point x="778.0" y="328.0" />
-                  <point x="423.8181818181818" y="328.0" />
-                  <point x="71.625" y="92.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type">
-                  <point x="-18.249999999999943" y="-136.0" />
-                  <point x="177.25" y="496.0" />
-                  <point x="103.5" y="496.0" />
-                  <point x="0.0" y="37.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects">
-                  <point x="91.25000000000006" y="-136.0" />
-                  <point x="286.75" y="516.0" />
-                  <point x="622.0" y="516.0" />
-                  <point x="-48.5" y="59.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position">
-                  <point x="0.0" y="-92.0" />
-                  <point x="0.0" y="37.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
-                  <point x="0.0" y="-59.0" />
-                  <point x="670.5" y="338.0" />
-                  <point x="376.0681818181818" y="338.0" />
-                  <point x="23.875" y="92.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status">
-                  <point x="54.75000000000006" y="-136.0" />
-                  <point x="250.25" y="506.0" />
-                  <point x="471.5" y="506.0" />
-                  <point x="0.0" y="37.0" />
-                </edge>
-                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects">
-                  <point x="-41.0" y="-48.0" />
-                  <point x="707.5" y="516.0" />
-                  <point x="719.0" y="516.0" />
-                  <point x="48.5" y="59.0" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.7685076380728555" x="302.29357798165137" y="212.06957186544344" />
-              <SelectedNodes>
-                <node>b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Key columns</Category>
-                <Category>Columns</Category>
-              </Categories>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddProject.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddProject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/add/AddProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
+            <state relative-caret-position="420">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <marker date="1513331405960" expanded="true" signature="1368:1511" ph="INSERT INTO projects... " />
@@ -223,6 +134,109 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SelectAllProjects.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/SelectAllProjects.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="47" />
+              <folding>
+                <element signature="e#402#411#0" expanded="true" />
+                <element signature="e#485#494#0" expanded="true" />
+                <element signature="method#setProjectForEditArrayList#0;class#SelectAllProjects#0" expanded="false" />
+                <marker date="1513288630649" expanded="true" signature="815:1152" ph="SELECT users... projects" />
+                <marker date="1513288630649" expanded="true" signature="2143:2526" ph="SELECT users... projects" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts" pinned="false" current-in-tab="true">
+        <entry file="uml://DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts</OriginalElement>
+              <nodes>
+                <node x="0.0" y="382.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status</node>
+                <node x="440.0492424242424" y="125.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users</node>
+                <node x="570.0" y="360.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects</node>
+                <node x="453.5492424242423" y="0.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position</node>
+                <node x="663.75" y="617.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project</node>
+                <node x="383.99999999999994" y="382.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type</node>
+                <node x="257.49999999999994" y="529.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs</node>
+                <node x="185.99999999999994" y="382.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
+                  <point x="18.416666666666686" y="-136.5" />
+                  <point x="386.41666666666663" y="509.0" />
+                  <point x="373.49999999999994" y="509.0" />
+                  <point x="373.49999999999994" y="340.0" />
+                  <point x="512.4242424242424" y="340.0" />
+                  <point x="-24.125" y="92.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority">
+                  <point x="-55.25" y="-136.5" />
+                  <point x="312.74999999999994" y="499.0" />
+                  <point x="268.99999999999994" y="499.0" />
+                  <point x="0.0" y="37.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
+                  <point x="41.5" y="-48.5" />
+                  <point x="788.25" y="509.0" />
+                  <point x="776.5" y="509.0" />
+                  <point x="776.5" y="330.0" />
+                  <point x="608.9242424242423" y="330.0" />
+                  <point x="72.37499999999997" y="92.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects">
+                  <point x="92.08333333333337" y="-136.5" />
+                  <point x="460.0833333333333" y="509.0" />
+                  <point x="619.0" y="509.0" />
+                  <point x="-49.0" y="59.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type">
+                  <point x="55.25" y="-136.5" />
+                  <point x="423.24999999999994" y="499.0" />
+                  <point x="466.99999999999994" y="499.0" />
+                  <point x="0.0" y="37.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
+                  <point x="0.0" y="-59.5" />
+                  <point x="668.0" y="340.0" />
+                  <point x="560.6742424242424" y="340.0" />
+                  <point x="24.125" y="92.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position">
+                  <point x="-2.8421709430404007E-14" y="-92.5" />
+                  <point x="0.0" y="37.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status">
+                  <point x="-92.08333333333337" y="-136.5" />
+                  <point x="275.9166666666666" y="509.0" />
+                  <point x="83.0" y="509.0" />
+                  <point x="0.0" y="37.5" />
+                </edge>
+                <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects">
+                  <point x="-41.5" y="-48.5" />
+                  <point x="705.25" y="509.0" />
+                  <point x="717.0" y="509.0" />
+                  <point x="49.0" y="59.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.7694117647058824" x="664.5412844036697" y="461.68195718654437" />
+              <SelectedNodes>
+                <node>b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="EditBug.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/edit/EditBug.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -236,7 +250,7 @@
       <file leaf-file-name="adminpage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
+            <state relative-caret-position="4245">
               <caret line="352" column="54" lean-forward="false" selection-start-line="352" selection-start-column="52" selection-end-line="352" selection-end-column="54" />
               <folding>
                 <element signature="e#1431#3073#0#JSP" expanded="false" />
@@ -469,24 +483,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="Scratches">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="61db50fb:ScratchProjectViewPane$MyPsiNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -584,6 +581,23 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="Scratches">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="61db50fb:ScratchProjectViewPane$MyPsiNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -812,11 +826,13 @@
       <workItem from="1513267085912" duration="6866000" />
       <workItem from="1513275580161" duration="5220000" />
       <workItem from="1513288676449" duration="9334000" />
+      <workItem from="1513377197766" duration="109000" />
+      <workItem from="1513588513073" duration="422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137118000" />
+    <option name="totallyTimeSpent" value="137649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -836,27 +852,27 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37243047" sideWeight="0.46781117" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31922612" sideWeight="0.4828326" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902583" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36396614" sideWeight="0.4828326" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35308343" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32164448" sideWeight="0.4828326" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25751072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31922612" sideWeight="0.4828326" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32164448" sideWeight="0.4828326" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -992,9 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="method#SelectAllUsers#1;class#SelectAllUsers#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,7 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="85" column="13" lean-forward="false" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,14 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="134" column="62" lean-forward="false" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="62" />
-          <folding>
-            <element signature="method#doPost#0;class#CreateIssue#0" expanded="false" />
-            <element signature="method#selectIdProject#0;class#CreateIssue#0" expanded="false" />
-            <element signature="method#selectKeyNameProject#0;class#CreateIssue#0" expanded="false" />
-            <element signature="method#selectIdPriority#0;class#CreateIssue#0" expanded="false" />
-            <element signature="method#selectIdUserAssignee#0;class#CreateIssue#0" expanded="false" />
-            <element signature="method#selectIdStatus#0;class#CreateIssue#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1050,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="195" column="16" lean-forward="false" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,7 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,7 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,7 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,7 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,15 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="31" column="74" lean-forward="false" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
-          <folding>
-            <marker date="1513293716871" expanded="true" signature="838:873" ph="SELECT id FR... users" />
-            <marker date="1513293716871" expanded="true" signature="838:874" ph="SELECT id FR... users" />
-            <marker date="1513293716871" expanded="true" signature="838:888" ph="SELECT id FR... users" />
-            <marker date="1513293716871" expanded="true" signature="1404:1453" ph="SELECT first... users" />
-            <marker date="1513293716871" expanded="true" signature="2622:2678" ph="SELECT count... bugs" />
-            <marker date="1513293716871" expanded="true" signature="3197:3286" ph="SELECT count... bugs" />
-            <marker date="1513293716871" expanded="true" signature="3807:3896" ph="SELECT count... bugs" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1224,7 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
           <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,11 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#1274#1275#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <marker date="1513290880326" expanded="true" signature="613:880" ph="SELECT bugs.... bugs" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,9 +1225,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,14 +1248,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/addusertoproject.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/addusertoproject.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/mail/SendMail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
@@ -1310,32 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts</OriginalElement>
-          <nodes>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs</node>
-            <node x="" y="">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.7685076380728555" x="665.3348623853211" y="404.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/dd0cbf28/b4172a17-7f3a-4f23-9f91-93c01718fc15/bts.public.bugs">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1347,7 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,29 +1303,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/SelectAllProjects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="47" />
-          <folding>
-            <element signature="method#setProjectForEditArrayList#0;class#SelectAllProjects#0" expanded="false" />
-            <marker date="1513288630649" expanded="true" signature="815:1152" ph="SELECT users... projects" />
-            <marker date="1513288630649" expanded="true" signature="2143:2526" ph="SELECT users... projects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/script/formassign.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/add/AddUserToProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="630">
           <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1401,7 +1333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/editbug.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
+        <state relative-caret-position="0">
           <caret line="109" column="62" lean-forward="false" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="62" />
           <folding />
         </state>
@@ -1409,7 +1341,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/adminpage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
+        <state relative-caret-position="4245">
           <caret line="352" column="54" lean-forward="false" selection-start-line="352" selection-start-column="52" selection-end-line="352" selection-end-column="54" />
           <folding>
             <element signature="e#1431#3073#0#JSP" expanded="false" />
@@ -1450,15 +1382,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bugs/ViewBug.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="300">
           <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
           <folding>
             <marker date="1513288630655" expanded="true" signature="533:1527" ph="SELECT type.... bugs" />
@@ -1542,20 +1472,21 @@
               <point x="48.5" y="59.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.7685076380728555" x="302.29357798165137" y="212.06957186544344" />
+          <settings layout="Hierarchic Group" zoom="0.7685076380728555" x="302.0" y="212.0" />
           <SelectedNodes>
             <node>b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
           </SelectedNodes>
           <Categories>
-            <Category>Key columns</Category>
             <Category>Columns</Category>
+            <Category>Key columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/add/AddProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
+        <state relative-caret-position="420">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <marker date="1513331405960" expanded="true" signature="1368:1511" ph="INSERT INTO projects... " />
@@ -1570,6 +1501,105 @@
             <marker date="1513331405960" expanded="true" signature="2305:2340" ph="SELECT email... users" />
             <marker date="1513331405960" expanded="true" signature="3099:3149" ph="SELECT id FR... users" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adminpage/SelectAllProjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="47" />
+          <folding>
+            <element signature="e#402#411#0" expanded="true" />
+            <element signature="e#485#494#0" expanded="true" />
+            <element signature="method#setProjectForEditArrayList#0;class#SelectAllProjects#0" expanded="false" />
+            <marker date="1513288630649" expanded="true" signature="815:1152" ph="SELECT users... projects" />
+            <marker date="1513288630649" expanded="true" signature="2143:2526" ph="SELECT users... projects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>b4172a17-7f3a-4f23-9f91-93c01718fc15.DATABASE:bts</OriginalElement>
+          <nodes>
+            <node x="0.0" y="382.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status</node>
+            <node x="440.0492424242424" y="125.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users</node>
+            <node x="570.0" y="360.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects</node>
+            <node x="453.5492424242423" y="0.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position</node>
+            <node x="663.75" y="617.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project</node>
+            <node x="383.99999999999994" y="382.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type</node>
+            <node x="257.49999999999994" y="529.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs</node>
+            <node x="185.99999999999994" y="382.0">b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
+              <point x="18.416666666666686" y="-136.5" />
+              <point x="386.41666666666663" y="509.0" />
+              <point x="373.49999999999994" y="509.0" />
+              <point x="373.49999999999994" y="340.0" />
+              <point x="512.4242424242424" y="340.0" />
+              <point x="-24.125" y="92.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority">
+              <point x="-55.25" y="-136.5" />
+              <point x="312.74999999999994" y="499.0" />
+              <point x="268.99999999999994" y="499.0" />
+              <point x="0.0" y="37.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
+              <point x="41.5" y="-48.5" />
+              <point x="788.25" y="509.0" />
+              <point x="776.5" y="509.0" />
+              <point x="776.5" y="330.0" />
+              <point x="608.9242424242423" y="330.0" />
+              <point x="72.37499999999997" y="92.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects">
+              <point x="92.08333333333337" y="-136.5" />
+              <point x="460.0833333333333" y="509.0" />
+              <point x="619.0" y="509.0" />
+              <point x="-49.0" y="59.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.type">
+              <point x="55.25" y="-136.5" />
+              <point x="423.24999999999994" y="499.0" />
+              <point x="466.99999999999994" y="499.0" />
+              <point x="0.0" y="37.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users">
+              <point x="0.0" y="-59.5" />
+              <point x="668.0" y="340.0" />
+              <point x="560.6742424242424" y="340.0" />
+              <point x="24.125" y="92.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.users" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.position">
+              <point x="-2.8421709430404007E-14" y="-92.5" />
+              <point x="0.0" y="37.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.bugs" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.status">
+              <point x="-92.08333333333337" y="-136.5" />
+              <point x="275.9166666666666" y="509.0" />
+              <point x="83.0" y="509.0" />
+              <point x="0.0" y="37.5" />
+            </edge>
+            <edge source="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.user_project" target="b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.projects">
+              <point x="-41.5" y="-48.5" />
+              <point x="705.25" y="509.0" />
+              <point x="717.0" y="509.0" />
+              <point x="49.0" y="59.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7694117647058824" x="664.5412844036697" y="461.68195718654437" />
+          <SelectedNodes>
+            <node>b4172a17-7f3a-4f23-9f91-93c01718fc15.TABLE:bts.public.priority</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
